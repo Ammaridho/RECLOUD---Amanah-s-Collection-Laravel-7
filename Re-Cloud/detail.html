@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+
+<body>
+  
+
+  <!-- navbar -->
+  <section class="navbar" id="navbar">
+    <nav class="navbar navbar-expand-xl navbar-light bg-light fixed-top">
+      <a class="navbar-brand mr-auto" href="#">Amanah's Collection</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link" href="#">Home </a>
+          <a class="nav-link active" href="#">Penyewaan<span class="sr-only"></span></a>
+          <a class="nav-link" href="#">Hubungi Kami</a>
+          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="#"><i class="fas fa-file"></i></i></a>
+          <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+        </div>
+      </div>
+    </nav>
+  </section>
+  <!-- akhir navbar -->
+
+
+  <!-- utama -->
+  <section class="utama bg-danger" id="utama">
+    <nav class="navbar mt-3">
+      <form class="d-flex">
+        <input class="form-control" type="search" placeholder="Tulis disini.." aria-label="Search">
+        <button class="btn btn-outline-body bg-success" type="submit">Cari</button>
+      </form>
+    </nav>
+    
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  </section>
+  <!-- akhir utama -->
+
+  <!-- sidebar -->
+  <section class="sidenav" id="mySidenav">
+    <div class="container text-center">
+      
+      <div class="row">
+        <div class="namda col-sm-12 mt-2">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><h2>Nama Daerah</h2>
+        </div>
+      </div> 
+
+      <div class="row">
+        <div class="col-md-4 pt-2 pl-3">
+          <img src="img/FUNNYYOU.png" class="rounded-circle text-center" width="150px">
+        </div>
+        <div class="col-md-8 pt-2 pr-4">
+          <p class="text">Bali  adalah sebuah provinsi di Indonesia yang ibu kota provinsinya bernama Denpasar. Bali juga merupakan salah satu pulau di Kepulauan Nusa Tenggara. Di awal kemerdekaan Indonesia, pulau ini termasuk dalam Provinsi Sunda Kecil yang beribu kota di Singaraja, dan kini terbagi menjadi 3 provinsi: Bali, Nusa Tenggara Barat, dan Nusa Tenggara Timur.</p>
+        </div>
+      </div>  
+
+    </div>
+  </section>
+  <!-- akhir sidebar -->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+      <script>
+      function openNav() {
+        document.location.href="detail.html";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0px";
+      }
+      </script>
+</html>
