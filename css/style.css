@@ -91,7 +91,7 @@ color: #111;
     z-index: 1; /*layer*/
     top: 0;
     right: 0;
-    background-color: rgba(17, 17, 17, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     overflow: auto;
     transition: transform 0.5s;
   }
@@ -105,7 +105,7 @@ color: #111;
   }
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    color: #000000;
   }
   
   .sidenav .closebtn {
@@ -141,8 +141,6 @@ color: #111;
   }
 
   .sidenav .ckc {
-    color: rgb(182, 27, 27);
-    background-color: aqua;
   }
 
   /* akhir detail */
@@ -165,6 +163,31 @@ color: #111;
       width: 1080px;
       margin-top: 30px;
     }
+
+    /* costumisasi menu pakaian adat */
+    .jenisPakaian {
+      height: 43vh;
+    }
+
+    .jenisPakaian #bajuAdat {
+      overflow:auto;
+    }
+
+    .namaTari {
+      overflow: auto;
+      height: 43vh;
+    }
+
+    #isisubBajuTari {
+      overflow: auto;
+      width: 120%;
+      height: 43vh;
+    }
+
+    .jenisPakaian #bajuPernikahan {
+      overflow:auto;
+    }
+    /* akhir costumisasi menu pakaian adat */
     
   }
 
@@ -178,7 +201,8 @@ color: #111;
       width: 1080px;
       margin-top: 20px;
     }
-    
+
+
   }
 
 
@@ -193,6 +217,30 @@ color: #111;
       margin-top: 10px;
     }
     
+    /* costumisasi menu pakaian adat */
+    .jenisPakaian {
+      height: 38vh;
+    }
+
+    .jenisPakaian #bajuAdat {
+      overflow:auto;
+    }
+
+    .namaTari {
+      overflow: auto;
+      height: 30vh;
+    }
+
+    #isisubBajuTari {
+      overflow: auto;
+      width: 120%;
+      height: 30vh;
+    }
+
+    .jenisPakaian #bajuPernikahan {
+      overflow:auto;
+    }
+    /* akhir costumisasi menu pakaian adat */
   }
 
 /* Akhir Responsive */
