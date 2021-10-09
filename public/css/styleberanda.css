@@ -1,0 +1,699 @@
+body{
+  font-family: Viga;
+  overflow-x: hidden;
+}
+
+/* navbar */
+.navbar-brand{
+  font-size: 25px;
+}
+
+.nav-item{
+  font-family: Viga;
+}
+
+
+.navbar {
+  background-color: #bbdfc8;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: black;
+}
+
+
+/* utilities */
+.tombol{
+  border-radius: 25px;
+  background: orange;
+  color: white;
+  margin-left: 5px;
+}
+
+.tombol:hover{
+  background: #3F98D9;
+  color: white;
+}
+
+.ikon{
+  margin-left: 50px;
+  margin-top: 7px;
+  color: black;
+}
+
+.ikon1{
+  margin-left: 5px;
+  font-size: 25px;
+  color: green;
+}
+
+
+
+.custom-section {
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 110px;
+
+}
+
+.custom-section .col-lg-4 {
+  margin-top: 100px;
+}
+
+.custom-section .col-lg-4 h2 {
+  font-weight: 700;
+  font-size: 45px;
+  color: #000;
+  margin-bottom: 0;
+  line-height: 1;
+  white-space: normal; 
+}
+
+.custom-section .col-lg-4 p {
+  color: #000;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.custom-section .col-lg-8 img {
+  width: 80%;
+  position: absolute;
+  top: -10rem;
+  right: -5%;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+    display:block;
+}
+
+.fa-arrow-circle-right, 
+.fa-arrow-circle-left{
+  color: green;
+}
+
+.fa-arrow-circle-left{
+  margin-top: 300px;
+  margin-left: 20px;
+}
+
+.fa-arrow-circle-right{
+  margin-top: 300px;
+  margin-right: 480px;
+}
+
+/* carousel */
+
+/* info panel */
+.info-panel{
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin: 0px auto;
+  background-color: #F9FBEF;
+  width: 100%;
+}
+
+.col-lg{
+  text-align: center;
+}
+.col-lg h4{
+  font-size: 20px;
+}
+
+.col-lg p{
+  font-size: 15px;
+}
+
+.infoPanel h2{
+  text-align: center;
+  padding: 10px;
+}
+
+/* contact us */
+.contact{
+  margin-top: 150px;
+  font-family: Viga;
+}
+
+.contact .fa{
+  padding: 5px 10px;
+  font-size: 20px;
+  text-align: left;
+  text-decoration: none;
+  margin: 5px 5px;
+  
+}
+
+
+
+.contact h2{
+  border-bottom: 3px solid orange;
+}
+
+.contact aside{
+  width: 100%;
+  margin: 0px auto;
+}
+
+.contact aside h1{
+padding: 10px;
+font-size: 20px;
+text-align: center;
+}
+
+.contact .col-lg-8 img {
+  width: 60%;
+  position: absolute;
+  top: -18rem;
+  right: -50%;
+}
+
+
+.contact aside input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.contact aside input[type=submit] {
+  background-color: orange;
+  color: white;
+  margin-top: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+/* cart */
+.keranjang{
+  position: relative;
+  margin: 0 auto;
+}
+
+.cart{
+  position: absolute;
+  width: 100%;
+}
+
+.card{
+  margin: 0 auto;
+}
+
+.keranjang h5{
+  text-align: center;
+}
+
+.form-check h6{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 3px;
+}
+
+.subtotal{
+  background-color: #C4C4C4;
+}
+
+.keranjang input[type=submit] {
+  background-color: orange;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 50%;
+  margin-left: 90px;
+}
+
+.subtotal h5{
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+.tombol-checkout{
+  border-radius: 25px;
+  background: orange;
+  color: white;
+  width: 40%;
+  margin: 10px 0 10px 100px;
+}
+
+/* alamat */
+.alamat{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.alamat aside{
+  margin: auto;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.alamat h2{
+  border-bottom: 3px solid orange;
+  text-align: right;
+}
+
+.alamat p{
+  text-align: right;
+}
+
+/* footer */
+.mini-footer {
+ background:#192027;
+ text-align:center;
+ padding:32px 0
+}
+.mini-footer p {
+ margin:0;
+ line-height:26px;
+ font-size:15px;
+ color:#999
+}
+.mini-footer p a {
+ color:#5867dd
+}
+.mini-footer p a:hover {
+ color:#34bfa3
+}
+
+
+
+.kotakhitam{
+  visibility: hidden;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.kotakhitam .kotakrelative{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.kotakhitam .kotakrelative .kotaklogin,
+.kotakhitam .kotakrelative .kotakdaftar{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.kotakhitam .kotakrelative .kotakdaftar{
+  visibility: hidden;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih{
+  margin: 80px auto;
+  height: 339px;
+  width: 88%;
+  max-width: 300px;
+  border-radius: .5rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: translateY(-200%);
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin{
+  width: 100%;
+  position: absolute;
+  height: 84%;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin .judul{
+  display: flex;
+  width: 92%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin .judul h1{
+  display: inline-block;
+  width: 100%;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  padding-left: 1.8rem;
+  border-left: #FF7A00 5px solid;
+  color:  #FF7A00;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin .judul i{
+  color: rgb(202, 201, 201);
+  cursor: pointer;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form{
+  width: 97%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .form-row{
+  margin: 17px 0px;
+  display: flex;
+  position: relative;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .form-row:last-child{
+  margin-top: 11px;
+  margin-bottom: 10px;
+  display: flex;
+  position: relative;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .form-row span{
+  display: inline-block;
+  font-size: 14px;
+  background: white;
+  position: absolute;
+  padding: 0px 5px;
+  left: 1.7em;
+  transform: translateY(-50%);
+  top: 50%;
+  color: rgb(201, 201, 201);
+  pointer-events: none;
+  transition: all 300ms ease;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .form-row input{
+  margin: 0px auto;
+  border-radius: 3px;
+  padding-top: 13px;
+  padding-bottom: 11px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 88%;
+  border: solid 1px rgb(199, 199, 199);
+  color: rgb(104, 104, 104);
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .form-row input:focus{
+  outline: none;
+  border-color: #FF7A00;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .form-row input:valid + span,
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .form-row input:focus + span{
+  top: 0;
+  left: 2.2em;
+  font-size: 12px;
+  color: black;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .alert{
+  display: none;
+  height: 30px;
+  width: 88%;
+  margin: 0px auto;
+  background: rgb(255, 79, 79);
+  color: rgb(104, 104, 104);
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin form .form-row button{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  border: none;
+  border-radius: 3px;
+  margin-top: 15px;
+  width: 88%;
+  background:  #e2e2e2;
+  color: rgb(167, 167, 167);
+  cursor: not-allowed;
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin p{
+  text-align: center;
+  font-size: 13px;
+  color: rgb(168, 168, 168);
+}
+
+.kotakhitam .kotakrelative .kotaklogin .kotakputih .formlogin p span{
+  font-weight: 700;
+  color:  #FF7A00;
+  cursor: pointer;
+}
+
+/*form styles*/
+#msform {
+width: 400px;
+margin: 50px auto;
+text-align: center;
+position: relative;
+  visibility: hidden;
+  transform: translateY(-200%);
+}
+#msform .putih {
+background: white;
+border: 0 none;
+border-radius: 3px;
+box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+padding: 20px 30px;
+box-sizing: border-box;
+width: 80%;
+margin: 0 10%;
+
+/*stacking fieldsets above each other*/
+position: relative;
+}
+#msform .putih i{
+  position: absolute;
+  right: 10%;
+  color: rgb(202, 201, 201);
+  cursor: pointer;
+}
+#msform fieldset {
+border: 0 none;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+display: none;
+}
+
+#msform fieldset .form-row{
+  margin: 17px 0px;
+  display: flex;
+  position: relative;
+}
+
+#msform fieldset .form-row span{
+  display: inline-block;
+  font-size: 14px;
+  background: white;
+  position: absolute;
+  padding: 0px 5px;
+  left: .7em;
+  transform: translateY(-50%);
+  top: 50%;
+  color: rgb(201, 201, 201);
+  pointer-events: none;
+  transition: all 300ms ease;
+}
+
+#msform fieldset .form-row input,
+#msform fieldset .form-row textarea{
+  margin: 0px auto;
+  border-radius: 3px;
+  padding-top: 13px;
+  padding-bottom: 11px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  border: solid 1px rgb(199, 199, 199);
+  color: rgb(104, 104, 104);
+}
+
+#msform fieldset .form-row input.invalid,
+#msform fieldset .form-row textarea.invalid{
+  background-color: #ffdddd;
+}
+
+#msform fieldset .form-row input:focus,
+#msform fieldset .form-row textarea:focus{
+  outline: none;
+  border-color: #FF7A00;
+}
+
+#msform fieldset .form-row input:valid + span,
+#msform fieldset .form-row input:focus + span,
+#msform fieldset .form-row textarea:valid + span,
+#msform fieldset .form-row textarea:focus + span{
+  top: 0;
+  left: .7em;
+  font-size: 12px;
+  color: black;
+}
+
+#msform fieldset .form-row textarea{
+  resize: none;
+}
+/*headings*/
+.fs-title {
+font-size: 15px;
+text-transform: uppercase;
+color: #2C3E50;
+margin-bottom: 10px;
+}
+.fs-subtitle {
+font-weight: normal;
+font-size: 13px;
+color: #666;
+margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+margin-bottom: 30px;
+overflow: hidden;
+/*CSS counters to number the steps*/
+  counter-reset: step;
+}
+#progressbar .step {
+list-style-type: none;
+color: white;
+text-transform: uppercase;
+font-size: 9px;
+width: 29%;
+float: left;
+position: relative;
+}
+#progressbar .step:before {
+content: counter(step);
+counter-increment: step;
+width: 20px;
+line-height: 20px;
+display: block;
+font-size: 10px;
+color: #333;
+background: white;
+border-radius: 3px;
+  margin: 0 auto 5px auto;
+  position: relative;
+  z-index: 3;
+}
+/*progressbar connectors*/
+#progressbar .step:after {
+content: '';
+width: 100%;
+height: 2px;
+background: white;
+position: absolute;
+left: -50%;
+top: 9px;
+z-index: 1; /*put it behind the numbers*/
+}
+#progressbar .step:first-child:after {
+/*connector not needed before the first step*/
+content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar .step.active:before,  #progressbar .step.active:after{
+background: #FF7A00;
+color: white;
+}
+#msform .pencetan{
+  display: flex;
+  gap: 5px;
+}
+#msform .pencetan button{
+  outline: none;
+  padding: 10px 10px;
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  border: none;
+  border-radius: 3px;
+  background-color: #FF7A00;
+  color:white;
+  cursor: pointer;
+}
+#msform p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 13px;
+  color: rgb(168, 168, 168);
+}
+
+#msform p span{
+  font-weight: 700;
+  color:  #FF7A00;
+  cursor: pointer;
+}
+
+@media (max-width:991px) {
+ .footer-menu {
+  padding-left:0
+ }
+}
+
+/* desktop version */
+@media (min-width: 992px){
+  .nav-link{
+    margin-right: 20px;
+  }
+
+  .nav-link:hover::after{
+    content: '';
+    display: block;
+    border-bottom: 3px solid orange;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+  } 
+}
+
+@media screen and (max-width: 991.98px) {
+  .custom-section {
+    flex-direction: column-reverse;
+  }
+  .custom-section .col-lg-8 img {
+    width: 100%;
+    position: relative;
+    top: 50px;
+  }
+  .nav-item{
+    margin: auto;
+    margin-bottom: 5px;
+  }
+  .fa-arrow-circle-right{
+    margin-top: 300px;
+    margin-right: 380px;
+  }
+  
+  .contact aside{
+    width: 90%;
+  }
+  .ikon{
+    margin: auto;
+    margin-top: 5px;
+  }
+}

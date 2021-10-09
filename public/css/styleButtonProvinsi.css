@@ -1,0 +1,2190 @@
+/* Button Position dari Provinsi */
+
+.tombolProvinsi {
+    display: inline-block;
+    position: absolute; 
+    font-size: 10px;text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.623);
+    text-shadow: 1px 0px rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+}
+
+
+
+/* Aceh ========================================================================================================*/
+#aceh {
+    top: 115px;
+    left: 50px;
+  }
+
+  #aceh:hover { 
+    background-image: url(../img/provinsi/Aceh-01.png);
+    background-size:90px;
+    border: solid black;   
+    width: 97px;
+    height: 110px;
+    top: 77px;
+    left: 13px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #aceh {
+      top: 65px;
+      left: 50px;
+    }
+
+    #aceh:hover {
+      top: 27px;
+      left: 13px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #aceh {
+      top: 55px;
+      left: 35px;
+    }
+
+    #aceh:hover {
+      top: 17px;
+      left: -2px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #aceh {
+      top: 45px;
+      left: 35px;
+    }
+
+    #aceh:hover {
+      top: 7px;
+      left: -2px;
+    }
+    
+  }
+
+/* akhir Aceh ========================================================================================================*/
+
+
+
+/* Sumatra Utara ========================================================================================================*/
+#sumatraUtara {
+    top: 160px;
+    left: 80px;
+  }
+
+  #sumatraUtara:hover { 
+    background-image: url(../img/provinsi/Sumut-01.png);
+    background-size:87px;
+    background-repeat: no-repeat;
+    border: solid black;   
+    width: 100px;
+    height: 110px;
+    top: 113px;
+    left: 60px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #sumatraUtara {
+      top: 110px;
+      left: 80px;
+    }
+
+    #sumatraUtara:hover {
+      top: 63px;
+      left: 60px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #sumatraUtara {
+      top: 100px;
+      left: 65px;
+    }
+
+    #sumatraUtara:hover {
+      top: 53px;
+      left: 45px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #sumatraUtara {
+      top: 90px;
+      left: 65px;
+    }
+
+    #sumatraUtara:hover {
+      top: 43px;
+      left: 45px;
+    }
+    
+  }
+
+/* akhir Sumatra Utara ========================================================================================================*/
+
+
+
+/* sumatraBarat ========================================================================================================*/
+#sumatraBarat {
+    top: 240px;
+    left: 100px;
+  }
+
+  #sumatraBarat:hover { 
+    background-image: url(../img/provinsi/Sumbar-01.png);
+    background-size:94px;
+    border: solid black;   
+    width: 97px;
+    height: 115px;
+    top: 190px;
+    left: 92px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #sumatraBarat {
+      top: 190px;
+      left: 100px;
+    }
+
+    #sumatraBarat:hover {
+      top: 140px;
+      left: 92px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #sumatraBarat {
+      top: 180px;
+      left: 85px;
+    }
+
+    #sumatraBarat:hover {
+      top: 130px;
+      left: 77px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #sumatraBarat {
+      top: 170px;
+      left: 85px;
+    }
+
+    #sumatraBarat:hover {
+      top: 120px;
+      left: 77px;
+    }
+    
+  }
+
+/* akhir sumatraBarat ========================================================================================================*/
+
+
+
+/* riau ========================================================================================================*/
+#riau {
+    top: 210px;
+    left: 170px;
+  }
+
+  #riau:hover { 
+    background-image: url(../img/provinsi/riau-01.png);
+    background-size:105px;
+    border: solid black;   
+    width: 105px;
+    height: 110px;
+    top: 158px;
+    left: 126px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #riau {
+      top: 160px;
+      left: 170px;
+    }
+
+    #riau:hover {
+      top: 108px;
+      left: 126px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #riau {
+      top: 150px;
+      left: 155px;
+    }
+
+    #riau:hover {
+      top: 98px;
+      left: 111px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #riau {
+      top: 140px;
+      left: 155px;
+    }
+
+    #riau:hover {
+      top: 88px;
+      left: 111px;
+    }
+    
+  }
+
+/* akhir riau ========================================================================================================*/
+
+
+
+/* jambi ========================================================================================================*/
+#jambi {
+    top: 255px;
+    left: 190px;
+  }
+
+  #jambi:hover { 
+    background-image: url(../img/provinsi/jambi-01.png);
+    background-size:97px;
+    border: solid black;   
+    width: 97px;
+    height: 55px;
+    top: 236px;
+    left: 152px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #jambi {
+      top: 205px;
+      left: 190px;
+    }
+
+    #jambi:hover {
+      top: 186px;
+      left: 152px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #jambi {
+      top: 195px;
+      left: 175px;
+    }
+
+    #jambi:hover {
+      top: 176px;
+      left: 137px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #jambi {
+      top: 185px;
+      left: 175px;
+    }
+
+    #jambi:hover {
+      top: 166px;
+      left: 137px;
+    }
+    
+  }
+
+/* akhir jambi ========================================================================================================*/
+
+
+
+/* bengkulu ========================================================================================================*/
+#bengkulu {
+    top: 310px;
+    left: 150px;
+  }
+
+  #bengkulu:hover { 
+    background-image: url(../img/provinsi/bengkulu-01.png);
+    background-size:110px;
+    border: solid black;   
+    width: 97px;
+    height: 90px;
+    top: 268px;
+    left: 130px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #bengkulu {
+      top: 260px;
+      left: 150px;
+    }
+
+    #bengkulu:hover {
+      top: 218px;
+      left: 130px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #bengkulu {
+      top: 250px;
+      left: 135px;
+    }
+
+    #bengkulu:hover {
+      top: 208px;
+      left: 115px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #bengkulu {
+      top: 240px;
+      left: 135px;
+    }
+
+    #bengkulu:hover {
+      top: 198px;
+      left: 115px;
+    }
+    
+  }
+
+/* akhir bengkulu ========================================================================================================*/
+
+
+
+/* sumatraSelatan ========================================================================================================*/
+#sumatraSelatan {
+    top: 290px;
+    left: 193px;
+  }
+
+  #sumatraSelatan:hover { 
+    background-image: url(../img/provinsi/Sumsel-01.png);
+    background-size:110px;
+    border: solid black;   
+    width: 120px;
+    height: 90px;
+    top: 255px;
+    left: 173px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #sumatraSelatan {
+      top: 240px;
+      left: 193px;
+    }
+
+    #sumatraSelatan:hover {
+      top: 205px;
+      left: 173px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #sumatraSelatan {
+      top: 230px;
+      left: 178px;
+    }
+
+    #sumatraSelatan:hover {
+      top: 195px;
+      left: 158px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #sumatraSelatan {
+      top: 220px;
+      left: 178px;
+    }
+
+    #sumatraSelatan:hover {
+      top: 185px;
+      left: 158px;
+    }
+    
+  }
+
+/* akhir sumatraSelatan ========================================================================================================*/
+
+
+
+/* bangkablitung ========================================================================================================*/
+#bangkablitung {
+    top: 270px;
+    left: 265px;
+  }
+
+  #bangkablitung:hover { 
+    background-image: url(../img/provinsi/Bangka\ Blitung-01.png);
+    background-size:90px;
+    border: solid black;   
+    width: 97px;
+    height: 60px;
+    top: 251px;
+    left: 248px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #bangkablitung {
+      top: 220px;
+      left: 265px;
+    }
+
+    #bangkablitung:hover {
+      top: 201px;
+      left: 248px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #bangkablitung {
+      top: 210px;
+      left: 250px;
+    }
+
+    #bangkablitung:hover {
+      top: 191px;
+      left: 233px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #bangkablitung {
+      top: 200px;
+      left: 250px;
+    }
+
+    #bangkablitung:hover {
+      top: 181px;
+      left: 233px;
+    }
+    
+  }
+
+/* akhir bangkablitung ========================================================================================================*/
+
+
+
+/* lampung ========================================================================================================*/
+#lampung {
+    top: 330px;
+    left: 235px;
+  }
+
+  #lampung:hover { 
+    background-image: url(../img/provinsi/lampung-01.png);
+    background-size:67px;
+    border: solid black;   
+    width: 80px;
+    height: 70px;
+    top: 301px;
+    left: 212px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #lampung {
+      top: 280px;
+      left: 235px;
+    }
+
+    #lampung:hover {
+      top: 251px;
+      left: 212px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #lampung {
+      top: 270px;
+      left: 220px;
+    }
+
+    #lampung:hover {
+      top: 241px;
+      left: 197px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #lampung {
+      top: 260px;
+      left: 220px;
+    }
+
+    #lampung:hover {
+      top: 231px;
+      left: 197px;
+    }
+    
+  }
+
+/* akhir lampung ========================================================================================================*/
+
+
+
+/* banten ========================================================================================================*/
+#banten {
+    top: 365px;
+    left: 250px;
+  }
+
+  #banten:hover { 
+    background-image: url(../img/provinsi/banten-01.png);
+    background-size:45px;
+    border: solid black;   
+    width: 50px;
+    height: 40px;
+    top: 354px;
+    left: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #banten {
+      top: 315px;
+      left: 250px;
+    }
+
+    #banten:hover {
+      top: 304px;
+      left: 250px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #banten {
+      top: 305px;
+      left: 235px;
+    }
+
+    #banten:hover {
+      top: 294px;
+      left: 235px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #banten {
+      top: 295px;
+      left: 235px;
+    }
+
+    #banten:hover {
+      top: 284px;
+      left: 235px;
+    }
+    
+  }
+
+/* akhir banten ========================================================================================================*/
+
+
+
+/* jakarta ========================================================================================================*/
+#jakarta {
+    top: 350px;
+    left: 270px;
+  }
+
+  #jakarta:hover { 
+    background-image: url(../img/provinsi/DKI\ Jakarta-01.png);
+    background-size:12px;
+    border: solid black;   
+    width: 60px;
+    height: 30px;
+    top: 354px;
+    left: 287px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #jakarta {
+      top: 300px;
+      left: 270px;
+    }
+
+    #jakarta:hover {
+      top: 304px;
+      left: 287px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #jakarta {
+      top: 290px;
+      left: 255px;
+    }
+
+    #jakarta:hover {
+      top: 294px;
+      left: 272px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #jakarta {
+      top: 280px;
+      left: 255px;
+    }
+
+    #jakarta:hover {
+      top: 284px;
+      left: 272px;
+    }
+    
+  }
+
+/* akhir jakarta ========================================================================================================*/
+
+
+
+/* jawaBarat ========================================================================================================*/
+#jawaBarat {
+    top: 375px;
+    left: 287px;
+  }
+
+  #jawaBarat:hover { 
+    background-image: url(../img/provinsi/Jabar-01.png);
+    background-size:67px;
+    border: solid black;   
+    width: 70px;
+    height: 60px;
+    top: 354px;
+    left: 277px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #jawaBarat {
+      top: 325px;
+      left: 287px;
+    }
+
+    #jawaBarat:hover {
+      top: 304px;
+      left: 277px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #jawaBarat {
+      top: 315px;
+      left: 272px;
+    }
+
+    #jawaBarat:hover {
+      top: 294px;
+      left: 262px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #jawaBarat {
+      top: 305px;
+      left: 272px;
+    }
+
+    #jawaBarat:hover {
+      top: 284px;
+      left: 262px;
+    }
+    
+  }
+
+/* akhir jawaBarat ========================================================================================================*/
+
+
+
+/* jawaTengah ========================================================================================================*/
+#jawaTengah {
+    top: 385px;
+    left: 340px;
+  }
+
+  #jawaTengah:hover { 
+    background-image: url(../img/provinsi/JATENG-01.png);
+    background-size:80px;
+    border: solid black;   
+    width: 85px;
+    height: 60px;
+    top: 366px;
+    left: 332px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #jawaTengah {
+      top: 335px;
+      left: 340px;
+    }
+
+    #jawaTengah:hover {
+      top: 316px;
+      left: 332px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #jawaTengah {
+      top: 325px;
+      left: 325px;
+    }
+
+    #jawaTengah:hover {
+      top: 306px;
+      left: 317px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #jawaTengah {
+      top: 315px;
+      left: 325px;
+    }
+
+    #jawaTengah:hover {
+      top: 296px;
+      left: 317px;
+    }
+    
+  }
+
+/* akhir jawaTengah ========================================================================================================*/
+
+
+
+/* yogyakarta ========================================================================================================*/
+#yogyakarta {
+    top: 407px;
+    left: 347px;
+  }
+
+  #yogyakarta:hover { 
+    background-image: url(../img/provinsi/Jogja-01.png);
+    background-size:25px;
+    border: solid black;   
+    width: 53px;
+    height: 30px;
+    top: 394px;
+    left: 363px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #yogyakarta {
+      top: 357px;
+      left: 347px;
+    }
+
+    #yogyakarta:hover {
+      top: 344px;
+      left: 363px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #yogyakarta {
+      top: 347px;
+      left: 332px;
+    }
+
+    #yogyakarta:hover {
+      top: 334px;
+      left: 348px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #yogyakarta {
+      top: 337px;
+      left: 332px;
+    }
+
+    #yogyakarta:hover {
+      top: 324px;
+      left: 348px;
+    }
+    
+  }
+
+/* akhir yogyakarta ========================================================================================================*/
+
+
+/* jawaTimur ========================================================================================================*/
+#jawaTimur {
+    top: 395px;
+    left: 410px;
+  }
+
+  #jawaTimur:hover { 
+    background-image: url(../img/provinsi/Jawa\ Timur-01.png);
+    background-size:122px;
+    border: solid black;   
+    width: 125px;
+    height: 60px;
+    top: 375px;
+    left: 380px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #jawaTimur {
+      top: 345px;
+      left: 410px;
+    }
+
+    #jawaTimur:hover {
+      top: 325px;
+      left: 380px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #jawaTimur {
+      top: 335px;
+      left: 395px;
+    }
+
+    #jawaTimur:hover {
+      top: 315px;
+      left: 365px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #jawaTimur {
+      top: 325px;
+      left: 395px;
+    }
+
+    #jawaTimur:hover {
+      top: 305px;
+      left: 365px;
+    }
+    
+  }
+
+/* akhir jawaTimur ========================================================================================================*/
+
+
+
+/* bali ========================================================================================================*/
+#bali {
+    top: 413px;
+    left: 483px;
+  }
+
+  #bali:hover { 
+    background-image: url(../img/provinsi/bali-01.png);
+    background-size:34px;
+    border: solid black;   
+    width: 40px;
+    height: 30px;
+    top: 406px;
+    left: 472px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #bali {
+      top: 363px;
+      left: 483px;
+    }
+
+    #bali:hover {
+      top: 356px;
+      left: 472px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #bali {
+      top: 353px;
+      left: 468px;
+    }
+
+    #bali:hover {
+      top: 346px;
+      left: 457px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #bali {
+      top: 343px;
+      left: 468px;
+    }
+
+    #bali:hover {
+      top: 336px;
+      left: 457px;
+    }
+    
+  }
+
+/* akhir bali ========================================================================================================*/
+
+
+
+/* NTB ========================================================================================================*/
+#NTB {
+    top: 416px;
+    left: 530px;
+  }
+
+  #NTB:hover { 
+    background-image: url(../img/provinsi/NTB-01.png);
+    background-size:87px;
+    border: solid black;   
+    width: 93px;
+    height: 40px;
+    top: 406px;
+    left: 498px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #NTB {
+      top: 366px;
+      left: 530px;
+    }
+
+    #NTB:hover {
+      top: 356px;
+      left: 498px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #NTB {
+      top: 356px;
+      left: 515px;
+    }
+
+    #NTB:hover {
+      top: 346px;
+      left: 483px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #NTB {
+      top: 346px;
+      left: 515px;
+    }
+
+    #NTB:hover {
+      top: 336px;
+      left: 483px;
+    }
+    
+  }
+
+/* akhir NTB ========================================================================================================*/
+
+
+
+/* NTT ========================================================================================================*/
+#NTT {
+    top: 440px;
+    left: 640px;
+  }
+
+  #NTT:hover { 
+    background-image: url(../img/provinsi/NTT-01.png);
+    background-size:166px;
+    border: solid black;   
+    width: 175px;
+    height: 84px;
+    top: 402px;
+    left: 563px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #NTT {
+      top: 390px;
+      left: 640px;
+    }
+
+    #NTT:hover {
+      top: 352px;
+      left: 563px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #NTT {
+      top: 380px;
+      left: 625px;
+    }
+
+    #NTT:hover {
+      top: 342px;
+      left: 546px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #NTT {
+      top: 370px;
+      left: 625px;
+    }
+
+    #NTT:hover {
+      top: 332px;
+      left: 548px;
+    }
+    
+  }
+
+/* akhir NTT ========================================================================================================*/
+
+
+
+/* maluku ========================================================================================================*/
+#maluku {
+    top: 340px;
+    left: 790px;
+  }
+
+  #maluku:hover { 
+    background-image: url(../img/provinsi/maluku-01.png);
+    background-size:243px;
+    border: solid black;   
+    width: 180px;
+    height: 180px;
+    top: 274px;
+    left: 717px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #maluku {
+      top: 290px;
+      left: 790px;
+    }
+
+    #maluku:hover {
+      top: 224px;
+      left: 717px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #maluku {
+      top: 280px;
+      left: 775px;
+    }
+
+    #maluku:hover {
+      top: 214px;
+      left: 702px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #maluku {
+      top: 270px;
+      left: 775px;
+    }
+
+    #maluku:hover {
+      top: 204px;
+      left: 702px;
+    }
+    
+  }
+
+/* akhir maluku ========================================================================================================*/
+
+
+
+/* papua ========================================================================================================*/
+#papua {
+    top: 300px;
+    left: 1000px;
+  }
+
+  #papua:hover { 
+    background-image: url(../img/provinsi/Papua\ Timur-01.png);
+    background-size:187px;
+    border: solid black;   
+    width: 184px;
+    height: 229px;
+    top: 222px;
+    left: 913px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #papua {
+      top: 250px;
+      left: 1000px;
+    }
+
+    #papua:hover {
+      top: 172px;
+      left: 913px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #papua {
+      top: 240px;
+      left: 985px;
+    }
+
+    #papua:hover {
+      top: 162px;
+      left: 898px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #papua {
+      top: 230px;
+      left: 985px;
+    }
+
+    #papua:hover {
+      top: 152px;
+      left: 898px;
+    }
+    
+  }
+
+/* akhir papua ========================================================================================================*/
+
+
+/* papuaBarat ========================================================================================================*/
+#papuaBarat {
+    top: 260px;
+    left: 870px;
+  }
+
+  #papuaBarat:hover { 
+    background-image: url(../img/provinsi/Papua\ Barat-01.png);
+    background-size:152px;
+    border: solid black;   
+    width: 160px;
+    height: 130px;
+    top: 213px;
+    left: 811px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #papuaBarat {
+      top: 210px;
+      left: 870px;
+    }
+
+    #papuaBarat:hover {
+      top: 163px;
+      left: 811px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #papuaBarat {
+      top: 200px;
+      left: 855px;
+    }
+
+    #papuaBarat:hover {
+      top: 153px;
+      left: 796px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #papuaBarat {
+      top: 190px;
+      left: 855px;
+    }
+
+    #papuaBarat:hover {
+      top: 143px;
+      left: 796px;
+    }
+    
+  }
+
+/* akhir papuaBarat ========================================================================================================*/
+
+
+
+/* malukuUtara ========================================================================================================*/
+#malukuUtara {
+    top: 220px;
+    left: 745px;
+  }
+
+  #malukuUtara:hover { 
+    background-image: url(../img/provinsi/Maluku\ Utara-01.png);
+    background-size:140px;
+    border: solid black;   
+    width: 130px;
+    height: 140px;
+    top: 154px;
+    left: 690px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #malukuUtara {
+      top: 170px;
+      left: 754px;
+    }
+
+    #malukuUtara:hover {
+      top: 104px;
+      left: 690px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #malukuUtara {
+      top: 160px;
+      left: 739px;
+    }
+
+    #malukuUtara:hover {
+      top: 94px;
+      left: 675px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #malukuUtara {
+      top: 150px;
+      left: 739px;
+    }
+
+    #malukuUtara:hover {
+      top: 84px;
+      left: 675px;
+    }
+    
+  }
+
+/* akhir malukuUtara ========================================================================================================*/
+
+
+
+/* sulawesiUtara ========================================================================================================*/
+#sulawesiUtara {
+    top: 170px;
+    left: 680px;
+  }
+
+  #sulawesiUtara:hover { 
+    background-image: url(../img/provinsi/SulUt-01.png);
+    background-size:108px;
+    border: solid black;   
+    width: 120px;
+    height: 120px;
+    top: 111px;
+    left: 658px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #sulawesiUtara {
+      top: 120px;
+      left: 680px;
+    }
+
+    #sulawesiUtara:hover {
+      top: 61px;
+      left: 658px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #sulawesiUtara {
+      top: 110px;
+      left: 665px;
+    }
+
+    #sulawesiUtara:hover {
+      top: 51px;
+      left: 643px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #sulawesiUtara {
+      top: 100px;
+      left: 665px;
+    }
+
+    #sulawesiUtara:hover {
+      top: 41px;
+      left: 643px;
+    }
+    
+  }
+
+/* akhir sulawesiUtara ========================================================================================================*/
+
+
+
+/* gorontalo ========================================================================================================*/
+#gorontalo {
+    top: 205px;
+    left: 630px;
+  }
+
+  #gorontalo:hover { 
+    background-image: url(../img/provinsi/Gorontalo-01.png);
+    background-size:60px;
+    border: solid black;   
+    width: 70px;
+    height: 30px;
+    top: 194px;
+    left: 617px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #gorontalo {
+      top: 155px;
+      left: 630px;
+    }
+
+    #gorontalo:hover {
+      top: 144px;
+      left: 617px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #gorontalo {
+      top: 145px;
+      left: 615px;
+    }
+
+    #gorontalo:hover {
+      top: 134px;
+      left: 602px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #gorontalo {
+      top: 135px;
+      left: 615px;
+    }
+
+    #gorontalo:hover {
+      top: 124px;
+      left: 602px;
+    }
+    
+  }
+
+/* akhir gorontalo ========================================================================================================*/
+
+
+
+/* sulawesiTengah ========================================================================================================*/
+#sulawesiTengah {
+    top: 238px;
+    left: 600px;
+  }
+
+  #sulawesiTengah:hover { 
+    background-image: url(../img/provinsi/SulTengah-01.png);
+    background-size:115px;
+    border: solid black;   
+    width: 120px;
+    height: 120px;
+    top: 184px;
+    left: 581px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #sulawesiTengah {
+      top: 188px;
+      left: 600px;
+    }
+
+    #sulawesiTengah:hover {
+      top: 134px;
+      left: 581px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #sulawesiTengah {
+      top: 178px;
+      left: 585px;
+    }
+
+    #sulawesiTengah:hover {
+      top: 124px;
+      left: 566px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #sulawesiTengah {
+      top: 168px;
+      left: 585px;
+    }
+
+    #sulawesiTengah:hover {
+      top: 114px;
+      left: 566px;
+    }
+    
+  }
+
+/* akhir sulawesiTengah ========================================================================================================*/
+
+
+
+/* sulawesiTenggara ========================================================================================================*/
+#sulawesiTenggara {
+    top: 320px;
+    left: 640px;
+  }
+
+  #sulawesiTenggara:hover { 
+    background-image: url(../img/provinsi/SulTeng-01.png);
+    background-size:85px;
+    border: solid black;   
+    width: 97px;
+    height: 96px;
+    top: 282px;
+    left: 615px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #sulawesiTenggara {
+      top: 270px;
+      left: 640px;
+    }
+
+    #sulawesiTenggara:hover {
+      top: 232px;
+      left: 615px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #sulawesiTenggara {
+      top: 260px;
+      left: 625px;
+    }
+
+    #sulawesiTenggara:hover {
+      top: 222px;
+      left: 600px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #sulawesiTenggara {
+      top: 250px;
+      left: 625px;
+    }
+
+    #sulawesiTenggara:hover {
+      top: 212px;
+      left: 600px;
+    }
+    
+  }
+
+/* akhir sulawesiTenggara ========================================================================================================*/
+
+
+
+/* sulawesiSelatan ========================================================================================================*/
+#sulawesiSelatan {
+    top: 310px;
+    left: 550px;
+  }
+
+  #sulawesiSelatan:hover { 
+    background-image: url(../img/provinsi/SulSel-01.png);
+    background-size:67px;
+    border: solid black;   
+    width: 75px;
+    height: 150px;
+    top: 257px;
+    left: 578px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #sulawesiSelatan {
+      top: 260px;
+      left: 550px;
+    }
+
+    #sulawesiSelatan:hover {
+      top: 207px;
+      left: 578px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #sulawesiSelatan {
+      top: 250px;
+      left: 535px;
+    }
+
+    #sulawesiSelatan:hover {
+      top: 197px;
+      left: 563px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #sulawesiSelatan {
+      top: 240px;
+      left: 535px;
+    }
+
+    #sulawesiSelatan:hover {
+      top: 187px;
+      left: 563px;
+    }
+    
+  }
+
+/* akhir sulawesiSelatan ========================================================================================================*/
+
+
+
+/* sulawesiBarat ========================================================================================================*/
+#sulawesiBarat {
+    top: 270px;
+    left: 540px;
+  }
+
+  #sulawesiBarat:hover { 
+    background-image: url(../img/provinsi/SulBar-01.png);
+    background-size: 30px;
+    border: solid black;   
+    width: 40px;
+    height: 80px;
+    top: 234px;
+    left: 567px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media only screen and (max-width:1500px) {
+
+    #sulawesiBarat {
+      top: 220px;
+      left: 540px;
+    }
+
+    #sulawesiBarat:hover {
+      top: 184px;
+      left: 567px;
+    }
+    
+  }
+
+  @media only screen and (max-width:1200px) {
+
+    #sulawesiBarat {
+      top: 210px;
+      left: 525px;
+    }
+
+    #sulawesiBarat:hover {
+      top: 174px;
+      left: 552px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width:1000px) {
+
+    #sulawesiBarat {
+      top: 200px;
+      left: 525px;
+    }
+
+    #sulawesiBarat:hover {
+      top: 164px;
+      left: 552px;
+    }
+    
+  }
+
+/* akhir sulawesiBarat ========================================================================================================*/
+
+
+
+/* kalimantanUtara ========================================================================================================*/
+#kalimantanUtara {
+  top: 130px;
+  left: 480px;
+}
+
+#kalimantanUtara:hover { 
+  background-image: url(../img/provinsi/Kaltara-01.png);
+  background-size:91px;
+  border: solid black;   
+  width: 97px;
+  height: 90px;
+  top: 114px;
+  left: 468px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width:1500px) {
+
+  #kalimantanUtara {
+    top: 80px;
+    left: 480px;
+  }
+
+  #kalimantanUtara:hover {
+    top: 64px;
+    left: 468px;
+  }
+  
+}
+
+@media only screen and (max-width:1200px) {
+
+  #kalimantanUtara {
+    top: 70px;
+    left: 465px;
+  }
+
+  #kalimantanUtara:hover {
+    top: 54px;
+    left: 453px;
+  }
+  
+}
+
+
+@media only screen and (max-width:1000px) {
+
+  #kalimantanUtara {
+    top: 60px;
+    left: 465px;
+  }
+
+  #kalimantanUtara:hover {
+    top: 44px;
+    left: 453px;
+  }
+  
+}
+
+/* akhir kalimantanUtara ========================================================================================================*/
+
+
+
+
+/* kalimantanTimur ========================================================================================================*/
+#kalimantanTimur {
+  top: 205px;
+  left: 500px;
+}
+
+#kalimantanTimur:hover { 
+  background-image: url(../img/provinsi/KalTim-01.png);
+  background-size:145px;
+  border: solid black;   
+  width: 145px;
+  height: 135px;
+  top: 151px;
+  left: 444px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width:1500px) {
+
+  #kalimantanTimur {
+    top: 155px;
+    left: 500px;
+  }
+
+  #kalimantanTimur:hover {
+    top: 101px;
+    left: 444px;
+  }
+  
+}
+
+@media only screen and (max-width:1200px) {
+
+  #kalimantanTimur {
+    top: 145px;
+    left: 485px;
+  }
+
+  #kalimantanTimur:hover {
+    top: 91px;
+    left: 429px;
+  }
+  
+}
+
+
+@media only screen and (max-width:1000px) {
+
+  #kalimantanTimur {
+    top: 135px;
+    left: 485px;
+  }
+
+  #kalimantanTimur:hover {
+    top: 81px;
+    left: 429px;
+  }
+  
+}
+
+/* akhir kalimantanTimur ========================================================================================================*/
+
+
+
+/* kalimantanSelatan ========================================================================================================*/
+#kalimantanSelatan {
+  top: 290px;
+  left: 470px;
+}
+
+#kalimantanSelatan:hover { 
+  background-image: url(../img/provinsi/KalSel-01.png);
+  background-size:65px;
+  border: solid black;   
+  width: 97px;
+  height: 110px;
+  top: 247px;
+  left: 462px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width:1500px) {
+
+  #kalimantanSelatan {
+    top: 240px;
+    left: 470px;
+  }
+
+  #kalimantanSelatan:hover {
+    top: 197px;
+    left: 462px;
+  }
+  
+}
+
+@media only screen and (max-width:1200px) {
+
+  #kalimantanSelatan {
+    top: 230px;
+    left: 455px;
+  }
+
+  #kalimantanSelatan:hover {
+    top: 187px;
+    left: 447px;
+  }
+  
+}
+
+
+@media only screen and (max-width:1000px) {
+
+  #kalimantanSelatan {
+    top: 220px;
+    left: 455px;
+  }
+
+  #kalimantanSelatan:hover {
+    top: 177px;
+    left: 447px;
+  }
+  
+}
+
+/* akhir kalimantanSelatan ========================================================================================================*/
+
+
+
+/* kalimantanTengah ========================================================================================================*/
+#kalimantanTengah {
+  top: 260px;
+  left: 400px;
+}
+
+#kalimantanTengah:hover { 
+  background-image: url(../img/provinsi/KalTeng-01.png);
+  background-size:130px;
+  border: solid black;   
+  width: 135px;
+  height: 120px;
+  top: 198px;
+  left: 377px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width:1500px) {
+
+  #kalimantanTengah {
+    top: 210px;
+    left: 400px;
+  }
+
+  #kalimantanTengah:hover {
+    top: 148px;
+    left: 377px;
+  }
+  
+}
+
+@media only screen and (max-width:1200px) {
+
+  #kalimantanTengah {
+    top: 200px;
+    left: 385px;
+  }
+
+  #kalimantanTengah:hover {
+    top: 138px;
+    left: 362px;
+  }
+  
+}
+
+
+@media only screen and (max-width:1000px) {
+
+  #kalimantanTengah {
+    top: 190px;
+    left: 385px;
+  }
+
+  #kalimantanTengah:hover {
+    top: 128px;
+    left: 362px;
+  }
+  
+}
+
+/* akhir kalimantanTengah ========================================================================================================*/
+
+
+
+/* kalimantanBarat ========================================================================================================*/
+#kalimantanBarat {
+  top: 220px;
+  left: 355px;
+}
+
+#kalimantanBarat:hover { 
+  background-image: url(../img/provinsi/Kalbar-01.png);
+  background-size:149px;
+  border: solid black;   
+  width: 160px;
+  height: 165px;
+  top: 165px;
+  left: 325px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width:1500px) {
+
+  #kalimantanBarat {
+    top: 170px;
+    left: 355px;
+  }
+
+  #kalimantanBarat:hover {
+    top: 115px;
+    left: 325px;
+  }
+  
+}
+
+@media only screen and (max-width:1200px) {
+
+  #kalimantanBarat {
+    top: 160px;
+    left: 340px;
+  }
+
+  #kalimantanBarat:hover {
+    top: 105px;
+    left: 310px;
+  }
+  
+}
+
+
+@media only screen and (max-width:1000px) {
+
+  #kalimantanBarat {
+    top: 150px;
+    left: 340px;
+  }
+
+  #kalimantanBarat:hover {
+    top: 95px;
+    left: 310px;
+  }
+  
+}
+
+/* akhir kalimantanBarat ========================================================================================================*/
+
+
+
+/* kepRiau ========================================================================================================*/
+#kepRiau {
+  top: 170px;
+  left: 240px;
+}
+
+#kepRiau:hover { 
+  background-image: url(../img/provinsi/Kep\ Riau-01.png);
+  background-size:152px;
+  border: solid black;   
+  width: 160px;
+  height: 165px;
+  top: 102px;
+  left: 201px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width:1500px) {
+
+  #kepRiau {
+    top: 120px;
+    left: 240px;
+  }
+
+  #kepRiau:hover {
+    top: 52px;
+    left: 201px;
+  }
+  
+}
+
+@media only screen and (max-width:1200px) {
+
+  #kepRiau {
+    top: 110px;
+    left: 225px;
+  }
+
+  #kepRiau:hover {
+    top: 42px;
+    left: 186px;
+  }
+  
+}
+
+
+@media only screen and (max-width:1000px) {
+
+  #kepRiau {
+    top: 100px;
+    left: 225px;
+  }
+
+  #kepRiau:hover {
+    top: 32px;
+    left: 186px;
+  }
+  
+}
+
+/* akhir kepRiau ========================================================================================================*/
+
+
+
