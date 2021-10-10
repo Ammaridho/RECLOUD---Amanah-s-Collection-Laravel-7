@@ -68,6 +68,8 @@ class InputDetailSideController extends Controller
 
             $keranjang->save();
 
+            $id =
+
 
         //masukkan ke keranjang ukuran
             $keranjang_ukuran = new keranjang_ukuran;
