@@ -12,4 +12,9 @@ class keranjang extends Model
     {
         return $this->hasMany(keranjang_ukuran::class);  //one to many
     }
+
+    public function customer()
+    {
+        return $this->belongsTo(customer::class);
+    }
 }

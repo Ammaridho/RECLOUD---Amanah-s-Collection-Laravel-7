@@ -56,7 +56,31 @@ class InputDetailSideController extends Controller
         $id_keranjang = 1;
         
         //masukkan ke keranjang
-            $keranjang = keranjang::join('keranjang_ukuran','keranjang_ukuran.id_keranjang','=','keranjang.id_keranjang');
+            $keranjang = new keranjang;
+            $keranjang->id_customer = $id_customer;                     //belum benar sementara 
+            $keranjang->id_baju = $request->id_baju;        
+            $keranjang->jumlah = $request->banyakBajuSaja;
+            $keranjang->tanggal_mulai = $request->tanggal_mulai;
+            $keranjang->tanggal_selesai = $request->tanggal_selesai;
+            $keranjang->total_hari = $request->totalHariSaja;
+            $keranjang->total_biaya = $request->totalBiayaSaja;
+
+
+            $keranjang->save();
+
+
+        //masukkan ke keranjang ukuran
+            $keranjang_ukuran = new keranjang_ukuran;
+            // $keranjang_ukuran->id_keranjang = $id_keranjang;
+            $keranjang_ukuran->ukuran_atasan = $ukuranBaju[0][0];
+            $keranjang_ukuran->ukuran_bawahan = $ukuranBaju[0][1];
+            $keranjang_ukuran->jumlah_baju_perukuran = $ukuranBaju[0][2];
+            $keranjang_ukuran->save();
+
+            return redirect('/');
+
+
+            // $keranjang = keranjang::join('keranjang_ukuran','keranjang_ukuran.id_keranjang','=','keranjang.id_keranjang');
             // ->insert([
             //     'id_customer' => $id_customer,                     //belum benar sementara 
             //     'id_baju' => $request->id_baju,        
@@ -72,22 +96,6 @@ class InputDetailSideController extends Controller
             //     // 'ukuran_bawahan' => $request->ukuranBaju[0][1],
             //     // 'jumlah_baju_perukuran' => $request->ukuranBaju[0][2]
             // ]);
-            
-
-            var_dump($keranjang);
-
-            // $keranjang->save();
-
-
-        //masukkan ke keranjang ukuran
-            // $keranjang_ukuran = new keranjang_ukuran;
-            // // $keranjang_ukuran->id_keranjang = $id_keranjang;
-            // $keranjang_ukuran->ukuran_atasan = $ukuranBaju[0][0];
-            // $keranjang_ukuran->ukuran_bawahan = $ukuranBaju[0][1];
-            // $keranjang_ukuran->jumlah_baju_perukuran = $ukuranBaju[0][2];
-            // $keranjang_ukuran->save();
-
-            // return redirect('/');
         
     }
 }
