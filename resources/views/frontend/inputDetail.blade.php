@@ -253,8 +253,7 @@
 
       @csrf
 
-      <input type="hidden" name="baju" value="<?= $id_baju; ?>">
-      <input type="hidden" name="id_keranjang" value="<?= $id_keranjang; ?>">
+      <input type="hidden" name="id_baju" value="<?= $id_baju; ?>">
 
       <div class="row">
 

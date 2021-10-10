@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 
 use App\Models\baju;
+use App\Models\keranjang;
 use Illuminate\Http\Request;
 
 class InputDetailSideController extends Controller
@@ -42,6 +43,8 @@ class InputDetailSideController extends Controller
     }
 
     public function store(Request $request){
+        $id_baju = $request->id_baju;
+
         $ukuranBaju = $request->ukuranBaju;                 //banyak baju
         $banyakBajuSaja = $request->banyakBajuSaja;
 
@@ -51,7 +54,8 @@ class InputDetailSideController extends Controller
         
         $totalBiayaSaja = $request->totalBiayaSaja;         //total Biaya
 
-        dd($ukuranBaju);
+        $keranjang = new keranjang;
+        $keranjang->id_customer = $request->id_customer;           //LANJUTTKANNNNNN>>>>
         
     }
 }
