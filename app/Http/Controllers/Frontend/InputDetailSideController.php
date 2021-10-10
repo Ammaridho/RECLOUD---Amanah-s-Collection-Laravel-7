@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\baju;
 use App\Models\keranjang;
+use App\Models\keranjang_ukuran;
 use Illuminate\Http\Request;
 
 class InputDetailSideController extends Controller
@@ -43,19 +44,50 @@ class InputDetailSideController extends Controller
     }
 
     public function store(Request $request){
-        $id_baju = $request->id_baju;
 
+        //mengambil ukuran
         $ukuranBaju = $request->ukuranBaju;                 //banyak baju
-        $banyakBajuSaja = $request->banyakBajuSaja;
+        $ukuranBaju = explode(",",$ukuranBaju);
+        $ukuranBaju = array_chunk($ukuranBaju,3);
+        // var_dump($ukuranBaju[0][0]);
 
-        $tanggal_mulai = $request->tanggal_mulai;           //pertanggalan
-        $tanggal_selesai = $request->tanggal_selesai;
-        $totalHariSaja = $request->totalHariSaja;
+        // data sementara 
+        $id_customer = 1;
+        $id_keranjang = 1;
         
-        $totalBiayaSaja = $request->totalBiayaSaja;         //total Biaya
+        //masukkan ke keranjang
+            $keranjang = keranjang::join('keranjang_ukuran','keranjang_ukuran.id_keranjang','=','keranjang.id_keranjang');
+            // ->insert([
+            //     'id_customer' => $id_customer,                     //belum benar sementara 
+            //     'id_baju' => $request->id_baju,        
+            //     'jumlah' => $request->banyakBajuSaja,
+            //     'tanggal_mulai' => $request->tanggal_mulai,
+            //     'tanggal_selesai' => $request->tanggal_selesai,
+            //     'total_hari' => $request->totalHariSaja,
+            //     'total_biaya' => $request->totalBiayaSaja,
+            //     'ukuran_atasan' => 'L',
+            //     'ukuran_bawahan' => 'xl',
+            //     'jumlah_baju_perukuran' => 3
+            //     // 'ukuran_atasan' => $request->ukuranBaju[0][0],
+            //     // 'ukuran_bawahan' => $request->ukuranBaju[0][1],
+            //     // 'jumlah_baju_perukuran' => $request->ukuranBaju[0][2]
+            // ]);
+            
 
-        $keranjang = new keranjang;
-        $keranjang->id_customer = $request->id_customer;           //LANJUTTKANNNNNN>>>>
+            var_dump($keranjang);
+
+            // $keranjang->save();
+
+
+        //masukkan ke keranjang ukuran
+            // $keranjang_ukuran = new keranjang_ukuran;
+            // // $keranjang_ukuran->id_keranjang = $id_keranjang;
+            // $keranjang_ukuran->ukuran_atasan = $ukuranBaju[0][0];
+            // $keranjang_ukuran->ukuran_bawahan = $ukuranBaju[0][1];
+            // $keranjang_ukuran->jumlah_baju_perukuran = $ukuranBaju[0][2];
+            // $keranjang_ukuran->save();
+
+            // return redirect('/');
         
     }
 }

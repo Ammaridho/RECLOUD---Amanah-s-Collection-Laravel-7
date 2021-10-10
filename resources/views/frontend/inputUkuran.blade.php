@@ -72,16 +72,18 @@ for($fiu = 0; $fiu < $batasan; $fiu++){?>
                 arr[i][1] = $(`#ukuran_bawahan${i}`).val();
                 arr[i][2] = $(`#banyak${i}`).val();
             }
-
+            
             return arr;
             
         }
 
         var ukuranBaju =  buatArray(rows);
 
+        console.log(ukuranBaju);
+
         document.getElementById('ukuranBaju').value = ukuranBaju;
 
-        console.log(ukuranBaju);
+        
     });
 
     
