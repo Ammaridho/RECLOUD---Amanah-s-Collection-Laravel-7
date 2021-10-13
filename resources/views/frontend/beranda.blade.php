@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-      </section>
+    </section>
       <!-- akhir halaman -->
   
       <!-- carousel -->

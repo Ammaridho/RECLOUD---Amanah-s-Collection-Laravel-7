@@ -19,9 +19,11 @@
 
 <body class="beranda">
   
-  <!-- login -->
+  <!-- form login/signup -->
   <div class="kotakhitam" id="kotakhitam">
     <div class="kotakrelative">
+
+        <!-- login -->
         <div class="kotaklogin" id="kotaklogin">
             <div class="kotakputih" id="kotakputih">
                 <div class="formlogin" id="formlogin">
@@ -29,20 +31,23 @@
                         <h1>Masuk</h1>
                         <i class="fa fa-times" onclick="Tombolcloselogin()"></i>
                     </div>
-                    <form name="login" action="" id="loginn">
+                    <form name="login" action="/login" id="login" method="POST">
+
+                      @csrf
+
                         <div class="form-row">
-                            <input type="text" id="email" onkeyup="ValidateInputan()" required>
+                            <input type="text" id="email" onkeyup="ValidateInputan()" name="email" required>
                             <span id="tulisanemaillogin">Email</span>
                         </div>
                         <div class="form-row">
-                            <input type="password" id="password" onkeyup="ValidateInputan()" required>
+                            <input type="password" id="password" onkeyup="ValidateInputan()" name="password" required>
                             <span id="tulisanpasswordlogin">Password</span>
                         </div>
                         <div class="alert" id="alert">
     
                         </div>
                         <div class="form-row">
-                            <button type="submit" id="tombolmasuk" disabled = "true" onclick="ValidateLogin()">Masuk</button>
+                            <button type="submit" class="btn-success">Masuk</button>
                         </div>
                     </form>
                     <p><span onclick="Gantidaftar()">Daftar</span> jika belum memiliki akun</p>
@@ -118,6 +123,7 @@
                 </div>
             </form>
         </div>
+
     </div>
 </div>
 <!-- akhir signup -->
@@ -135,7 +141,11 @@
             <span class="sr-only">(current)</span>
             <a class="nav-item nav-link" href="/pulau">For-rent</a>
             <a class="nav-item nav-link" href="#contact">Contact</a>
-            <a class="nav-item  btn tombol" onclick="Tombollogin()">Login</a>
+            @if (!session('success_login'))
+              <a class="nav-item  btn tombol" onclick="Tombollogin()">Login</a>
+            @else
+              <a class="nav-item  btn tombol" href="/logout">Logout</a>
+            @endif
           </div>
         </div>
     </div>

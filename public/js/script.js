@@ -12,6 +12,7 @@
         var c = document.getElementById("navbar");
         c.style.zIndex = "1";
       }
+
       function ValidateInputan(){
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;

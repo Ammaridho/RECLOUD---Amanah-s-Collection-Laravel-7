@@ -20,15 +20,30 @@ use Illuminate\Support\Facades\Route;
 // beranda
 Route::get('/','Frontend\BerandaController@index');
 
-//pulau
-Route::get('/pulau','Frontend\PulauController@index')->name('pulau');
 
-Route::get('/menu','Frontend\MenuSideController@index')->name('menu');
 
-Route::get('/subtari','Frontend\MenuSideController@subtari')->name('subtari');
+//Login
+// Route::get('/login','');
+ROute::post('/login','auth\authController@ceklogin');
 
-Route::get('/inputdetail','Frontend\InputDetailSideController@index')->name('inputdetail');
-Route::post('/inputdetail','Frontend\InputDetailSideController@store')->name('storeInputDetail');
+//Access Restrict =========================================================================
+Route::group(['middleware' => 'ceksession'], function(){
 
-Route::get('/inputdetail/inputukuran','Frontend\InputDetailSideController@inputUkuran')->name('inputdetailukuran');
+    Route::get('/logout','auth\authController@logout');
+
+    //pulau
+        Route::get('/pulau','Frontend\PulauController@index')->name('pulau');
+
+        Route::get('/menu','Frontend\MenuSideController@index')->name('menu');
+
+        Route::get('/subtari','Frontend\MenuSideController@subtari')->name('subtari');
+
+        Route::get('/inputdetail','Frontend\InputDetailSideController@index')->name('inputdetail');
+        Route::post('/inputdetail','Frontend\InputDetailSideController@store')->name('storeInputDetail');
+
+        Route::get('/inputdetail/inputukuran','Frontend\InputDetailSideController@inputUkuran')->name('inputdetailukuran');
+
+});
+
+
 
