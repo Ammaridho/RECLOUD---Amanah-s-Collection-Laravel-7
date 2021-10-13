@@ -59,7 +59,14 @@
         <!-- signup -->
         <div class="kotakdaftar" id="kotakdaftar">
             <!-- multistep form -->
-            <form id="msform">
+            <form id="msform" action="/signup" method="POST" enctype="multipart/form-data">
+
+              @csrf
+              
+              {{-- @csrf_field
+              
+              {{ method_field('PUT') }} --}}
+
                 <!-- progressbar -->
                 <ul id="progressbar">
                     <li class="step">Setup Akun</li>
@@ -73,15 +80,15 @@
                         <h2 class="fs-title">Buat Akun</h2>
                         <h3 class="fs-subtitle">Data akan digunakan ketika masuk ke akun</h3>
                         <div class="form-row">
-                            <input type="text" required>
+                            <input type="text" name="email" required>
                             <span id="tulisanemaildaftar">Email</span>
                         </div>
                         <div class="form-row">
-                            <input type="password" required>
+                            <input type="password" id="password1" name="password1" required>
                             <span id="tulisanpassworddaftar">Password</span>
                         </div>
                         <div class="form-row">
-                            <input type="password" required>
+                            <input type="password" id="password2" name="password2" required>
                             <span id="tulisanconpassword">Konfirmasi Password</span>
                         </div>
                     </fieldset>
@@ -89,15 +96,15 @@
                         <h2 class="fs-title">Data Diri</h2>
                         <h3 class="fs-subtitle">Data menjadi profil dan akan digunakan ketika transaksi</h3>
                         <div class="form-row">
-                            <input type="text" required>
+                            <input type="text" name="nama" required>
                             <span id="tulisannamalengkap">Nama Lengkap</span>
                         </div>
                         <div class="form-row">
-                            <textarea cols="30" rows="3" required></textarea>
+                            <textarea cols="30" rows="3" id="alamat" name="alamat" required></textarea>
                             <span id="tulisanalamat">Alamat</span>
                         </div>
                         <div class="form-row">
-                            <input type="number" required>
+                            <input type="number" name="notelp" required>
                             <span id="tulisannotelp">Nomor HP</span>
                         </div>
                     </fieldset>
@@ -131,7 +138,7 @@
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">Amanah Collection</a>
+        <a class="navbar-brand">Amanah Collection</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -139,10 +146,15 @@
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link active" href="/">Home</a>
             <span class="sr-only">(current)</span>
-            <a class="nav-item nav-link" href="/pulau">For-rent</a>
+
+            @if (!session('success_login'))
+              <a class="nav-item nav-link" onclick="alertGagalforrent()">For-rent</a>
+            @else
+              <a class="nav-item nav-link" href="/pulau">For-rent</a>
+            @endif
             <a class="nav-item nav-link" href="#contact">Contact</a>
             @if (!session('success_login'))
-              <a class="nav-item  btn tombol" onclick="Tombollogin()">Login</a>
+              <a class="nav-item  btn btn-primary" onclick="Tombollogin()">Login</a>
             @else
               <a class="nav-item  btn tombol" href="/logout">Logout</a>
             @endif
@@ -183,6 +195,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
+    <script src="scriptvalidasisignup.js"></script>
     <script>
       function openMenu() {
         document.getElementById("pilihan").style.transform = "translatex(0%)";

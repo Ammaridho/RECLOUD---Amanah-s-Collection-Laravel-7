@@ -1,5 +1,24 @@
+    $('.nav-item').on('click',function() {
+        $('.nav-item').removeClass('active');
+            $(this).addClass('active');
+    })
 
-      function Tombollogin(){
+    // $('#nextBtn').on('click',function () {
+    //     $password1 = $('#password1').val();
+    //     $password2 = $('#password2').val();
+    
+    //     console.log($password1);
+    
+    //     if ($password1 != $password2) {
+    //         alert('Password not Match!');
+    //     }
+    // })
+    
+    function alertGagalforrent() {
+        alert('You have to login for rent!');
+    }
+     
+     function Tombollogin(){
         var x = document.getElementById("kotakputih");
         x.style.transform = "translateY(0%)";
         x.style.transition = "transform 1.3s";
@@ -108,6 +127,7 @@
         }
         if (n == (x.length - 1)) {
             document.getElementById("nextBtn").innerHTML = "Submit";
+            $('#nextBtn').removeAttr("type").attr("type","submit");  //rubah typenya jadi submit
         } else {
             document.getElementById("nextBtn").innerHTML = "Next";
         }
@@ -119,6 +139,15 @@
         // This function will figure out which tab to display
         var x = document.getElementsByClassName("tab");
         if (n == 1 && !validateForm()) return false;
+
+
+        $password1 = $('#password1').val();
+        $password2 = $('#password2').val();
+    
+        if ($password1 != $password2) {
+            alert('Password not Match!');
+            return false;
+        }
         // Hide the current tab:
         x[currentTab].style.display = "none";
         // Increase or decrease the current tab by 1:
@@ -134,7 +163,7 @@
     }
     function validateForm() {
         // This function deals with validation of the form fields
-        var x, y, i, valid = true;
+        var x, y, i, alamat, valid = true;
         x = document.getElementsByClassName("tab");
         y = x[currentTab].getElementsByTagName("input");
         // A loop that checks every input field in the current tab:
@@ -146,6 +175,18 @@
                 // and set the current valid status to false
                 valid = false;
             }
+        }
+
+        alamat = $('#alamat').val();
+
+        if (currentTab == 1) {
+            if (alamat == '') {
+                valid = false;
+            }
+        }
+
+        if (valid == false) {
+            alert('empty field detected!');
         }
         return valid; // return the valid status
     }

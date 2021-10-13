@@ -20,11 +20,12 @@ use Illuminate\Support\Facades\Route;
 // beranda
 Route::get('/','Frontend\BerandaController@index');
 
-
+// Signup
+Route::post('/signup','auth\authController@signup');
 
 //Login
-// Route::get('/login','');
-ROute::post('/login','auth\authController@ceklogin');
+Route::post('/login','auth\authController@ceklogin');
+
 
 //Access Restrict =========================================================================
 Route::group(['middleware' => 'ceksession'], function(){
