@@ -18,7 +18,8 @@ class authController extends Controller
         $data = User::where('email',$request->email)->first();
         if($data){
             if($request->password == $data->password){
-                session(['success_login' => true]);
+                session(['success_login' => true]);                   //mengaktifkan session
+                $request->session()->put('data',$request->input());   //untuk menyimpan data dalam session
                 return redirect('/');
             }
         }

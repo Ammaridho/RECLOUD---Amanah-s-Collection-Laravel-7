@@ -26,11 +26,15 @@ Route::post('/signup','auth\authController@signup');
 //Login
 Route::post('/login','auth\authController@ceklogin');
 
+Route::get('/keranjang','Frontend\keranjangController@tampil')->name('a');
 
 //Access Restrict =========================================================================
 Route::group(['middleware' => 'ceksession'], function(){
 
     Route::get('/logout','auth\authController@logout');
+
+    //keranjang
+        
 
     //pulau
         Route::get('/pulau','Frontend\PulauController@index')->name('pulau');

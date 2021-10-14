@@ -152,18 +152,39 @@
             @else
               <a class="nav-item nav-link" href="/pulau">For-rent</a>
             @endif
+
             <a class="nav-item nav-link" href="#contact">Contact</a>
+            
+            <div class="dropdown nav-item">
+              <a id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Keranjang
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div class="listKeranjang" id="listKeranjang"></div>
+              </div>
+            </div>
+
             @if (!session('success_login'))
               <a class="nav-item  btn btn-primary" onclick="Tombollogin()">Login</a>
             @else
-              <a class="nav-item  btn tombol" href="/logout">Logout</a>
+              <div class="dropdown nav-item">
+                <a id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{$emailsession = session('data')['email']}}
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="btn tombol" onclick="logout()">Logout</a>
+                </div>
+              </div>
+
             @endif
+
           </div>
         </div>
     </div>
   </nav>
   <!-- akhir navbar -->
-
 
   @yield('content')
 
@@ -195,36 +216,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
-    <script src="scriptvalidasisignup.js"></script>
-    <script>
-      function openMenu() {
-        document.getElementById("pilihan").style.transform = "translatex(0%)";
-      }
-      
-      function closeMenu() {
-        document.getElementById("pilihan").style.transform = "translatex(100%)";
-      }
-
-      function openDetail() {
-        document.getElementById("pilihan").style.transform = "translatex(100%)";
-        document.getElementById("detail").style.transform = "translatex(0%)";
-      }
-
-      function closeDetail() {
-        document.getElementById("pilihan").style.transform = "translatex(0%)";
-        document.getElementById("detail").style.transform = "translatex(100%)";
-      }
-      
-      function beranda(){
-          $.get("frontend/beranda.blade.php", function(data){
-              $("#content").html(data);
-          })
-      };
-      function pulau(){
-          $.get("frontend/pulau.blade.php", function(data){
-              $("#content").html(data);
-          })
-      }
-    </script>
     
 </html>

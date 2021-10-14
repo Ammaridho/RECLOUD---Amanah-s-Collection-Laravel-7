@@ -170,60 +170,60 @@
   
       <!-- keranjang -->
       <section id="keranjang" class="keranjang">
-      <!--Section: Block Content-->
-      <div class="container">
-      <!--Grid row-->
-        <div class="row ml-2">
-          <!--Grid column-->
-          <div class="col-lg-4">
-            <!-- Card -->
-            <div class="card mb-3">
-              <div class="card-body">
-                <h5 class="mb-4">Cart</h5>
-                <span></span>
-                <div class="form-check mb-3">
-                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                  <label class="form-check-label" for="inlineCheckbox1">Pilih Semua</label>
-                  <h6>Hapus</h6>
-                </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                  <label class="form-check-label" for="inlineCheckbox1">Pilih</label>
+        <!--Section: Block Content-->
+        <div class="container">
+        <!--Grid row-->
+          <div class="row ml-2">
+            <!--Grid column-->
+            <div class="col-lg-4">
+              <!-- Card -->
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="mb-4">Cart</h5>
+                  <span></span>
+                  <div class="form-check mb-3">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    <label class="form-check-label" for="inlineCheckbox1">Pilih Semua</label>
+                    <h6>Hapus</h6>
                   </div>
-                <div class="row mb-4">              
-                  <div class="col-md-5 col-lg-3 col-xl-3">
-                    <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                        <div class="mask waves-effect waves-light">
-                          <img class="img-fluid w-100"
-                            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg">
-                        </div>
+                  <div class="form-check mb-3">
+                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    <label class="form-check-label" for="inlineCheckbox1">Pilih</label>
                     </div>
-                  </div>
-                  <div class="col-md-7 col-lg-9 col-xl-9">
-                    <div>
-                      <div class="d-flex justify-content-between">
-                        <div class="detail">
-                          <h5>Blue denim shirt</h5>
-                          <p class="mb-3 text-muted text-uppercase small">Jumlah</p>
-                          <p class="mb-2 text-muted text-uppercase small">Ukuran</p>
+                  <div class="row mb-4">              
+                    <div class="col-md-5 col-lg-3 col-xl-3">
+                      <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                          <div class="mask waves-effect waves-light">
+                            <img class="img-fluid w-100"
+                              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg">
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-lg-9 col-xl-9">
+                      <div>
+                        <div class="d-flex justify-content-between">
+                          <div class="detail">
+                            <h5>Blue denim shirt</h5>
+                            <p class="mb-3 text-muted text-uppercase small">Jumlah</p>
+                            <p class="mb-2 text-muted text-uppercase small">Ukuran</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <p>Harga  :</p>
                 </div>
-                <p>Harga  :</p>
+                <div class="subtotal">
+                  <h5>Subtotal  :</h5>
+                </div>
+                <a class="btn tombol-checkout">Checkout</a>
               </div>
-              <div class="subtotal">
-                <h5>Subtotal  :</h5>
-              </div>
-              <a class="btn tombol-checkout">Checkout</a>
+              <!-- Card -->
             </div>
-            <!-- Card -->
+            <!--Grid column-->
           </div>
-          <!--Grid column-->
+          <!--Grid row-->
         </div>
-        <!--Grid row-->
-      </div>
       </section>
     <!--Section: Block Content-->  
     <!-- akhir keranjang -->

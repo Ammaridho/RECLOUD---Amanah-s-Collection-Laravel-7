@@ -1,23 +1,65 @@
+// Button Keranjang ===
+    $('#buttonKeranjang').on('click', function() {
+        var a = 1;
+        $.get("/keranjang",{a:a}, function(data) {
+            $("#listKeranjang").html(data);
+        });
+    })
+
+  
+
+// Buka Menu slide ===
+    function openMenu() {
+        document.getElementById("pilihan").style.transform = "translatex(0%)";
+    }
+    
+    function closeMenu() {
+        document.getElementById("pilihan").style.transform = "translatex(100%)";
+    }
+
+    function openDetail() {
+        document.getElementById("pilihan").style.transform = "translatex(100%)";
+        document.getElementById("detail").style.transform = "translatex(0%)";
+    }
+
+    function closeDetail() {
+        document.getElementById("pilihan").style.transform = "translatex(0%)";
+        document.getElementById("detail").style.transform = "translatex(100%)";
+    }
+    
+    // function beranda(){
+    //     $.get("frontend/beranda.blade.php", function(data){
+    //         $("#content").html(data);
+    //     })
+    // };
+    // function pulau(){
+    //     $.get("frontend/pulau.blade.php", function(data){
+    //         $("#content").html(data);
+    //     })
+    // }
+    
+// button logout ============
+    function logout() {
+
+        var confirmation = confirm("Are u sure?");
+
+        if (confirmation == true) {
+            window.location.href = "/logout";
+        }
+    }
+    
+//button highlight ===
     $('.nav-item').on('click',function() {
         $('.nav-item').removeClass('active');
             $(this).addClass('active');
     })
-
-    // $('#nextBtn').on('click',function () {
-    //     $password1 = $('#password1').val();
-    //     $password2 = $('#password2').val();
     
-    //     console.log($password1);
-    
-    //     if ($password1 != $password2) {
-    //         alert('Password not Match!');
-    //     }
-    // })
-    
+//Alert Must Login For Rent
     function alertGagalforrent() {
         alert('You have to login for rent!');
     }
      
+//button login =============
      function Tombollogin(){
         var x = document.getElementById("kotakputih");
         x.style.transform = "translateY(0%)";
