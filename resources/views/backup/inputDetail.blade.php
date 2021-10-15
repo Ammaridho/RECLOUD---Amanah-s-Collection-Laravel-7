@@ -15,7 +15,7 @@
 
     $rs = \App\Models\keranjang::where('id_keranjang',"$id_keranjang")->first();
   
-    $id_baju = $rs->id_baju;
+    $id = $rs->id;
     $ukuran_atasan = $rs->ukuran_atasan;
     $ukuran_bawahan = $rs->ukuran_bawahan;
     $banyak = $rs->jumlah;
@@ -83,9 +83,9 @@
 
                     <?php 
                     //gambar baju
-                    // $arrayGambar = query("SELECT gambar FROM gambar_baju WHERE id_baju = $id_baju");
+                    // $arrayGambar = query("SELECT gambar FROM gambar_baju WHERE id = $id");
 
-                    $arrayGambar = \App\Models\gambar_baju::select('gamber')->where('id_baju', "$id_baju")->get();
+                    $arrayGambar = \App\Models\gambar_baju::select('gamber')->where('id', "$id")->get();
 
                     foreach($arrayGambar as $d):?>
                     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
@@ -125,13 +125,13 @@
                 //                       INNER JOIN bawahan_baju ON baju.id_bawahan = bawahan_baju.id_bawahan) 
                 //                       INNER JOIN kode_aksesoris ON baju.kode_aksesoris = kode_aksesoris.kode_aksesoris)
                 //                       INNER jOIN aksesoris_baju ON kode_aksesoris.id_aksesoris = aksesoris_baju.id_aksesoris) 
-                //                       WHERE id_baju = $id_baju");
+                //                       WHERE id = $id");
 
                 $keterangan = \App\Models\baju::join('atasan_baju','baju.id_atasan','=','atasan_baju.id_atasan')
                                               ->join('bawahan_baju','baju.id_bawahan','=','bawahan_baju.id_bawahan')
                                               ->join('kode_aksesoris','baju.kode_aksesoris','=','kode_aksesoris.kode_aksesoris')
                                               ->join('aksesoris_baju','kode_aksesoris.id_aksesoris','=','aksesoris_baju.id_aksesoris')
-                                              ->where('baju.id_baju',"$id_baju")
+                                              ->where('baju.id',"$id")
                                               ->first();
               ?>
               <tbody>
@@ -148,11 +148,11 @@
 
                 <?php 
                 // $daftarAksesoris = query("SELECT * FROM ((baju INNER JOIN kode_aksesoris ON baju.kode_aksesoris = kode_aksesoris.kode_aksesoris)
-                // INNER jOIN aksesoris_baju ON kode_aksesoris.id_aksesoris = aksesoris_baju.id_aksesoris) WHERE id_baju = $id_baju");
+                // INNER jOIN aksesoris_baju ON kode_aksesoris.id_aksesoris = aksesoris_baju.id_aksesoris) WHERE id = $id");
                 
                 $daftarAksesoris = \App\Models\baju::join('kode_aksesoris','baju.kode_aksesoris','=','kode_aksesoris.kode_aksesoris')
                                                    ->join('aksesoris_baju','kode_aksesoris.id_aksesoris','=','aksesoris_baju.id_aksesoris')
-                                                   ->where('baju.id_baju',"$id_baju")
+                                                   ->where('baju.id',"$id")
                                                    ->get();
 
                 $df=3;
@@ -189,10 +189,10 @@
               <?php $iatas=1; ?>
               <?php 
               //chart atasan
-              // $arrayChartAtasan = query("SELECT * FROM baju INNER JOIN chart_atasan ON baju.id_atasan = chart_atasan.id_atasan WHERE id_baju = $id_baju");
+              // $arrayChartAtasan = query("SELECT * FROM baju INNER JOIN chart_atasan ON baju.id_atasan = chart_atasan.id_atasan WHERE id = $id");
 
               $arrayChartAtasan = \App\Models\baju::join('chart_atasan','baju.id_atasan','=','chart_atasan.id_atasan')
-                                                  ->where('baju.id_baju',"$id_baju")
+                                                  ->where('baju.id',"$id")
                                                   ->get();
               
               foreach($arrayChartAtasan as $d):?>
@@ -225,10 +225,10 @@
               <?php $ibawah=1; ?>
               <?php 
               //chart bawahan
-              // $arrayChartBawahan = query("SELECT * FROM baju INNER JOIN chart_bawahan ON baju.id_bawahan = chart_bawahan.id_bawahan WHERE id_baju = $id_baju");
+              // $arrayChartBawahan = query("SELECT * FROM baju INNER JOIN chart_bawahan ON baju.id_bawahan = chart_bawahan.id_bawahan WHERE id = $id");
 
               $arrayChartBawahan = \App\Models\baju::join('chart_bawahan','baju.id_bawahan','=','chart_bawahan.id_bawahan')
-                                                  ->where('baju.id_baju',"$id_baju")
+                                                  ->where('baju.id',"$id")
                                                   ->get();
 
               foreach($arrayChartBawahan   as $d):?>
@@ -249,7 +249,7 @@
 
     <form onsubmit="masukkan_keranjang(); return false;" id="form">
 
-      <input type="hidden" name="baju" value="<?= $id_baju; ?>">
+      <input type="hidden" name="baju" value="<?= $id; ?>">
       <input type="hidden" name="id_keranjang" value="<?= $id_keranjang; ?>">
 
       <div class="row">

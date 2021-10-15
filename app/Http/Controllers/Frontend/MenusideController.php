@@ -20,7 +20,7 @@ class MenusideController extends Controller
         $id_provinsi = $request->id_provinsi;
         
 
-        $fokusTari = \App\Models\baju::join('tari','baju.id_baju','=','tari.id_baju')->where('id_provinsi',"$id_provinsi")->where('jenis_baju',"Baju Tari")->where('nama_tari',$nama_tari)->orderBy('nama_baju','asc')->get();
+        $fokusTari = \App\Models\baju::join('tari','baju.id','=','tari.id')->where('id_provinsi',"$id_provinsi")->where('jenis_baju',"Baju Tari")->where('nama_tari',$nama_tari)->orderBy('nama_baju','asc')->get();
 
 
         return view('frontend/listTari',compact('nama_tari','fokusTari'));

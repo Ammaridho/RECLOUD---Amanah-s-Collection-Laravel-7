@@ -17,4 +17,9 @@ class keranjang extends Model
     {
         return $this->belongsTo(customer::class);
     }
+
+    public function baju()
+    {
+        return $this->belongsTo(baju::class);
+    }
 }

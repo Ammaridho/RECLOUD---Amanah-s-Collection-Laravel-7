@@ -27,8 +27,8 @@
 
           <li class="nav-item" role="JenisPakaian">
               <?php 
-                // $tariSatu = tampil1("SELECT * FROM baju INNER JOIN tari ON baju.id_baju = tari.id_baju WHERE id_provinsi = $id_provinsi AND jenis_baju = 'Baju Tari'");
-                $tariSatu = \App\Models\baju::join('tari','baju.id_baju','=','tari.id_baju')->where('id_provinsi',"$provinsi->id_provinsi")->where('jenis_baju','Baju Tari')->orderBy('nama_tari', 'asc')->first();
+                // $tariSatu = tampil1("SELECT * FROM baju INNER JOIN tari ON baju.id = tari.id WHERE id_provinsi = $id_provinsi AND jenis_baju = 'Baju Tari'");
+                $tariSatu = \App\Models\baju::join('tari','baju.id','=','tari.id')->where('id_provinsi',"$provinsi->id_provinsi")->where('jenis_baju','Baju Tari')->orderBy('nama_tari', 'asc')->first();
                 // dd($tariSatu->id_provinsi);
               ?>
 
@@ -57,9 +57,9 @@
                   <img class="card-img-top" src="" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title text-body"><?= $b["nama_baju"];?></h5>
-                    <h5 class="card-title text-body"><?= $b['id_baju'];?></h5>
+                    <h5 class="card-title text-body"><?= $b['id'];?></h5>
                     <p class="card-text text-body"><?= $b["harga_baju"];?></p>
-                    <a href="javascript:void()" onclick="openDetail('<?= $b['id_baju']; ?>')" class="btn btn-primary">Go somewhere</a>
+                    <a href="javascript:void()" onclick="openDetail('<?= $b['id']; ?>')" class="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>  
               </div>
@@ -79,9 +79,9 @@
 
                     <?php
                     $i = 0;
-                    // $semuaTari = query("SELECT * FROM baju INNER JOIN tari ON baju.id_baju = tari.id_baju WHERE id_provinsi = $id_provinsi AND jenis_baju = 'Baju Tari'");
+                    // $semuaTari = query("SELECT * FROM baju INNER JOIN tari ON baju.id = tari.id WHERE id_provinsi = $id_provinsi AND jenis_baju = 'Baju Tari'");
 
-                    $semuaTari = \App\Models\baju::join('tari','baju.id_baju','=','tari.id_baju')->where('id_provinsi',"$id_provinsi")->where('jenis_baju',"Baju Tari")->orderBy('nama_baju','asc')->get();
+                    $semuaTari = \App\Models\baju::join('tari','baju.id','=','tari.id')->where('id_provinsi',"$id_provinsi")->where('jenis_baju',"Baju Tari")->orderBy('nama_baju','asc')->get();
                     ?>
                     
                     <?php foreach($semuaTari as $st):?>
@@ -132,7 +132,7 @@
                   <div class="card-body">
                     <h5 class="card-title text-body"><?= $b["nama_baju"];?></h5>
                     <p class="card-text text-body"><?= $b["harga_baju"];?></p>
-                    <a href="javascript:void()" onclick="openDetail('<?= $b['id_baju']; ?>')" class="btn btn-primary">Go somewhere</a>
+                    <a href="javascript:void()" onclick="openDetail('<?= $b['id']; ?>')" class="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>  
               </div>
@@ -162,8 +162,8 @@
     document.getElementById("sidebar").style.transform = "translatex(100%)";
   }
 
-  function openDetail(id_baju) {
-    $.get("{{route('inputdetail')}}", {id_baju:id_baju}, function(data) {
+  function openDetail(id) {
+    $.get("{{route('inputdetail')}}", {id:id}, function(data) {
         $("#content").html(data);
     });
   }

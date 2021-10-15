@@ -9,7 +9,7 @@
             <div class="card-body">
                 <h5 class="card-title text-body"><?= $ft['nama_baju'];?></h5>
                 <p class="card-text text-body"><?= $ft['harga_baju'];?></p>
-                <a href="javascript:void()" onclick="openDetail('<?= $ft['id_baju']; ?>')" class="btn btn-primary">Go somewhere</a>
+                <a href="javascript:void()" onclick="openDetail('<?= $ft['id']; ?>')" class="btn btn-primary">Go somewhere</a>
             </div> 
         </div>
 
