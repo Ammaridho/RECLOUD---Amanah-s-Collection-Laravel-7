@@ -1,7 +1,7 @@
 // Button Keranjang ===
     $('#buttonKeranjang').on('click', function() {
-        var a = 1;
-        $.get("/keranjang",{a:a}, function(data) {
+        var emailSession = $(this).val();
+        $.get("/keranjang",{emailSession:emailSession}, function(data) {
             $("#listKeranjang").html(data);
         });
     })

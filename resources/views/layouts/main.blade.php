@@ -155,10 +155,19 @@
 
             <a class="nav-item nav-link" href="#contact">Contact</a>
             
+            <?php 
+
+            $emailsession = 'belum login';
+
+            if(isset(session('data')['email'])){
+              $emailsession = session('data')['email'];
+            } 
+            ?>
+
             <div class="dropdown nav-item">
-              <a id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
                 Keranjang
-              </a>
+              </button>
             
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <div class="listKeranjang" id="listKeranjang"></div>
@@ -170,7 +179,7 @@
             @else
               <div class="dropdown nav-item">
                 <a id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{$emailsession = session('data')['email']}}
+                  {{$emailsession}}
                 </a>
               
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
