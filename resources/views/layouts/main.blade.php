@@ -163,16 +163,20 @@
               $emailsession = session('data')['email'];
             } 
             ?>
-
-            <div class="dropdown nav-item">
-              <button id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
-                Keranjang
-              </button>
-            
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <div class="listKeranjang" id="listKeranjang"></div>
+            @if (session('success_login'))
+              <div class="dropdown nav-item">
+                <button id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
+                  Keranjang
+                </button>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <div class="listKeranjang" id="listKeranjang"></div>
+                </div>
               </div>
-            </div>
+            @else
+              <a class="nav-item nav-link" onclick="alertGagalforrent()">keranjangr</a>
+            @endif
+            
 
             @if (!session('success_login'))
               <a class="nav-item  btn btn-primary" onclick="Tombollogin()">Login</a>

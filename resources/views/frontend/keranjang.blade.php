@@ -24,7 +24,9 @@
       <div class="row">
         <div class="col">
           
-          @if (false == true)
+          <?php //var_dump(count($arrayNamaBaju)); ?>
+
+          @if (count($arrayNamaBaju)>0)
             <div class="isiKeranjang" style="height: 400px; overflow-y:scroll; border: 1px solid rgb(185, 185, 185);">
                 <?php 
                   $ukur = count($arrayNamaBaju); 
