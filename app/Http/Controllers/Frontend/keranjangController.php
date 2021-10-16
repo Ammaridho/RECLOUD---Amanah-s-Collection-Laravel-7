@@ -39,8 +39,6 @@ class keranjangController extends Controller
                 $arrayUkuran[]   = $isi->keranjang_ukuran->pluck('ukuran_atasan');//ambil nama baju dan masukkan ke array (pluck karena bentuk data yang diambil banyaka maka dibuat array)
             }
 
-            // var_dump($arrayIdBaju[0]);
-
             // ambil id_baju    3, 5, 1
 
             for ($i= 0; $i < count($arrayIdBaju); $i++) { 
