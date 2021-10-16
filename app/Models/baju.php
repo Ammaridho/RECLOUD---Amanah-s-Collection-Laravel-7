@@ -12,4 +12,9 @@ class baju extends Model
     {
         return $this->hasMany(keranjang::class);
     }
+
+    public function gambar_baju()    
+    {
+        return $this->hasMany(gambar_baju::class);
+    }
 }

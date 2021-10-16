@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\keranjang;
 use App\Models\keranjang_ukuran;
 
+use App\Models\gambar_baju;
 use App\Models\customer;
 use App\Models\baju;
 
@@ -15,57 +16,34 @@ class keranjangController extends Controller
 {
     public function tampil(Request $request)
     {   
-        // $id_customer = $request->a;
-        // $id_customer = 1; 
-        // $keranjang = keranjang::where('customer_id',$id_customer)->orderby('id','desc')->first();
-        // var_dump($keranjang);
-
-
-        // $id_customer = $request->a;
+        //ambil email
         $customer_email = $request->emailSession;
-        // var_dump($customer_email);
         
-        //id customer
+        //ambil id customer
         $customer_id = customer::where('email',$customer_email)->first()->id;
-        //customer data
-        $customer = customer::where('email',$customer_email)->first();
 
-        //itterasi keranjang (macam macam baju di keranjang)
-        // $keranjang_cust = $customer->keranjang[0];
-        $keranjang_cust = $customer->keranjang;  //karena terdiri dari object object maka kita keluarkan dnegan foreach
+        //ambil data keranjang sesuai id
+        $keranjang = keranjang::where('customer_id',$customer_id);
+        $keranjangGet = $keranjang->get();
 
-        $arrayNamaBaju = [];
+            // //Jumlah & harga
+                $arrayJumlahBaju = $keranjang->pluck('jumlah');  //dipluck, karena diambil dan dirubah ke bentuk array
+                $arrayTotalBiaya = $keranjang->pluck('total_biaya');
+                $arrayIdBaju     = $keranjang->pluck('baju_id');
 
-        foreach($keranjang_cust as $isi){
-            $arrayNamaBaju[] = $isi->baju->nama_baju;
+                foreach($keranjangGet as $isi){    //karena mengambil atribut di dalam objek baju yang berelasi keranjang, berawal dari keranjang. (tujuan foreach adalah membuka isinya)
+                    $arrayNamaBaju[] = $isi->baju->nama_baju;             //ambil nama baju dan masukkan ke array
+                    $arrayUkuran[]   = $isi->keranjang_ukuran->pluck('ukuran_atasan');//ambil nama baju dan masukkan ke array (pluck karena bentuk data yang diambil banyaka maka dibuat array)
+                }
+
+                // var_dump($arrayIdBaju[0]);
+
+        // ambil id_baju    3, 5, 1
+
+        for ($i= 0; $i < count($arrayIdBaju); $i++) { 
+            $arrayGambarBaju[] = gambar_baju::where('id',$arrayIdBaju[$i])->pluck('gambar')->first();
         }
 
-        // var_dump($arrayNamaBaju);
-
-        //ambil nama baju (harus satu objek saja tidak array atau banyak object)
-        // $nama_baju = $keranjang_cust->baju->nama_baju;
-
-        // var_dump($nama_baju);
-
-
-        // //Jumlah & harga
-        $keranjang = keranjang::where('customer_id',$customer_id)->orderby('id','desc');
-
-        $arrayTotalBiaya = $keranjang->pluck('total_biaya');
-        // var_dump($arrayTotalBiaya);
-
-
-        // //ukuran
-        // $ukuranPerKeranjang = $keranjang->first()->keranjang_ukuran->pluck('ukuran_atasan');
-        $ukuranPerKeranjang = $keranjang->get();
-        
-        $arrayUkuran = [];
-        foreach($ukuranPerKeranjang as $isi){
-            $arrayUkuran[] = $isi->keranjang_ukuran->pluck('ukuran_atasan');
-        }
-
-        // var_dump($arrayUkuran);
-
-        return view('frontend/keranjang',compact('arrayNamaBaju','arrayTotalBiaya','arrayUkuran')); //sampai sini data sudah di array semua
+        return view('frontend/keranjang',compact('arrayNamaBaju','arrayTotalBiaya','arrayUkuran','arrayJumlahBaju','arrayGambarBaju')); //sampai sini data sudah di array semua
     }
 }
