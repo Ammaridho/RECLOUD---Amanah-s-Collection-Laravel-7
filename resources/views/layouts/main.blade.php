@@ -174,7 +174,7 @@
                 </div>
               </div>
             @else
-              <a class="nav-item nav-link" onclick="alertGagalforrent()">keranjangr</a>
+              <a class="nav-item nav-link" onclick="alertGagalkeranjang()">keranjang</a>
             @endif
             
 

@@ -18,7 +18,7 @@ class keranjangController extends Controller
     {   
         //ambil email
         $customer_email = $request->emailSession;
-
+        // var_dump($customer_email);
 
         //ambil id customer
         $customer_id = customer::where('email',$customer_email)->first()->id;
@@ -28,6 +28,9 @@ class keranjangController extends Controller
         $keranjangGet = $keranjang->get();
 
         if(count($keranjangGet) > 0){
+
+            //id keranjang
+            $keranjang_id = $keranjang->pluck('id'); 
 
             // //Jumlah & harga
             $arrayJumlahBaju = $keranjang->pluck('jumlah');  //dipluck, karena diambil dan dirubah ke bentuk array
@@ -51,8 +54,31 @@ class keranjangController extends Controller
             $arrayUkuran        = [];
             $arrayJumlahBaju    = [];
             $arrayGambarBaju    = [];
+            $keranjang_id = '';
         }
 
-        return view('frontend/keranjang',compact('arrayNamaBaju','arrayTotalBiaya','arrayUkuran','arrayJumlahBaju','arrayGambarBaju')); //sampai sini data sudah di array semua
+        return view('frontend/keranjang',compact('arrayNamaBaju','arrayTotalBiaya','arrayUkuran','arrayJumlahBaju','arrayGambarBaju','keranjang_id','arrayIdBaju')); //sampai sini data sudah di array semua
+    }
+
+    public function edit(Request $request)
+    {
+
+        $keranjang_id = $request->keranjang_id;
+
+        $isiKeranjang = keranjang::findOrFail($keranjang_id);
+
+        $baju_id = $isiKeranjang->baju_id;
+        $id = $baju_id;
+
+        $seleksi = baju::where('id',"$baju_id")->first();
+
+        if($seleksi->jenis_baju == 'Baju Tari'){
+            $detail = baju::join('gambar_baju','baju.id','=','gambar_baju.id')->join('tari','baju.id','=','tari.id')->where('baju.id',"$baju_id")->first();
+                                            
+        }else{
+            $detail = baju::join('gambar_baju','baju.id','=','gambar_baju.id')->where('baju.id',"$baju_id")->first();
+        }
+
+        return view('frontend/inputDetail',compact('isiKeranjang','id','detail','seleksi'));
     }
 }

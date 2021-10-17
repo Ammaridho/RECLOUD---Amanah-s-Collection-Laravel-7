@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 
 use App\Models\baju;
+use App\Models\customer;
 use App\Models\keranjang;
 use App\Models\keranjang_ukuran;
 use Illuminate\Http\Request;
@@ -31,7 +32,6 @@ class InputDetailSideController extends Controller
             $detail = baju::join('gambar_baju','baju.id','=','gambar_baju.id')->where('baju.id',"$id")->first();
         }
         
-
         return view('frontend.inputDetail',compact('id','detail','seleksi'));
     }
 
@@ -53,7 +53,9 @@ class InputDetailSideController extends Controller
         // var_dump($ukuranBaju[0][0]);
 
         // // data sementara 
-        $id_customer = 1;
+        $customer_email = $request->customer_email;
+        $id_customer = customer::where('email',$customer_email)->first()->id;
+        var_dump($id_customer);
         
         // //masukkan ke keranjang
             $keranjang = new keranjang;
@@ -79,6 +81,7 @@ class InputDetailSideController extends Controller
 
             return redirect('/');
 
-        
     }
+
+    
 }

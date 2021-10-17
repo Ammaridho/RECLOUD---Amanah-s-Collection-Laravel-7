@@ -27,17 +27,6 @@
         document.getElementById("detail").style.transform = "translatex(100%)";
     }
     
-    // function beranda(){
-    //     $.get("frontend/beranda.blade.php", function(data){
-    //         $("#content").html(data);
-    //     })
-    // };
-    // function pulau(){
-    //     $.get("frontend/pulau.blade.php", function(data){
-    //         $("#content").html(data);
-    //     })
-    // }
-    
 // button logout ============
     function logout() {
 
@@ -54,9 +43,13 @@
             $(this).addClass('active');
     })
     
-//Alert Must Login For Rent
+//Alert Must Login
     function alertGagalforrent() {
         alert('You have to login for rent!');
+    }
+
+    function alertGagalkeranjang() {
+        alert('You have to login for keranjang!');
     }
      
 //button login =============

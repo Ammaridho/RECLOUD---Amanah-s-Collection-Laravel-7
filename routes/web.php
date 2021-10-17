@@ -26,15 +26,16 @@ Route::post('/signup','auth\authController@signup');
 //Login
 Route::post('/login','auth\authController@ceklogin');
 
-Route::get('/keranjang','Frontend\keranjangController@tampil')->name('a');
-
 //Access Restrict =========================================================================
 Route::group(['middleware' => 'ceksession'], function(){
 
-    Route::get('/logout','auth\authController@logout');
+    //logout
+        Route::get('/logout','auth\authController@logout');
 
     //keranjang
-        
+        Route::get('/keranjang','Frontend\keranjangController@tampil')->name('a');
+        Route::get('/keranjang/edit','Frontend\keranjangController@edit')->name('editInputDetail');
+
 
     //pulau
         Route::get('/pulau','Frontend\PulauController@index')->name('pulau');

@@ -23,8 +23,9 @@
       {{-- row isi keranjang --}}
       <div class="row">
         <div class="col">
+
           
-          <?php //var_dump(count($arrayNamaBaju)); ?>
+          
 
           @if (count($arrayNamaBaju)>0)
             <div class="isiKeranjang" style="height: 400px; overflow-y:scroll; border: 1px solid rgb(185, 185, 185);">
@@ -35,37 +36,39 @@
                 @for ($i = $ukur-1; $i >= 0; $i--)
                 <!-- Card -->
                   <div class="card mb-3">
-                    <div class="card-body">
-                      <span></span>
-                      <div class="form-check mb-3">
-                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        <label class="form-check-label" for="inlineCheckbox1">Pilih</label>
+                    <button onclick="openDetailKeranjang({{$arrayIdBaju[$i]}})">
+                      <div class="card-body">
+                        <span></span>
+                        <div class="form-check mb-3">
+                          <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                          <label class="form-check-label" for="inlineCheckbox1">Pilih</label>
                         </div>
-                      <div class="row mb-4">              
-                        <div class="col">
-                          <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                              <div class="mask waves-effect waves-light text-center">
-                                <img class="img-fluid w-100"
-                                  src="img/gambarbaju/{{$arrayGambarBaju[$i]}}">
-                              </div>
+                        <div class="row mb-4">              
+                          <div class="col">
+                            <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                                <div class="mask waves-effect waves-light text-center">
+                                  <img class="img-fluid w-100"
+                                    src="img/gambarbaju/{{$arrayGambarBaju[$i]}}">
+                                </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <div>
-                            <div class="d-flex justify-content-between">
-                              <div class="detail">
-                                <h5>{{$arrayNamaBaju[$i]}}</h5>
-                                <p class="mb-3 text-muted text-uppercase small">Jumlah : {{$arrayJumlahBaju[$i]}}</p>
-                                <p class="mb-2 text-muted text-uppercase small">Ukuran : {{$arrayUkuran[$i]}}</p>
+                        <div class="row">
+                          <div class="col">
+                            <div>
+                              <div class="d-flex justify-content-between">
+                                <div class="detail">
+                                  <h5>{{$arrayNamaBaju[$i]}}</h5>
+                                  <p class="mb-3 text-muted text-uppercase small">Jumlah : {{$arrayJumlahBaju[$i]}}</p>
+                                  <p class="mb-2 text-muted text-uppercase small">Ukuran : {{$arrayUkuran[$i]}}</p>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        <p>Harga  : {{$arrayTotalBiaya[$i]}}</p>
                       </div>
-                      <p>Harga  : {{$arrayTotalBiaya[$i]}}</p>
-                    </div>
+                    </button>
                   </div>
                 <!-- Card -->  
                 @endfor
@@ -92,3 +95,12 @@
     </div>
 
 </section>
+
+<script>
+  function openDetailKeranjang(baju_id) {
+    alert('bisa' + baju_id);  ///sampai sinii
+    // $.get("{{route('editInputDetail')}}", {baju_id:baju_id}, function(data) {
+    //     $("#content").html(data);
+    // });
+  }
+</script>

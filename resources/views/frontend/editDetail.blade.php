@@ -1,5 +1,12 @@
 <?php 
   $hargaBaju = $detail['harga_baju'];
+
+  $keranjang_id = $isiKeranjang->id;
+  $ukuran_atasan = $isiKeranjang->ukuran_atasan;
+  $ukuran_bawahan = $isiKeranjang->ukuran_bawahan;
+  $banyak = $isiKeranjang->jumlah;
+  $tanggal_mulai = $isiKeranjang->tanggal_mulai;
+  $tanggal_selesai = $isiKeranjang->tanggal_selesai;
 ?>
 <body>
 
