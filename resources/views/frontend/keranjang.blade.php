@@ -3,28 +3,29 @@
     <!--Section: Block Content-->
     <div class="container">
       
-      {{-- header keranjang --}}
-        <div class="row">
-          <div class="col-12">
-            <h5 class="text-center">Cart</h5>
-          </div>
-        </div>
+      <div id="cobabuton"></div>
 
-        <div class="row">
-          <div class="col">
-            <div class="form-check mb-3">
-              <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-              <label class="form-check-label" for="inlineCheckbox1">Pilih Semua</label>
-              <h6>Hapus</h6>
-            </div>
+
+      {{-- header keranjang --}}
+      <div class="row">
+        <div class="col-12">
+          <h5 class="text-center">Cart</h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check mb-3">
+            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+            <label class="form-check-label" for="inlineCheckbox1">Pilih Semua</label>
+            <h6>Hapus</h6>
           </div>
         </div>
+      </div>
 
       {{-- row isi keranjang --}}
       <div class="row">
         <div class="col">
-
-          
           
 
           @if (count($arrayNamaBaju)>0)
@@ -36,7 +37,7 @@
                 @for ($i = $ukur-1; $i >= 0; $i--)
                 <!-- Card -->
                   <div class="card mb-3">
-                    <button onclick="openDetailKeranjang({{$arrayIdBaju[$i]}})">
+                    <button onclick="openDetailKeranjang({{$keranjang_id[$i]}})" data-toggle="modal" data-target="#exampleModal">
                       <div class="card-body">
                         <span></span>
                         <div class="form-check mb-3">
@@ -95,12 +96,3 @@
     </div>
 
 </section>
-
-<script>
-  function openDetailKeranjang(baju_id) {
-    alert('bisa' + baju_id);  ///sampai sinii
-    // $.get("{{route('editInputDetail')}}", {baju_id:baju_id}, function(data) {
-    //     $("#content").html(data);
-    // });
-  }
-</script>

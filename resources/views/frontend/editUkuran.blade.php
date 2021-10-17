@@ -77,7 +77,7 @@ for($fiu = 0; $fiu < $batasan; $fiu++){?>
 
         var ukuranBaju =  buatArray(rows);
 
-        console.log(ukuranBaju);
+        // console.log(ukuranBaju);
 
         document.getElementById('ukuranBaju').value = ukuranBaju;
 

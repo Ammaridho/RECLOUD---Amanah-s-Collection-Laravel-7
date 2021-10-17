@@ -1,3 +1,13 @@
+function openDetailKeranjang(keranjang_id) {
+    // alert('bisa' + baju_id);  ///sampai sinii
+    $.get("/keranjang/edit", {keranjang_id:keranjang_id}, function(data) {
+        $('.modal-content').find("#modalEditKeranjang").html(data);
+    });
+
+    // $('.modal-content').find("#modalEditKeranjang").html('<h1>BISAAAA</h1>');
+
+  }
+
 // Button Keranjang ===
     $('#buttonKeranjang').on('click', function() {
         var emailSession = $(this).val();
@@ -5,7 +15,6 @@
             $("#listKeranjang").html(data);
         });
     })
-
   
 
 // Buka Menu slide ===

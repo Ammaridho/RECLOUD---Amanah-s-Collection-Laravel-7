@@ -229,9 +229,13 @@
       </div>
     </div>  
 
-    <form name="form-detail" onsubmit="masukkan_keranjang(); return false;" id="form" method="POST" action="{{route('storeInputDetail')}}">
+    <form name="form-detail" onsubmit="masukkan_keranjang(); return false;" id="form" method="POST" action="{{route('storeeditInputDetail')}}">
 
       @csrf
+
+      @method('PUT')
+
+      <input type="hidden" name="keranjang_id" value="<?= $keranjang_id; ?>">
 
       <input type="hidden" name="id" value="<?= $id; ?>">
 
@@ -269,13 +273,13 @@
               <label for="example-date-input" class="col-2 col-form-label text-white">Mulai</label>
               <div class="col-10">
                 <?php date_default_timezone_set("Asia/Jakarta");?>
-                <input  id="tanggal_mulai" class="form-control" type="date" name="tanggal_mulai" min="<?= date("Y-m-d");?>" value="<?= date("Y-m-d");?>" id="datePicker">
+                <input  id="tanggal_mulai" class="form-control" type="date" name="tanggal_mulai" min="<?= date("Y-m-d");?>" value="<?= $tanggal_mulai; ?>" id="datePicker">
               </div>
             </div>
             <div class="form-group row">
               <label for="example-date-input" class="col-2 col-form-label text-white">Selesai</label>
               <div class="col-10">
-                <input id="tanggal_selesai" class="form-control" type="date" name="tanggal_selesai" min="<?= date("Y-m-d");?>" value="<?= date("Y-m-d");?>" id="datePicker">
+                <input id="tanggal_selesai" class="form-control" type="date" name="tanggal_selesai" min="<?= date("Y-m-d");?>" value="<?= $tanggal_selesai; ?>" id="datePicker">
               </div>
             </div>
           </div>

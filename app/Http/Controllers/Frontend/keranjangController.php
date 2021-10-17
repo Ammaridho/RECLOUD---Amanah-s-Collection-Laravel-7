@@ -79,6 +79,21 @@ class keranjangController extends Controller
             $detail = baju::join('gambar_baju','baju.id','=','gambar_baju.id')->where('baju.id',"$baju_id")->first();
         }
 
-        return view('frontend/inputDetail',compact('isiKeranjang','id','detail','seleksi'));
+        return view('frontend/editDetail',compact('isiKeranjang','id','detail','seleksi','keranjang_id'));
+    }
+
+    public function editrestore(Request $request)
+    {
+        $keranjang_id = $request->keranjang_id;
+
+        $keranjang = keranjang::find($keranjang_id);
+        $keranjang->jumlah = $request->banyakBajuSaja;
+        $keranjang->tanggal_mulai = $request->tanggal_mulai;
+        $keranjang->tanggal_selesai = $request->tanggal_selesai;
+        $keranjang->total_hari = $request->totalHariSaja;
+        $keranjang->total_biaya = $request->totalBiayaSaja;
+        $keranjang->save();
+
+        return redirect('/');
     }
 }

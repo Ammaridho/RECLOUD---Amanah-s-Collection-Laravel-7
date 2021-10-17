@@ -35,7 +35,7 @@ Route::group(['middleware' => 'ceksession'], function(){
     //keranjang
         Route::get('/keranjang','Frontend\keranjangController@tampil')->name('a');
         Route::get('/keranjang/edit','Frontend\keranjangController@edit')->name('editInputDetail');
-
+        Route::put('/keranjang/edit','Frontend\keranjangController@editrestore')->name('storeeditInputDetail');
 
     //pulau
         Route::get('/pulau','Frontend\PulauController@index')->name('pulau');
