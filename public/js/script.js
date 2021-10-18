@@ -1,12 +1,28 @@
-function openDetailKeranjang(keranjang_id) {
-    // alert('bisa' + baju_id);  ///sampai sinii
-    $.get("/keranjang/edit", {keranjang_id:keranjang_id}, function(data) {
-        $('.modal-content').find("#modalEditKeranjang").html(data);
-    });
+//cekbox keranjang
+    function getCheckedCheckboxesFor(checkboxName) {
+        var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+        Array.prototype.forEach.call(checkboxes, function(el) {
+            values.push(el.value);
+        });
 
-    // $('.modal-content').find("#modalEditKeranjang").html('<h1>BISAAAA</h1>');
+        var konfirmasi = confirm("kamu yakin?");
 
-  }
+        if(konfirmasi){
+            $.get("{{route('deleteKeranjang)}}", {values:values}, function(data) {
+                console.log(values);
+            });  //ini proses hapus belum benar
+        }
+    }
+
+
+// edit keranjang
+    function openDetailKeranjang(keranjang_id) {
+        $.get("/keranjang/edit", {keranjang_id:keranjang_id}, function(data) {
+            $('.modal-content').find("#modalEditKeranjang").html(data);
+        });
+        // $('.modal-content').find("#modalEditKeranjang").html('<h1>BISAAAA</h1>');
+    }
+
 
 // Button Keranjang ===
     $('#buttonKeranjang').on('click', function() {

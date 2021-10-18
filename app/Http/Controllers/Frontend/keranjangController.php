@@ -86,6 +86,18 @@ class keranjangController extends Controller
     {
         $keranjang_id = $request->keranjang_id;
 
+        //mengambil ukuran
+        $ukuranBaju = $request->ukuranBaju;                 //banyak baju
+        $ukuranBaju = explode(",",$ukuranBaju);
+        $ukuranBaju = array_chunk($ukuranBaju,3);
+
+        // var_dump($ukuranBaju[0][0]);
+
+        // // data sementara 
+        $customer_email = $request->customer_email;
+        $id_customer = customer::where('email',$customer_email)->first()->id;
+        // var_dump($id_customer);
+
         $keranjang = keranjang::find($keranjang_id);
         $keranjang->jumlah = $request->banyakBajuSaja;
         $keranjang->tanggal_mulai = $request->tanggal_mulai;
@@ -93,6 +105,28 @@ class keranjangController extends Controller
         $keranjang->total_hari = $request->totalHariSaja;
         $keranjang->total_biaya = $request->totalBiayaSaja;
         $keranjang->save();
+
+        keranjang_ukuran::where('keranjang_id',"$keranjang_id")->delete();
+
+        for ($i=0; $i < count($ukuranBaju); $i++) { 
+            $keranjang_ukuran = new keranjang_ukuran;
+            $keranjang_ukuran->ukuran_atasan = $ukuranBaju[$i][0];
+            $keranjang_ukuran->ukuran_bawahan = $ukuranBaju[$i][1];
+            $keranjang_ukuran->jumlah_baju_perukuran = $ukuranBaju[$i][2];
+            $keranjang_ukuran->keranjang()->associate($keranjang);          //asosiasi id agar sama saat di restore
+            $keranjang_ukuran->save();
+        }
+
+        return redirect('/');
+    }
+
+    public function destroy(Request $request)
+    {
+        $keranjang_id = $request->values;
+        // var_dump($keranjang_id);
+
+        echo '<script>console.log(<?php $keranjang_id; ?>);</script>';
+        keranjang::find($id)->delete();
 
         return redirect('/');
     }
