@@ -9,6 +9,11 @@ class cekoutController extends Controller
 {
     public function cek(Request $request)
     {
-        dd($request->cekout);
+        $keranjang_id = $request->values;
+
+        return response()->json([
+                                    'success'=>'Berhasil dihapus.',
+                                    'id_keranjang' => $keranjang_id[0]
+                                ]);
     }
 }

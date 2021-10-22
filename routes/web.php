@@ -40,7 +40,7 @@ Route::group(['middleware' => 'ceksession'], function(){
         Route::post('/keranjang/deletemulti','Frontend\keranjangController@destroymulti')->name('deleteKeranjangmulti');
 
     //cekout
-        Route::get('/cekout','cekoutController@cek');
+        Route::get('/cekout','Frontend\cekoutController@cek')->name('cekout');
 
     //pulau
         Route::get('/pulau','Frontend\PulauController@index')->name('pulau');

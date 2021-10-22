@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col headerkeranjang">
             <div class="form-check mb-3">
-              <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+              <input class="form-check-input position-static" type="checkbox" id="cekboxpilihsemua" value="option1" aria-label="...">
               <label class="form-check-label" for="inlineCheckbox1">Pilih Semua</label>
             </div>
             {{-- button hapus --}}
@@ -42,7 +42,7 @@
                         <span>
                           <div class="row">
                             <div class="col-7 cekboxsatu">
-                              <input name="keranjang_id" type="checkbox" value="{{$keranjang_id[$i]}}" />
+                              <input id="cekboxsatu" name="keranjang_id" type="checkbox" value="{{$keranjang_id[$i]}}" />
                               <label for="keranjang_id">{{$keranjang_id[$i]}}</label>
                             </div>
                             <div class="col-5" >

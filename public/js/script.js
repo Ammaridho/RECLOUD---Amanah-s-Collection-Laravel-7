@@ -9,16 +9,6 @@
 
         if(konfirmasi){
 
-            // console.log(values);
-
-            //$.post('/keranjang/deletemulti', {values:values});
-            
-            // $.post('/keranjang/deletemulti', {values:values}, function(data) {
-            //         alert( "Data Loaded: " + data );
-            // });
-
-            // $.get("{{route('deleteKeranjangmulti')}}");
-
             //delete keranjang
             $.ajaxSetup({
                 headers: {
@@ -47,9 +37,12 @@
         var konfirmasi = confirm("kamu yakin cekout?");
 
         if(konfirmasi){
-            $.get('/cekout', {values:values}, function (data) {
-                    $('.modal-content').find("#modalEditKeranjang").html(data);
-            })
+
+            $.get("/cekout", {values:values}, function(data) {      //masuk ke controller
+                alert('bisaa');
+                alert(data.id_keranjang);
+            });
+
         }
     }
 
@@ -68,7 +61,20 @@
         var emailSession = $(this).val();
         $.get("/keranjang",{emailSession:emailSession}, function(data) {
             $("#listKeranjang").html(data);
+
+            //menchachked semuanya
+            $('#cekboxpilihsemua').on('click', function () {        //lokasi karena didalam action js lain maka harus ditaruh didalamnya
+                if($('.cekboxsatu > #cekboxsatu').prop( "checked" )){
+                    $('.cekboxsatu > #cekboxsatu').prop('checked', false);
+                }else{
+                    $('.cekboxsatu > #cekboxsatu').prop('checked', true);
+                }
+                
+            })
+
         });
+
+        
     })
   
 
