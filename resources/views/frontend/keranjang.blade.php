@@ -8,30 +8,31 @@
 
       {{-- header keranjang --}}
       <div class="row">
-        <div class="col-12">
-          <h5 class="text-center">Cart</h5>
+        <div class="col-12 text-center">
+          <h5 style="float:left">Cart</h5>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col headerkeranjang">
-          <div class="form-check mb-3">
-            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-            <label class="form-check-label" for="inlineCheckbox1">Pilih Semua</label>
+      @if (count($arrayNamaBaju) > 0)
+
+        <div class="row">
+          <div class="col headerkeranjang">
+            <div class="form-check mb-3">
+              <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+              <label class="form-check-label" for="inlineCheckbox1">Pilih Semua</label>
+            </div>
+            {{-- button hapus --}}
+            <button id="btnHapusKeranjang" onclick="hapusKeranjang('keranjang_id')"><h6>Hapus</h6></button>
           </div>
-          <button id="btnHapusKeranjang" onclick="getCheckedCheckboxesFor('keranjang_id')"><h6>Hapus</h6></button>
         </div>
-      </div>
 
-      {{-- row isi keranjang --}}
-      <div class="row">
-        <div class="col">
-          
-
-          @if (count($arrayNamaBaju)>0)
+        {{-- row isi keranjang --}}
+        <div class="row">
+          <div class="col">
             <div class="isiKeranjang" style="height: 400px; overflow-y:scroll; border: 1px solid rgb(185, 185, 185);">
                 <?php 
                   $ukur = count($arrayNamaBaju); 
+                  $total = 0;
                 ?>
                 @for ($i = $ukur-1; $i >= 0; $i--)
                 <!-- Card -->
@@ -39,8 +40,21 @@
                     
                       <div class="card-body">
                         <span>
-                          <input name="keranjang_id" type="checkbox" value="{{$keranjang_id[$i]}}" />
-                          <label for="keranjang_id">{{$keranjang_id[$i]}}</label>
+                          <div class="row">
+                            <div class="col-7 cekboxsatu">
+                              <input name="keranjang_id" type="checkbox" value="{{$keranjang_id[$i]}}" />
+                              <label for="keranjang_id">{{$keranjang_id[$i]}}</label>
+                            </div>
+                            <div class="col-5" >
+                                {{-- button hapus --}}
+                                <form action="/keranjang/delete/{{$keranjang_id[$i]}}"  method="post" style="float: right">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Hapus</button>
+                                </form> 
+                            </div>
+                          </div>
+
                         </span>
 
                         <button onclick="openDetailKeranjang({{$keranjang_id[$i]}})" data-toggle="modal" data-target="#exampleModal">
@@ -67,7 +81,8 @@
                               </div>
                             </div>
                           </div>
-                          <p>Harga  : {{$arrayTotalBiaya[$i]}}</p>
+                          <p>Harga : {{$arrayTotalBiaya[$i]}}</p>
+                          <?php $total += $arrayTotalBiaya[$i]; ?>
                         </button>
                       </div>
                     
@@ -75,24 +90,22 @@
                 <!-- Card -->  
                 @endfor
             </div>
-          @else
-              <h3>Keranjang masi kosong!</h3>
-          @endif
-          
-          
-        </div>
-      </div>
-
-      {{-- footer Keranjang --}}
-      <div class="row mt-2">
-        <div class="col">
-          <div class="subtotal">
-            <h5>Subtotal  :</h5>
           </div>
-          <a class="btn tombol-checkout">Checkout</a>
         </div>
-      </div>
 
+        {{-- footer Keranjang --}}
+        <div class="row mt-2">
+          <div class="col">
+            <div class="subtotal text-center">
+              <h5 style="font-size: 18px">Total  : {{$total}}</h5>
+            </div>
+            <a class="btn tombol-checkout" onclick="cekoutKeranjang('keranjang_id')">Checkout</a>
+          </div>
+        </div>
+
+      @else
+          <h3>Keranjang masi kosong!</h3>
+      @endif
 
     </div>
 

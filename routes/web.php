@@ -36,7 +36,11 @@ Route::group(['middleware' => 'ceksession'], function(){
         Route::get('/keranjang','Frontend\keranjangController@tampil')->name('a');
         Route::get('/keranjang/edit','Frontend\keranjangController@edit')->name('editInputDetail');
         Route::put('/keranjang/edit','Frontend\keranjangController@editrestore')->name('storeeditInputDetail');
-        Route::delete('/keranjang/delete','Frontend\keranjangController@destroy')->name('deleteKeranjang');
+        Route::delete('/keranjang/delete/{keranjang_id}','Frontend\keranjangController@destroy')->name('deleteKeranjang');
+        Route::post('/keranjang/deletemulti','Frontend\keranjangController@destroymulti')->name('deleteKeranjangmulti');
+
+    //cekout
+        Route::get('/cekout','cekoutController@cek');
 
     //pulau
         Route::get('/pulau','Frontend\PulauController@index')->name('pulau');

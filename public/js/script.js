@@ -1,5 +1,5 @@
-//cekbox keranjang
-    function getCheckedCheckboxesFor(checkboxName) {
+//cekbox hapus keranjang
+    function hapusKeranjang(checkboxName) {
         var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
         Array.prototype.forEach.call(checkboxes, function(el) {
             values.push(el.value);
@@ -8,9 +8,48 @@
         var konfirmasi = confirm("kamu yakin?");
 
         if(konfirmasi){
-            $.get("{{route('deleteKeranjang)}}", {values:values}, function(data) {
-                console.log(values);
-            });  //ini proses hapus belum benar
+
+            // console.log(values);
+
+            //$.post('/keranjang/deletemulti', {values:values});
+            
+            // $.post('/keranjang/deletemulti', {values:values}, function(data) {
+            //         alert( "Data Loaded: " + data );
+            // });
+
+            // $.get("{{route('deleteKeranjangmulti')}}");
+
+            //delete keranjang
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                });
+            $.ajax({ 
+                type: "POST", 
+                url:"/keranjang/deletemulti", 
+                data:{values:values},
+                success: function(data) {
+                    alert(data.id);
+                }
+            }); 
+        } 
+    }
+
+
+//checkbox cekout keranjang
+    function cekoutKeranjang(checkboxName) {
+        var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+        Array.prototype.forEach.call(checkboxes, function(el) {
+            values.push(el.value);
+        });
+
+        var konfirmasi = confirm("kamu yakin cekout?");
+
+        if(konfirmasi){
+            $.get('/cekout', {values:values}, function (data) {
+                    $('.modal-content').find("#modalEditKeranjang").html(data);
+            })
         }
     }
 
@@ -37,7 +76,7 @@
     function openMenu() {
         document.getElementById("pilihan").style.transform = "translatex(0%)";
     }
-    
+
     function closeMenu() {
         document.getElementById("pilihan").style.transform = "translatex(100%)";
     }
@@ -51,6 +90,7 @@
         document.getElementById("pilihan").style.transform = "translatex(0%)";
         document.getElementById("detail").style.transform = "translatex(100%)";
     }
+
     
 // button logout ============
     function logout() {
@@ -61,12 +101,14 @@
             window.location.href = "/logout";
         }
     }
+
     
 //button highlight ===
     $('.nav-item').on('click',function() {
         $('.nav-item').removeClass('active');
             $(this).addClass('active');
     })
+
     
 //Alert Must Login
     function alertGagalforrent() {
@@ -76,6 +118,7 @@
     function alertGagalkeranjang() {
         alert('You have to login for keranjang!');
     }
+
      
 //button login =============
      function Tombollogin(){

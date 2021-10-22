@@ -12,20 +12,16 @@
 
   <div class="container text-center">
 
-    <div class="row">
+    {{-- <div class="row">
       <div class="col-sm-12">
           <div class="text-light" id="isikeranjang"></div>
-          <?php //var_dump($id_keranjang);?>
       </div>
-    
-    </div>
+    </div> --}}
 
     <div class="row">
-      <div class="namda col-sm-12 mt-3">
-        <a href="javascript:void(0)" class="closebtn" >&times;</a>
-        {{-- <h1>{{$detail->nama_tari}}</h1> --}}
+      <div class="namda col-sm-12">
+        {{-- <a href="javascript:void(0)" class="closebtn" >&times;</a> --}}
         <?php
-          // var_dump($detail['nama_tari']);
           if($detail['jenis_baju'] == 'Baju Tari'){
             $namaTari = $detail['nama_tari'];
             echo "<h2>$namaTari</h2>";

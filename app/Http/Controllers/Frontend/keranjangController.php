@@ -55,6 +55,7 @@ class keranjangController extends Controller
             $arrayJumlahBaju    = [];
             $arrayGambarBaju    = [];
             $keranjang_id = '';
+            $arrayIdBaju = 0;
         }
 
         return view('frontend/keranjang',compact('arrayNamaBaju','arrayTotalBiaya','arrayUkuran','arrayJumlahBaju','arrayGambarBaju','keranjang_id','arrayIdBaju')); //sampai sini data sudah di array semua
@@ -122,12 +123,22 @@ class keranjangController extends Controller
 
     public function destroy(Request $request)
     {
-        $keranjang_id = $request->values;
-        // var_dump($keranjang_id);
-
-        echo '<script>console.log(<?php $keranjang_id; ?>);</script>';
-        keranjang::find($id)->delete();
+        $keranjang_id = $request->keranjang_id;
+        keranjang::find($keranjang_id)->delete();
 
         return redirect('/');
+    }
+
+    public function destroymulti(Request $request)
+    {
+        $keranjang_id = $request->values;
+
+        for ($i=0; $i < count($keranjang_id); $i++) { 
+            keranjang::find($keranjang_id[$i])->delete();
+        }
+
+        return response()->json([
+                                    'success'=>'Berhasil dihapus.',
+                                ]);
     }
 }
