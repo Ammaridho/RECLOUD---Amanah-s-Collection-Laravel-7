@@ -134,8 +134,7 @@
         </div>
 
     </div>
-</div>
-<!-- akhir signup -->
+  </div>
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
@@ -199,7 +198,6 @@
         </div>
     </div>
   </nav>
-  <!-- akhir navbar -->
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -216,7 +214,10 @@
     </div>
   </div>
 
-  @yield('content')
+  <div class="contentUtama">
+    @yield('content')
+  </div>
+  
 
   <!-- footer -->
   <footer class="footer-area footer--light">

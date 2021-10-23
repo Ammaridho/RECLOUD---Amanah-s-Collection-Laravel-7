@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//lihat view test
+Route::get('/testview','test\testController@index');
+
+
 // beranda
 Route::get('/','Frontend\BerandaController@index');
 

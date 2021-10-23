@@ -39,10 +39,23 @@
         if(konfirmasi){
 
             $.get("/cekout", {values:values}, function(data) {      //masuk ke controller
-                alert('bisaa');
-                alert(data.id_keranjang);
-            });
+                // alert('bisaa');
+                // alert(data.id_keranjang);
+                $('body > .contentUtama').html(data);
 
+                $('#salinDataUtama').on('click',function () {
+                    $('#namaLengkap').val('Ini Nama');
+                    $('#alamatt').val('Ini Alamat');
+                    $('#kodePos').val('Ini kode pos');
+                    $('#noTelp').val('Ini telp');
+                    $('#emaill').val('iniemail@gmail.com');
+                })
+
+                $('#bankTujuan').find('input').on('click',function () {
+                    $('#noRek').val($(this).val().substr(0,6));
+                    $('#namaRek').val($(this).val().substr(6));
+                })
+            });
         }
     }
 
@@ -64,11 +77,18 @@
 
             //menchachked semuanya
             $('#cekboxpilihsemua').on('click', function () {        //lokasi karena didalam action js lain maka harus ditaruh didalamnya
-                if($('.cekboxsatu > #cekboxsatu').prop( "checked" )){
+                
+                // $('#cekboxpilihsemua').prop('checked', false);
+
+                if(!($('#cekboxpilihsemua').prop("checked"))){
                     $('.cekboxsatu > #cekboxsatu').prop('checked', false);
                 }else{
                     $('.cekboxsatu > #cekboxsatu').prop('checked', true);
                 }
+
+                if($('.cekboxsatu > #cekboxsatu').on('click', function(){
+                    $('#cekboxpilihsemua').prop('checked',false);
+                }));
                 
             })
 
