@@ -7,7 +7,7 @@
                     {{-- pengiriman --}}
                     <div class="col">
                         <div class="box border border-dark p-3 m-2">
-                            <h3>Pengiriman {{$emailcustomer}}</h3>
+                            <h3>Pengiriman {{$customer->id}}</h3>
 
                             <div class="form-group row">
                                 <div class="col">
@@ -56,17 +56,14 @@
                                     <label for="metodePengiriman" class="col-sm-2 col-form-label">Metode Pengiriman</label>
                                 </div>
                                 <div class="col-4">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Choose...</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select class="form-control" id="pilihkurir">
+                                        <option value="Pilih metode pengiriman..">Pilih..</option>
+                                        <option value="25000">Gosend</option>
+                                        <option value="30000">Grab Express</option>
                                     </select>
                                 </div>
                                 <div class="col-5">
-                                    <input type="text" class="form-control" id="pilihOngkir" placeholder="" disabled>
+                                    <input type="text" class="form-control" id="hargaOngkir" placeholder="Pilih metode pengiriman.." disabled>
                                 </div>
                             </div>
                         </div>
@@ -100,14 +97,14 @@
                             <div class="form-group row">
                                 <label for="noRek" class="col-sm-2 col-form-label">No. Rekening</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="noRek" placeholder="">
+                                <input type="text" class="form-control" id="noRek" placeholder="Pilih bank tujuan.." disabled>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="namaRek" class="col-sm-2 col-form-label">Nama Rekening</label>
                                 <div class="col-sm-10">
-                                <input type="email" class="form-control" id="namaRek" placeholder="">
+                                <input type="email" class="form-control" id="namaRek" placeholder="Pilih bank tujuan.." disabled>
                                 </div>
                             </div>
 
@@ -125,6 +122,57 @@
                     <div class="col">
                         <div class="box border border-dark p-3 m-2">
                         <h3>Keranjang</h3>
+
+                            {{-- isi keranjang --}}
+                            <div class="row">
+                                <div class="col">
+                                  <div class="isiKeranjang" style="height: 400px; overflow-y:scroll; border: 1px solid rgb(185, 185, 185);">
+                                      <?php 
+                                        $ukur = count($arrayNamaBaju); 
+                                        $total = 0;
+                                      ?>
+                                      @for ($i = $ukur-1; $i >= 0; $i--)
+                                      <!-- Card -->
+                                        <div class="card mb-3 checkboxsatusatu">
+                                          
+                                            <div class="card-body">
+                      
+                                              <button onclick="openDetailKeranjang({{$keranjang_id[$i]}})" data-toggle="modal" data-target="#exampleModal">
+                                                <div class="row mb-4">              
+                                                  <div class="col">
+                                                    <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                                                        <div class="mask waves-effect waves-light text-center">
+                                                          <img class="img-fluid w-100"
+                                                            src="img/gambarbaju/{{$arrayGambarBaju[$i]}}">
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="row">
+                                                  <div class="col">
+                                                    <div>
+                                                      <div class="d-flex justify-content-between">
+                                                        <div class="detail">
+                                                          <h5>{{$arrayNamaBaju[$i]}}</h5>
+                                                          <p class="mb-3 text-muted text-uppercase small">Jumlah : {{$arrayJumlahBaju[$i]}}</p>
+                                                          <p class="mb-2 text-muted text-uppercase small">Ukuran : {{$arrayUkuran[$i]}}</p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <p>Harga : {{$arrayTotalBiaya[$i]}}</p>
+                                                <?php $total += $arrayTotalBiaya[$i]; ?>
+                                              </button>
+                                            </div>
+                                          
+                                        </div>
+                                      <!-- Card -->  
+                                      @endfor
+                                  </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -187,3 +235,18 @@
         </div>
     </div>
 </body>
+<script>
+    var customerNama    = "{{$customer->nama}}";
+    var alamat          = "{{$customer->alamat}}";
+    var kodepos         = "{{$customer->kodepos}}";
+    var notelp          = "{{$customer->tlp}}";
+    var email           = "{{$customer->email}}";
+
+    $('#salinDataUtama').on('click',function () {
+        $('#namaLengkap').val(customerNama);
+        $('#alamatt').val(alamat);
+        $('#kodePos').val(kodepos);
+        $('#noTelp').val(notelp);
+        $('#emaill').val(email);
+    })
+</script>

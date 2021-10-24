@@ -1,3 +1,5 @@
+
+
 //cekbox hapus keranjang
     function hapusKeranjang(checkboxName) {
         var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
@@ -43,17 +45,13 @@
                 // alert(data.id_keranjang);
                 $('body > .contentUtama').html(data);
 
-                $('#salinDataUtama').on('click',function () {
-                    $('#namaLengkap').val('Ini Nama');
-                    $('#alamatt').val('Ini Alamat');
-                    $('#kodePos').val('Ini kode pos');
-                    $('#noTelp').val('Ini telp');
-                    $('#emaill').val('iniemail@gmail.com');
-                })
-
                 $('#bankTujuan').find('input').on('click',function () {
                     $('#noRek').val($(this).val().substr(0,6));
                     $('#namaRek').val($(this).val().substr(6));
+                })
+
+                $('#pilihkurir').on('change',function () {
+                    $('#hargaOngkir').val($('#pilihkurir').val());
                 })
             });
         }
@@ -89,6 +87,17 @@
                 if($('.cekboxsatu > #cekboxsatu').on('click', function(){
                     $('#cekboxpilihsemua').prop('checked',false);
                 }));
+
+                $('.cekboxsatu > #cekboxsatu').on('click',function () {
+                    console.log($('input[name="' + keranjang_id + '"]:checked').val([]));
+                    
+                })
+                
+
+                // var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+                // Array.prototype.forEach.call(checkboxes, function(el) {
+                //     values.push(el.value);
+                // });
                 
             })
 
