@@ -52,6 +52,8 @@
 
                 $('#pilihkurir').on('change',function () {
                     $('#hargaOngkir').val($('#pilihkurir').val());
+                    $('#ongkir').val($('#pilihkurir').val());
+                    $('#totalTagihan').val(parseInt($('#biayaPenyewaan').val())+parseInt($('#uangJaminan').val())+parseInt($('#ongkir').val()));
                 })
             });
         }
@@ -90,20 +92,14 @@
 
                 $('.cekboxsatu > #cekboxsatu').on('click',function () {
                     console.log($('input[name="' + keranjang_id + '"]:checked').val([]));
-                    
                 })
                 
-
                 // var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
                 // Array.prototype.forEach.call(checkboxes, function(el) {
                 //     values.push(el.value);
                 // });
-                
             })
-
         });
-
-        
     })
   
 
@@ -115,7 +111,7 @@
     function closeMenu() {
         document.getElementById("pilihan").style.transform = "translatex(100%)";
     }
-
+d
     function openDetail() {
         document.getElementById("pilihan").style.transform = "translatex(100%)";
         document.getElementById("detail").style.transform = "translatex(0%)";

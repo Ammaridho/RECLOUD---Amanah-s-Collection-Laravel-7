@@ -33,21 +33,21 @@
                             <div class="form-group row">
                                 <label for="kodePos" class="col-sm-2 col-form-label">Kode Pos</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="kodePos" placeholder="">
+                                    <input type="text" class="form-control" id="kodePos" placeholder="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="noTelp" class="col-sm-2 col-form-label">No. Telp </label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="noTelp" placeholder="">
+                                    <input type="text" class="form-control" id="noTelp" placeholder="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="emaill" class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
-                                <input type="email" class="form-control" id="emaill" placeholder="">
+                                    <input type="email" class="form-control" id="emaill" placeholder="">
                                 </div>
                             </div>
 
@@ -187,7 +187,7 @@
                                     <label for="biayaPenyewaan" class="col-sm-2 col-form-label">Biaya Penyewaan</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="biayaPenyewaan" placeholder="">
+                                    <input type="text" class="form-control" id="biayaPenyewaan" value="{{$total}}" disabled>
                                 </div>
                             </div>
 
@@ -196,7 +196,7 @@
                                     <label for="uangJaminan" class="col-sm-2 col-form-label">Uang Jaminan 30%</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="uangJaminan" placeholder="">
+                                    <input type="text" class="form-control" id="uangJaminan" value="{{$total * 30/100}}" disabled>
                                 </div>
                             </div>
 
@@ -205,7 +205,7 @@
                                     <label for="ongkir" class="col-sm-2 col-form-label">Ongkos Kirim</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="ongkir" placeholder="">
+                                    <input type="text" class="form-control" id="ongkir" placeholder="Pilih metode pengiriman.." disabled>
                                 </div>
                             </div>
 
@@ -216,7 +216,8 @@
                                     <label for="totalTagihan" class="col-sm-2 col-form-label">Total Tagihan</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="totalTagihan" placeholder="">
+                                    <input type="text" class="form-control" id="totalTagihan" placeholder="" 
+                                   value="" disabled>
                                 </div>
                             </div>
                         </div>
