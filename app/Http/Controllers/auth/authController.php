@@ -39,6 +39,7 @@ class authController extends Controller
         $customer->email = $request->email;
         $customer->nama = $request->nama;
         $customer->alamat = $request->alamat;
+        $customer->kodepos = $request->kodepos;
         $customer->tlp = $request->notelp;
         $customer->noktp = $request->noktp;
         // $customer->fotoktp = $request->fotoktp;

@@ -82,7 +82,7 @@
                         <h2 class="fs-title">Buat Akun</h2>
                         <h3 class="fs-subtitle">Data akan digunakan ketika masuk ke akun</h3>
                         <div class="form-row">
-                            <input type="text" name="email" required>
+                            <input type="email" name="email" required>
                             <span id="tulisanemaildaftar">Email</span>
                         </div>
                         <div class="form-row">
@@ -104,6 +104,10 @@
                         <div class="form-row">
                             <textarea cols="30" rows="3" id="alamat" name="alamat" required></textarea>
                             <span id="tulisanalamat">Alamat</span>
+                        </div>
+                        <div class="form-row">
+                          <input type="number" name="kodepos" required>
+                          <span id="tulisankodepos">Kode Pos</span>
                         </div>
                         <div class="form-row">
                             <input type="number" name="notelp" required>

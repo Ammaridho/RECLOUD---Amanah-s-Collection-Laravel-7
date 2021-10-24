@@ -111,7 +111,7 @@
     function closeMenu() {
         document.getElementById("pilihan").style.transform = "translatex(100%)";
     }
-d
+
     function openDetail() {
         document.getElementById("pilihan").style.transform = "translatex(100%)";
         document.getElementById("detail").style.transform = "translatex(0%)";
