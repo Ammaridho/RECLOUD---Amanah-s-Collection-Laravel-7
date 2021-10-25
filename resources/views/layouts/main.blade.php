@@ -69,6 +69,8 @@
               
               {{ method_field('PUT') }} --}}
 
+              
+
                 <!-- progressbar -->
                 <ul id="progressbar">
                     <li class="step">Setup Akun</li>
@@ -118,14 +120,16 @@
                         <h2 class="fs-title">Verivikasi Data</h2>
                         <h3 class="fs-subtitle">Data ini akan dijadikan jaminan ketika transaksi</h3>
                         <div class="form-row">
-                            <input type="number" required>
+                            <input type="number" name="noktp" required>
                             <span id="tulisannoktp">Nomor KTP</span>
                         </div>
                         <div class="form-row">
-                            <input type="file" required>
+                            <label for="fotoKtp">Foto Ktp</label>
+                            <input class="form-control-file" type="file" name="fotoKtp" id="fotoKtp" value="" required>
                         </div>
                         <div class="form-row">
-                            <input type="file" required>
+                            <label for="fotoBersamaKtp">Foto diri dengan Ktp</label>
+                            <input class="form-control-file" type="file" name="fotoBersamaKtp" id="fotoBersamaKtp" value="" required>
                         </div>
                     </fieldset>
                     <div class="pencetan">
@@ -143,6 +147,17 @@
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
     <div class="container">
+
+      @if ($errors->any())                                       {{-- jika ada error --}}
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)            {{-- tampilkan semua --}}
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+              @endif
+
         <a class="navbar-brand">Amanah Collection</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -162,11 +177,11 @@
             
             <?php 
 
-            $emailsession = 'belum login';
+              $emailsession = 'belum login';
 
-            if(isset(session('data')['email'])){
-              $emailsession = session('data')['email'];
-            } 
+              if(isset(session('data')['email'])){
+                $emailsession = session('data')['email'];
+              } 
             ?>
             @if (session('success_login'))
               <div class="dropdown nav-item">
