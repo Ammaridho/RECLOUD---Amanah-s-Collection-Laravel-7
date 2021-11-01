@@ -45,9 +45,6 @@
                             <input type="password" id="password" onkeyup="ValidateInputan()" name="password" required>
                             <span id="tulisanpasswordlogin">Password</span>
                         </div>
-                        <div class="alert" id="alert">
-    
-                        </div>
                         <div class="form-row">
                             <button type="submit" class="btn-success">Masuk</button>
                         </div>
@@ -64,12 +61,6 @@
             <form id="msform" action="/signup" method="POST" enctype="multipart/form-data">
 
               @csrf
-              
-              {{-- @csrf_field
-              
-              {{ method_field('PUT') }} --}}
-
-              
 
                 <!-- progressbar -->
                 <ul id="progressbar">
