@@ -274,22 +274,11 @@ text-align: center;
 .mini-footer {
  background:#192027;
  text-align:center;
- padding:32px 0
 }
+
 .mini-footer p {
- margin:0;
- line-height:26px;
- font-size:15px;
  color:#999
 }
-.mini-footer p a {
- color:#5867dd
-}
-.mini-footer p a:hover {
- color:#34bfa3
-}
-
-
 
 .kotakhitam{
   visibility: hidden;
@@ -444,7 +433,7 @@ text-align: center;
   border-radius: 3px;
   margin-top: 15px;
   width: 88%;
-  /* background:  #e2e2e2; */
+  background:  #FF7A00;
   /* color: rgb(167, 167, 167); */
   /* cursor: not-allowed; */
 }

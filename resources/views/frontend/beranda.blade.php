@@ -5,7 +5,21 @@
     <!-- halaman -->
     <section class="halaman" id="halaman">
         <div class="container">
+
+          @if (session('message'))
+            <div class="row" style="margin-top: 100px">
+                <div class=" col alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                  {{session('message')}}
+                </div>
+            </div>
+          @endif
+          
+          
           <div class="row custom-section d-flex align-items-center">  
+            
             <div class="col-12 col-lg-4">
               <div id="carouselContent" class="carousel slide" data-ride="carousel" >
                 <div class="carousel-inner">

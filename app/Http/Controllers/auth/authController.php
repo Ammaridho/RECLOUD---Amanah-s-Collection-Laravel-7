@@ -24,7 +24,7 @@ class authController extends Controller
                 return redirect('/');
             }
         }
-        return redirect('/')->with('message','Id atau Password salah');
+        return redirect('/')->with('message','Id atau Password salah!');
     }
     
     public function logout(Request $request)

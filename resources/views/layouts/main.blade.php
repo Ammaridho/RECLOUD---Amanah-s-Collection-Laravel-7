@@ -139,16 +139,6 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
     <div class="container">
 
-      @if ($errors->any())                                       {{-- jika ada error --}}
-              <div class="alert alert-danger">
-                  <ul>
-                      @foreach ($errors->all() as $error)            {{-- tampilkan semua --}}
-                          <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-              @endif
-
         <a class="navbar-brand">Amanah Collection</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -164,7 +154,7 @@
               <a class="nav-item nav-link" href="/pulau">For-rent</a>
             @endif
 
-            <a class="nav-item nav-link" href="#contact">Contact</a>
+            <a class="nav-item nav-link" href="/#contact">Contact</a>
             
             <?php 
 
@@ -235,14 +225,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="copyright-text">
-              <p>© 2021
-                <a>Amanah Collection</a>
-              </p>
-            </div>
-            <div class="go_top">
-              <span class="icon-arrow-up"></span>
-            </div>
+              <p class="text-center">© 2021 Amanah Collection</p>
           </div>
         </div>
       </div>

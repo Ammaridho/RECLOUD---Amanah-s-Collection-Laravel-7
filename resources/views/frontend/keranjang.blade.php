@@ -8,7 +8,7 @@
       {{-- header keranjang --}}
       <div class="row">
         <div class="col-12 text-center">
-          <h5 style="float:left">Cart</h5>
+          <h5 class="text-dark" style="float:left">Cart</h5>
         </div>
       </div>
 
@@ -103,7 +103,7 @@
         </div>
 
       @else
-          <h3>Keranjang masi kosong!</h3>
+          <h3 class="text-dark">Keranjang masi kosong!</h3>
       @endif
 
     </div>
