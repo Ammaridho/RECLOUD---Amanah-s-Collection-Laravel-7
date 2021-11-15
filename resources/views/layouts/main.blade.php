@@ -8,8 +8,7 @@
     <title>Amanah's Collection</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styleberanda.css">
-    <script src="js/jquery-3.6.0.min.js"></script>
-    {{-- <link href="bst4/js/jquery-3.5.1.slim.min.js"> --}}
+    <script src="js/jquery-3.6.0.js"></script>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">

@@ -59,7 +59,6 @@
       }
 
       function inputProvinsi() {
-        // alert('bisabisa');
         document.getElementById("sidebar").style.transform = "translatex(0%)";
         $.get("admin/inputData.php", function(data) {
             $("#content").html(data);
