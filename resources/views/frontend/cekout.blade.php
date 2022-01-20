@@ -1,4 +1,7 @@
-<body>
+{{-- @extends('layouts.mainristrict')
+
+@section('name') --}}
+    <body>
     <div class="container mt-5">
         <div class="row p-3">
 
@@ -7,7 +10,7 @@
                     {{-- pengiriman --}}
                     <div class="col">
                         <div class="box border border-dark p-3 m-2">
-                            <h3>Pengiriman {{$customer->id}}</h3>
+                            <h3>Pengiriman</h3>
 
                             <div class="form-group row">
                                 <div class="col">
@@ -251,3 +254,4 @@
         $('#emaill').val(email);
     })
 </script>
+{{-- @endsection --}}

@@ -147,7 +147,9 @@
             <a class="nav-item nav-link active" href="/">Home</a>
             <span class="sr-only">(current)</span>
 
-            @if (session('success_login'))
+            @if (!session('success_login'))
+              {{-- <a class="nav-item nav-link" onclick="alertGagalforrent()">For-rent</a> --}}
+            @else
               <a class="nav-item nav-link" href="/pulau">For-rent</a>
             @endif
 
@@ -163,7 +165,7 @@
             ?>
             @if (session('success_login'))
               <div class="dropdown nav-item">
-                <button id="buttonKeranjang" class="btn dropdown-toggle nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
+                <button id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
                   Keranjang
                 </button>
               
@@ -171,14 +173,16 @@
                   <div class="listKeranjang" id="listKeranjang"></div>
                 </div>
               </div>
+            @else
+              {{-- <a class="nav-item nav-link" onclick="alertGagalkeranjang()">keranjang</a> --}}
             @endif
             
 
             @if (!session('success_login'))
-              <a class="nav-item  btn btn-primary nav-link" onclick="Tombollogin()">Login</a>
+              <a class="nav-item  btn btn-primary" onclick="Tombollogin()">Login</a>
             @else
               <div class="dropdown nav-item">
-                <a id="buttonKeranjang" class="btn dropdown-toggle nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a id="buttonKeranjang" class="btn dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{$emailsession}}
                 </a>
               

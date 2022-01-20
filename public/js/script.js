@@ -41,8 +41,6 @@
         if(konfirmasi){
 
             $.get("/cekout", {values:values}, function(data) {      //masuk ke controller
-                // alert('bisaa');
-                // alert(data.id_keranjang);
                 $('body > .contentUtama').html(data);
 
                 $('#bankTujuan').find('input').on('click',function () {
@@ -78,26 +76,46 @@
             //menchachked semuanya
             $('#cekboxpilihsemua').on('click', function () {        //lokasi karena didalam action js lain maka harus ditaruh didalamnya
                 
-                // $('#cekboxpilihsemua').prop('checked', false);
-
                 if(!($('#cekboxpilihsemua').prop("checked"))){
                     $('.cekboxsatu > #cekboxsatu').prop('checked', false);
+                    // console.log('cekboxallfalse');
                 }else{
                     $('.cekboxsatu > #cekboxsatu').prop('checked', true);
+                    // console.log('cekboxalltrue');
                 }
 
                 if($('.cekboxsatu > #cekboxsatu').on('click', function(){
                     $('#cekboxpilihsemua').prop('checked',false);
+                    // console.log('cekboxone');
                 }));
 
-                $('.cekboxsatu > #cekboxsatu').on('click',function () {
-                    console.log($('input[name="' + keranjang_id + '"]:checked').val([]));
-                })
                 
-                // var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
-                // Array.prototype.forEach.call(checkboxes, function(el) {
-                //     values.push(el.value);
-                // });
+            })
+            var total = 0;
+            $('.cekboxsatu > #cekboxsatu').on('click',function () {
+
+                var checkboxes = document.querySelectorAll('.cekboxsatu > #cekboxsatu:checked'), values = []; //ambil checkbox checked
+                
+                Array.prototype.forEach.call(checkboxes, function(el) { //jadikan array
+                    values.push(el.value);
+                });
+
+                console.log(values); //INI MASIH MENGAMBIL ID SAJA BELUM DI FIX
+
+
+                // if(($('#cekboxsatu').prop("checked"))){
+                //     $('.cekboxsatu > #cekboxsatu').on('click',function () {
+                //     console.log( parseInt($(this).attr( "data-valuetwo" )));
+                //     // total += parseInt($(this).attr( "data-valuetwo" ));
+                //     })
+                // }
+                // }else{
+                //     $('.cekboxsatu > #cekboxsatu').on('click',function () {
+                //     // console.log( $(this).attr( "data-valuetwo" ));
+                //     total -=  $(this).attr( "data-valuetwo" )
+                //     })
+                // }
+                // console.log(total);
             })
         });
     })
@@ -152,7 +170,7 @@
 
      
 //button login =============
-     function Tombollogin(){
+    function Tombollogin(){
         var x = document.getElementById("kotakputih");
         x.style.transform = "translateY(0%)";
         x.style.transition = "transform 1.3s";
@@ -164,9 +182,9 @@
         p.style.visibility = "hidden";
         var c = document.getElementById("navbar");
         c.style.zIndex = "1";
-      }
+    }
 
-      function ValidateInputan(){
+    function ValidateInputan(){
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

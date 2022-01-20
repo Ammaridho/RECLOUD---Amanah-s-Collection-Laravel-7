@@ -41,7 +41,7 @@
                         <span>
                           <div class="row">
                             <div class="col-7 cekboxsatu">
-                              <input id="cekboxsatu" name="keranjang_id" type="checkbox" value="{{$keranjang_id[$i]}}" />
+                              <input id="cekboxsatu" name="keranjang_id" type="checkbox" value="{{$keranjang_id[$i]}}" data-valuetwo="{{$arrayTotalBiaya[$i]}}" />
                               <label for="keranjang_id">{{$keranjang_id[$i]}}</label>
                             </div>
                             <div class="col-5" >

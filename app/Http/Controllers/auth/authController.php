@@ -13,9 +13,6 @@ class authController extends Controller
 {
     public function ceklogin(Request $request)
     {
-        $email = $request->email;
-        $password = $request->password;
-
         $data = User::where('email',$request->email)->first();
         if($data){
             if(\Hash::check($request->password, $data->password)){
@@ -35,11 +32,13 @@ class authController extends Controller
 
     public function signup(Request $request)
     {
+        // dd($request);
+
         $validatedData = $request->validate([   
-            'email' => 'required|max:50',
+            'email' => 'required|max:50|email',
             'password1' => 'required',
             'password2' => 'required',
-            'nama' => 'required|max:25',
+            'nama' => 'required|max:50',
             'alamat' => 'required|max:100',
             'kodepos' => 'required|max:10',
             'notelp' => 'required|max:25',
@@ -48,22 +47,23 @@ class authController extends Controller
             'fotoBersamaKtp' => 'required|mimes:jpeg,png,jpg|max:10000'
         ]);
 
+        // dd($request);
         // foto ktp =================================
             // membuat nama foto ktp agar tidak sama
-            $namafotoKtp = $request->fotoKtp->getClientOriginalName() . '-' . time() . '.' . $request->fotoKtp->extension();
+            $namafotoKtp = $request->email . '-' . time() . '-' . 'ktp' . '.' .  $request->fotoKtp->extension();
 
             // memasukkan ke folder
             $request->fotoKtp->move(public_path('img/foto'), $namafotoKtp);
 
         // foto bersama ktp =================================
             // membuat nama foto bersama ktp agar tidak sama
-            $namafotoBersamaKtp = $request->fotoBersamaKtp->getClientOriginalName() . '-' . time() . '.' . $request->fotoBersamaKtp->extension();
+            $namafotoBersamaKtp = $request->email . '-' . time() . '-' . 'bersamaktp' . '.' . $request->fotoBersamaKtp->extension();
 
             // memasukkan ke folder
             $request->fotoBersamaKtp->move(public_path('img/foto'), $namafotoBersamaKtp);
 
-            // dd($namafotoBersamaKtp);
-
+            // dd($request);
+        
         $customer = new customer;
         $customer->nama = $request->nama;
         $customer->tlp = $request->notelp;
@@ -83,6 +83,6 @@ class authController extends Controller
         $users->save();
 
 
-        return redirect('/')->with('message','Berhasil Sign Up');;
+        return redirect('/')->with('success','Berhasil Sign Up');;
     }
 }

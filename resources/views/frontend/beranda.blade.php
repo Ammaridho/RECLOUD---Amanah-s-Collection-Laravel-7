@@ -4,7 +4,7 @@
 
     <!-- halaman -->
     <section class="halaman" id="halaman">
-        <div class="container">
+        <div class="container  mt-5 mt-5 mt-5 mt-5">
 
           @if (session('message'))
             <div class="row" style="margin-top: 100px">
@@ -15,6 +15,16 @@
                   {{session('message')}}
                 </div>
             </div>
+          @endif
+
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
           @endif
           
           
