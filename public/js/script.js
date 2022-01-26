@@ -1,5 +1,3 @@
-
-
 //cekbox hapus keranjang
     function hapusKeranjang(checkboxName) {
         var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
@@ -36,25 +34,78 @@
             values.push(el.value);
         });
 
-        var konfirmasi = confirm("kamu yakin cekout?");
+        $.get("/cekout", {values:values}, function(data) {      //masuk ke controller
+            $('body > .contentUtama').html(data);
 
-        if(konfirmasi){
+            $('#bankTujuan').find('input').on('click',function () {
 
-            $.get("/cekout", {values:values}, function(data) {      //masuk ke controller
-                $('body > .contentUtama').html(data);
+                if($(this).val() == 'Bank BNI'){
+                    $('#noRek').val('12345');
+                    $('#namaRek').val('Ammaridho Siregar');
+                }else if($(this).val() == 'Bank BRI'){
+                    $('#noRek').val('67890');
+                    $('#namaRek').val('Ammaridho Siregar');
+                }else{
+                    $('#noRek').val('111213');
+                    $('#namaRek').val('Ammaridho Siregar');
+                    
+                }   
 
-                $('#bankTujuan').find('input').on('click',function () {
-                    $('#noRek').val($(this).val().substr(0,6));
-                    $('#namaRek').val($(this).val().substr(6));
-                })
+                // $('#noRek').val($(this).val().substr(0,6));
+                // $('#namaRek').val($(this).val().substr(6));
+            })
 
-                $('#pilihkurir').on('change',function () {
-                    $('#hargaOngkir').val($('#pilihkurir').val());
-                    $('#ongkir').val($('#pilihkurir').val());
-                    $('#totalTagihan').val(parseInt($('#biayaPenyewaan').val())+parseInt($('#uangJaminan').val())+parseInt($('#ongkir').val()));
-                })
-            });
-        }
+            $('#pilihkurir').on('change',function () {
+
+                if($('#pilihkurir').val() == 'Gosend'){
+                    var hargaOngkir = 25000;
+                }else{
+                    var hargaOngkir = 30000;
+                }
+
+                $('#hargaOngkir').val(hargaOngkir);
+
+                $('#ongkir').val(hargaOngkir);
+
+                $('#totalTagihan').val(parseInt($('#biayaPenyewaan').val())+parseInt($('#uangJaminan').val())+parseInt($('#ongkir').val()));
+
+            })
+
+            
+            // button bayar (ke rincian cekout)
+            $('#buttonBayar').on('click', function () {
+    
+                var vartest = 'bisaa';
+
+                var konfirmasi = confirm("kamu yakin cekout?");
+
+                // console.log(konfirmasi);
+
+                if(konfirmasi){
+
+                    nama = $('#formcek input[name="nama"]').val();
+                    alamat = $('#formcek textarea[name="alamat"]').val();
+                    kodePos = $('#formcek input[name="kodePos"]').val();
+                    noTelp = $('#formcek input[name="noTelp"]').val();
+                    emaill = $('#formcek input[name="emaill"]').val();
+                    pilihkurir = $('#formcek select[name="pilihkurir"]').val();
+                    bankTujuan = $('#formcek input[name="bankTujuan"]').val();
+                    biayaPenyewaan = $('#formcek input[name="biayaPenyewaan"]').val();
+                    uangJaminan = $('#formcek input[name="uangJaminan"]').val();
+                    ongkir = $('#formcek input[name="ongkir"]').val();
+                    totalTagihan = $('#formcek input[name="totalTagihan"]').val();
+                    noRek = $('#formcek input[name="noRek"]').val();
+                    namaRek = $('#formcek input[name="namaRek"]').val();
+
+                    $.get("/rincianCekout", {nama:nama,alamat:alamat,kodePos:kodePos,noTelp:noTelp,emaill:emaill,pilihkurir:pilihkurir,bankTujuan:bankTujuan,biayaPenyewaan:biayaPenyewaan,uangJaminan:uangJaminan,ongkir:ongkir,totalTagihan:totalTagihan,noRek:noRek,namaRek:namaRek}, function (data) {
+                        $('body > .contentUtama').html(data);
+                    })
+                
+                }
+
+            })
+
+        });
     }
 
 
@@ -120,6 +171,9 @@
         });
     })
   
+
+
+    
 
 // Buka Menu slide ===
     function openMenu() {

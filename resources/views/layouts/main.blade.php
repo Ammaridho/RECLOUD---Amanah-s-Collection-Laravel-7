@@ -171,6 +171,16 @@
                   <div class="listKeranjang" id="listKeranjang"></div>
                 </div>
               </div>
+
+              <div class="dropdown nav-item">
+                <button id="buttonKeranjang" class="btn dropdown-toggle nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
+                  Transaksi
+                </button>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <div class="listKeranjang" id="listKeranjang"></div>
+                </div>
+              </div>
             @endif
             
 
@@ -218,9 +228,9 @@
   <footer class="footer-area footer--light">
     <div class="mini-footer">
       <div class="container">
-        <div class="row">
+        <div class="row p-3">
           <div class="col-md-12">
-              <p class="text-center">© 2021 Amanah Collection</p>
+              <p class="text-center m-auto ">© 2021 Amanah Collection</p>
           </div>
         </div>
       </div>

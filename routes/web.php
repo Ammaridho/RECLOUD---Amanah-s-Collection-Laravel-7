@@ -45,6 +45,7 @@ Route::group(['middleware' => 'ceksession'], function(){
 
     //cekout
         Route::get('/cekout','Frontend\cekoutController@cek')->name('cekout');
+        Route::get('/rincianCekout','Frontend\cekoutController@rincianCekout')->name('rincianCekout');
 
     //pulau
         Route::get('/pulau','Frontend\PulauController@index')->name('pulau');

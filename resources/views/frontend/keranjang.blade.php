@@ -49,7 +49,7 @@
                                 <form action="/keranjang/delete/{{$keranjang_id[$i]}}"  method="post" style="float: right">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Hapus</button>
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Hapus</button>
                                 </form> 
                             </div>
                           </div>
