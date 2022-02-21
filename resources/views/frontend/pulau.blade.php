@@ -8,7 +8,7 @@
     </head>
 
 
-    <!-- pulau -->
+  <!-- pulau -->
   <section class="utama" id="utama">
     <div class="container utama">
       <nav class="navbar pt-5 bg-transparent">

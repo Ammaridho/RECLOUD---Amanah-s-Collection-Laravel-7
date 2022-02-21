@@ -13,6 +13,9 @@
                 <div class="col-md-8">
                     
                     <div class="row">
+
+                        <input type="hidden" name="customer_email" id="customer_email" value="{{session('data')['email']}}">
+
                         {{-- pengiriman --}}
                         <div class="col">
                             <div class="box border border-dark p-3 m-2">
@@ -131,6 +134,8 @@
                             <div class="box border border-dark p-3 m-2">
                             <h3>Keranjang</h3>
 
+                              {{-- INI MASI BELUM BAGAIMANA ARRAY BISA MASUK JADI VALUE YANG HARUSNYA SATU NILAI, ARRAY BANYAK NILAI DIDALAMNYA--}}
+
                                 {{-- isi keranjang --}}
                                 <div class="row">
                                     <div class="col">
@@ -139,8 +144,12 @@
                                             $ukur = count($arrayNamaBaju); 
                                             $total = 0;
                                         ?>
+                                        <input type="hidden" name="listkeranjang_id[]" id="listkeranjang_id" value="{{serialize($keranjang_id)}}">
+
                                         @for ($i = $ukur-1; $i >= 0; $i--)
-                                        <!-- Card -->
+
+                                            
+                                            <!-- Card -->
                                             <div class="card mb-3 checkboxsatusatu">
                                             
                                                 <div class="card-body">
@@ -175,7 +184,7 @@
                                                 </div>
                                             
                                             </div>
-                                        <!-- Card -->  
+                                            <!-- Card -->  
                                         @endfor
                                     </div>
                                     </div>
@@ -190,6 +199,7 @@
                         <div class="col">
                             <div class="box border border-dark p-3 m-2">
                                 <h3>Rincian</h3>
+
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <label for="biayaPenyewaan" class="col-sm-2 col-form-label">Biaya Penyewaan</label>

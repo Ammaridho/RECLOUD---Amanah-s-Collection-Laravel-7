@@ -3,6 +3,12 @@ body{
   overflow-x: hidden;
 }
 
+/* list transaksi */
+.container #listTransaksi{
+  width: 700px;
+}
+
+
 /* navbar */
 .navbar-brand{
   font-size: 25px;
@@ -637,11 +643,11 @@ color: white;
   cursor: pointer;
 }
 
-@media (max-width:991px) {
+/* @media (max-width:991px) {
  .footer-menu {
   padding-left:0
  }
-}
+} */
 
 /* desktop version */
 @media (min-width: 992px){
@@ -660,7 +666,22 @@ color: white;
   } 
 }
 
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width: 1250px) {
+
+  .nav-link{
+    margin-right: 20px;
+  }
+  
+  .nav-link:hover::after{
+    content: '';
+    display: block;
+    border-bottom: 3px solid orange;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+  } 
+
   .custom-section {
     flex-direction: column-reverse;
   }
@@ -669,18 +690,17 @@ color: white;
     position: relative;
     top: 50px;
   }
-  .nav-item{
+  /* .nav-item{
     margin: auto;
     margin-bottom: 5px;
   }
   .fa-arrow-circle-right{
     margin-top: 300px;
     margin-right: 380px;
-  }
-  
-  .contact aside{
+  } */
+  /* .contact aside{
     width: 90%;
-  }
+  } */
   .ikon{
     margin: auto;
     margin-top: 5px;

@@ -54,8 +54,8 @@ class keranjangController extends Controller
             $arrayUkuran        = [];
             $arrayJumlahBaju    = [];
             $arrayGambarBaju    = [];
-            $keranjang_id = '';
-            $arrayIdBaju = 0;
+            $keranjang_id       = '';
+            $arrayIdBaju        = 0;
         }
 
         return view('frontend/keranjang',compact('arrayNamaBaju','arrayTotalBiaya','arrayUkuran','arrayJumlahBaju','arrayGambarBaju','keranjang_id','arrayIdBaju')); //sampai sini data sudah di array semua

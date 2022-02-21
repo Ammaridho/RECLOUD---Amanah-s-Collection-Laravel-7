@@ -83,7 +83,8 @@
 
                 if(konfirmasi){
 
-                    nama = $('#formcek input[name="nama"]').val();
+                    customer_email = $('#formcek input[name="customer_email"]').val();  //ambil nilai yang ada di form cekout
+                    nama = $('#formcek input[name="nama"]').val();                      //ambil nilai yang ada di form cekout
                     alamat = $('#formcek textarea[name="alamat"]').val();
                     kodePos = $('#formcek input[name="kodePos"]').val();
                     noTelp = $('#formcek input[name="noTelp"]').val();
@@ -96,9 +97,11 @@
                     totalTagihan = $('#formcek input[name="totalTagihan"]').val();
                     noRek = $('#formcek input[name="noRek"]').val();
                     namaRek = $('#formcek input[name="namaRek"]').val();
+                    listkeranjang_id = $('#formcek input[name="listkeranjang_id[]"]').val();
+                    
 
-                    $.get("/rincianCekout", {nama:nama,alamat:alamat,kodePos:kodePos,noTelp:noTelp,emaill:emaill,pilihkurir:pilihkurir,bankTujuan:bankTujuan,biayaPenyewaan:biayaPenyewaan,uangJaminan:uangJaminan,ongkir:ongkir,totalTagihan:totalTagihan,noRek:noRek,namaRek:namaRek}, function (data) {
-                        $('body > .contentUtama').html(data);
+                    $.get("/rincianCekout", {nama:nama,alamat:alamat,kodePos:kodePos,noTelp:noTelp,emaill:emaill,pilihkurir:pilihkurir,bankTujuan:bankTujuan,biayaPenyewaan:biayaPenyewaan,uangJaminan:uangJaminan,ongkir:ongkir,totalTagihan:totalTagihan,noRek:noRek,namaRek:namaRek,listkeranjang_id:listkeranjang_id,customer_email:customer_email}, function (data) {
+                        $('body > .contentUtama').html(data);       //masuk ke routes
                     })
                 
                 }
@@ -171,7 +174,13 @@
         });
     })
   
-
+// Button Transaksi ===
+    $('#buttonTransaksi').on('click', function(){
+        var emailSession = $(this).val();
+        $.get("/lihatTransaksi",{emailSession:emailSession}, function (data) {
+            $("#listTransaksi").html(data);
+        })
+    })
 
     
 

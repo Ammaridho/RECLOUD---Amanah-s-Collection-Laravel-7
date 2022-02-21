@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 
 use App\Models\customer;
 use App\Models\keranjang;
+use App\Models\keranjang_ukuran;
 use App\Models\gambar_baju;
-use App\Models\prosestransaksi;
+use App\Models\transaksi;
+use App\Models\transaksi_barang;
+use App\Models\transaksi_ukuranbarang;
 
 class cekoutController extends Controller
 {
@@ -51,28 +54,75 @@ class cekoutController extends Controller
     {
         // dd($request);
         
-        $nama           = $request->nama;
-        $alamat         = $request->alamat;
-        $kodePos        = $request->kodePos;
-        $noTelp         = $request->noTelp; 
-        $email          = $request->emaill;
-        $pilihkurir     = $request->pilihkurir;
-        $bankTujuan     = $request->bankTujuan;
-        $biayaPenyewaan = $request->biayaPenyewaan;
-        $uangJaminan    = $request->uangJaminan;
-        $ongkir         = $request->ongkir;
-        $totalTagihan   = $request->totalTagihan;
-        $noRek          = $request->noRek;
-        $namaRek        = $request->namaRek;
+        $nama             = $request->nama;
+        $customer_email   = $request->customer_email;
+        $alamat           = $request->alamat;
+        $kodePos          = $request->kodePos;
+        $noTelp           = $request->noTelp; 
+        $email            = $request->emaill;
+        $pilihkurir       = $request->pilihkurir;
+        $bankTujuan       = $request->bankTujuan;
+        $biayaPenyewaan   = $request->biayaPenyewaan;
+        $uangJaminan      = $request->uangJaminan;
+        $ongkir           = $request->ongkir;
+        $totalTagihan     = $request->totalTagihan;
+        $noRek            = $request->noRek;
+        $namaRek          = $request->namaRek;
+        $listkeranjang_id = unserialize($request->listkeranjang_id);
+
+        // $transaksi_barang = new transaksi_barang;
+        // dd($transaksi_barang);
+
+        // $transaksi_ukuranbarang = new transaksi_ukuranbarang; //INPUT TRANSAKSI_UKURANBARANG MASIH TIDAK MAU MASUKK
+
+        // $transaksi_ukuranbarang->ukuran_atasan = 'xl';
+        // $transaksi_ukuranbarang->ukuran_bawahan = 's';
+        // $transaksi_ukuranbarang->jumlah_baju_perukuran = 2;
+        // $transaksi_ukuranbarang->transaksi_barang_id = 1;
+        // $transaksi_ukuranbarang->save();
+
 
         //ambil id customer
-        $customer_id = customer::where('email',$email)->first()->id;
+        $customer_id = customer::where('email',$customer_email)->first();
 
-        //store ke database prosestransaksi
-        $prosesTransaksi = new prosestransaksi;
-        $prosesTransaksi->customer_id = $customer_id;
-        $prosesTransaksi->status = 'Menunggu Pembayaran';
-        $prosesTransaksi->save();
+        //store tabel transaksi
+        $transaksi = new transaksi;
+        $transaksi->customer_id = $customer_id->id;
+        $transaksi->status = 'Menunggu Pembayaran';
+        $transaksi->save();
+
+        //store tabel transaksi_barang
+        for ($i=0; $i < count($listkeranjang_id); $i++) { 
+
+            $datakeranjang = keranjang::find($listkeranjang_id[$i])->first();
+
+            $transaksi_barang = new transaksi_barang;
+            $transaksi_barang->baju_id = $datakeranjang->baju_id;
+            $transaksi_barang->jumlah = $datakeranjang->jumlah;
+            $transaksi_barang->tanggal_mulai = $datakeranjang->tanggal_mulai;
+            $transaksi_barang->tanggal_selesai = $datakeranjang->tanggal_selesai;
+            $transaksi_barang->total_hari = $datakeranjang->total_hari;
+            $transaksi_barang->total_biaya = $datakeranjang->total_biaya;
+            $transaksi_barang->transaksi()->associate($transaksi);
+            $transaksi_barang->save();
+            
+            //store tabel transaksi_ukuranbarang
+
+            $keranjangukuran = keranjang_ukuran::where('keranjang_id',$listkeranjang_id[$i])->get();
+
+            for ($i=0; $i < count($keranjangukuran); $i++) { 
+                $transaksi_ukuranbarang = new transaksi_ukuranbarang;
+                $transaksi_ukuranbarang->ukuran_atasan = $keranjangukuran[$i]->ukuran_atasan;
+                $transaksi_ukuranbarang->ukuran_bawahan = $keranjangukuran[$i]->ukuran_bawahan;
+                $transaksi_ukuranbarang->jumlah_baju_perukuran = $keranjangukuran[$i]->jumlah_baju_perukuran;
+                $transaksi_ukuranbarang->transaksi_barang()->associate($transaksi_barang);
+                $transaksi_ukuranbarang->save();
+            }
+
+        }
+
+        
+        // dd('stop');
 
         return view('frontend.rincianCekout', compact('nama','alamat','kodePos','noTelp','email','pilihkurir','bankTujuan','biayaPenyewaan','uangJaminan','ongkir','totalTagihan','noRek','namaRek'));
     }

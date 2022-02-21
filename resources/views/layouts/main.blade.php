@@ -163,7 +163,7 @@
             ?>
             @if (session('success_login'))
               <div class="dropdown nav-item">
-                <button id="buttonKeranjang" class="btn dropdown-toggle nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
+                <button id="buttonKeranjang" class="btn nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
                   Keranjang
                 </button>
               
@@ -173,12 +173,12 @@
               </div>
 
               <div class="dropdown nav-item">
-                <button id="buttonKeranjang" class="btn dropdown-toggle nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
+                <button id="buttonTransaksi" class="btn nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="{{$emailsession}}">
                   Transaksi
                 </button>
               
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <div class="listKeranjang" id="listKeranjang"></div>
+                  <div class="listTransaksi" id="listTransaksi"></div>
                 </div>
               </div>
             @endif
@@ -188,7 +188,7 @@
               <a class="nav-item  btn btn-primary nav-link" onclick="Tombollogin()">Login</a>
             @else
               <div class="dropdown nav-item">
-                <a id="buttonKeranjang" class="btn dropdown-toggle nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a id="buttonKeranjang" class="btn nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{$emailsession}}
                 </a>
               
