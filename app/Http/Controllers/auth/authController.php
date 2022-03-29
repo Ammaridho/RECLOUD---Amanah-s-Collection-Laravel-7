@@ -70,7 +70,7 @@ class authController extends Controller
         $customer->email = $request->email;
         $customer->alamat = $request->alamat;
         $customer->kodepos = $request->kodepos;
-        $customer->noktp = $request->noktp;
+        $customer->nomorktp = $request->noktp;
         $customer->fotoktp = $namafotoKtp;
         $customer->fotobersamaktp = $namafotoBersamaKtp;
         $customer->save();

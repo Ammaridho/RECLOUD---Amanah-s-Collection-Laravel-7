@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAtasanBajuTable extends Migration
+class CreateBawahanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateAtasanBajuTable extends Migration
      */
     public function up()
     {
-        Schema::create('atasan_baju', function (Blueprint $table) {
+        Schema::create('bawahan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_atasan',50);
-            $table->string('gambar_atasan',50)->nullable();
-            $table->text('keterangan_atasan');
-            $table->integer('persediaan_atasan');
+            $table->string('nama_bawahan',50);
+            $table->string('gambar_bawahan',50)->nullable();
+            $table->text('keterangan_bawahan');
+            $table->integer('persediaan_bawahan');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateAtasanBajuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('atasan_baju');
+        Schema::dropIfExists('bawahan');
     }
 }

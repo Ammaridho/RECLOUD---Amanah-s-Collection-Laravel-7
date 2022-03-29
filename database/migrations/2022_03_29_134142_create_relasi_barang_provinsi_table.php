@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAksesorisBajuTable extends Migration
+class CreateRelasiBarangProvinsiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateAksesorisBajuTable extends Migration
      */
     public function up()
     {
-        Schema::create('aksesoris_baju', function (Blueprint $table) {
+        Schema::create('relasi_barang_provinsi', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_aksesoris',50);
-            $table->string('kode_aksesoris',5);
-            $table->string('gambar_aksesoris',50)->nullable();
-            $table->integer('persediaan_aksesoris');
-            $table->text('keterangan_aksesoris');
+            $table->foreignId('atasan_id')->nullable();
+            $table->foreignId('bawahan_id')->nullable();
+            $table->foreignId('aksesoris_id')->nullable();
+            $table->foreignId('provinsi_id');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateAksesorisBajuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aksesoris_baju');
+        Schema::dropIfExists('relasi_barang_provinsi');
     }
 }
