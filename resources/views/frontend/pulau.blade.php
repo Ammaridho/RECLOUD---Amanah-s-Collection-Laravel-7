@@ -24,7 +24,7 @@
 
         <?php
         foreach($semuaprovinsi as $p):?>
-          <a href="javascript:void()" onclick="openMenuside('<?= $p['id_provinsi']; ?>')"><h6 class="tombolProvinsi" id=<?= $p['namaButton'];?>><?= $p['nama_provinsi'];?></h6></a>
+          <a href="javascript:void()" onclick="openMenuside('<?= $p['id_provinsi']; ?>')"><h6 class="tombolProvinsi" id=<?= $p['namaButton_provinsi'];?>><?= $p['nama_provinsi'];?></h6></a>
         <?php endforeach;?>
     
       </div>
