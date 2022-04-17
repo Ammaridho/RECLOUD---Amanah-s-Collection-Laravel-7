@@ -40,23 +40,19 @@
                       <div class="card-body">
                         <span>
                           <div class="row">
-                            <div class="col-7 cekboxsatu">
+                            <div class="col-6 cekboxsatu">
                               <input id="cekboxsatu" name="keranjang_id" type="checkbox" value="{{$keranjang_id[$i]}}" data-valuetwo="{{$arrayTotalBiaya[$i]}}" />
                               <label for="keranjang_id">{{$keranjang_id[$i]}}</label>
                             </div>
-                            <div class="col-5" >
+                            <div class="col-6" >
                                 {{-- button hapus --}}
-                                <form action="/keranjang/delete/{{$keranjang_id[$i]}}"  method="post" style="float: right">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Hapus</button>
-                                </form> 
+                                <button type="button" class="btn btn-sm btn-danger" id="hapusKeranjang" data-id="{{$keranjang_id[$i]}}">Hapus</button>
                             </div>
                           </div>
 
                         </span>
 
-                        <button onclick="openDetailKeranjang({{$keranjang_id[$i]}})" data-toggle="modal" data-target="#exampleModal">
+                        <button onclick="openDetailKeranjang({{$keranjang_id[$i]}})" data-toggle="modal" data-target="#lihatDetailKeranjang">
                           <div class="row mb-4">              
                             <div class="col">
                               <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
@@ -108,4 +104,37 @@
 
     </div>
 
+    
+
 </section>
+
+ 
+
+
+<script>
+  // hapus keranjang
+  $('#hapusKeranjang').on('click',function () {
+    
+    const konfirm = confirm('yakin hapus?');
+    
+    if(konfirm){
+      
+      const id = $(this).data('id');
+      
+      $.ajax({
+        type: 'POST',
+        url: "{{ route('deleteKeranjang') }}",
+        data: {id:id,"_token": "{{ csrf_token() }}"},
+        success: function (response) {
+          alert('berhasil');
+        },
+        error: function (response) {
+          alert('gagal');
+        }
+
+      })
+
+    }
+
+  })
+</script>

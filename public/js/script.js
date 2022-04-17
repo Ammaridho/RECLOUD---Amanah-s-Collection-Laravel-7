@@ -20,7 +20,7 @@
                 url:"/keranjang/deletemulti", 
                 data:{values:values},
                 success: function(data) {
-                    alert(data.id);
+                    alert('Berhasil Hapus Data!');
                 }
             }); 
         } 
@@ -83,21 +83,22 @@
 
                 if(konfirmasi){
 
-                    customer_email = $('#formcek input[name="customer_email"]').val();  //ambil nilai yang ada di form cekout
-                    nama = $('#formcek input[name="nama"]').val();                      //ambil nilai yang ada di form cekout
-                    alamat = $('#formcek textarea[name="alamat"]').val();
-                    kodePos = $('#formcek input[name="kodePos"]').val();
-                    noTelp = $('#formcek input[name="noTelp"]').val();
-                    emaill = $('#formcek input[name="emaill"]').val();
-                    pilihkurir = $('#formcek select[name="pilihkurir"]').val();
-                    bankTujuan = $('#formcek input[name="bankTujuan"]').val();
-                    biayaPenyewaan = $('#formcek input[name="biayaPenyewaan"]').val();
-                    uangJaminan = $('#formcek input[name="uangJaminan"]').val();
-                    ongkir = $('#formcek input[name="ongkir"]').val();
-                    totalTagihan = $('#formcek input[name="totalTagihan"]').val();
-                    noRek = $('#formcek input[name="noRek"]').val();
-                    namaRek = $('#formcek input[name="namaRek"]').val();
-                    listkeranjang_id = $('#formcek input[name="listkeranjang_id[]"]').val();
+                    let customer_email = $('#formcek input[name="customer_email"]').val();  //ambil nilai yang ada di form cekout
+                    let nama = $('#formcek input[name="nama"]').val();                      //ambil nilai yang ada di form cekout
+                    let alamat = $('#formcek textarea[name="alamat"]').val();
+                    let kodePos = $('#formcek input[name="kodePos"]').val();
+                    let noTelp = $('#formcek input[name="noTelp"]').val();
+                    let emaill = $('#formcek input[name="emaill"]').val();
+                    let pilihkurir = $('#formcek select[name="pilihkurir"]').val();
+                    let bankTujuan = $('#formcek input[name="bankTujuan"]').val();
+                    let biayaPenyewaan = $('#formcek input[name="biayaPenyewaan"]').val();
+                    let uangJaminan = $('#formcek input[name="uangJaminan"]').val();
+                    let ongkir = $('#formcek input[name="ongkir"]').val();
+                    let totalTagihan = $('#formcek input[name="totalTagihan"]').val();
+                    let noRek = $('#formcek input[name="noRek"]').val();
+                    let namaRek = $('#formcek input[name="namaRek"]').val();
+
+                    var listkeranjang_id = $("input[name='listkeranjang_id[]']").map(function(){return $(this).val();}).get();
                     
 
                     $.get("/rincianCekout", {nama:nama,alamat:alamat,kodePos:kodePos,noTelp:noTelp,emaill:emaill,pilihkurir:pilihkurir,bankTujuan:bankTujuan,biayaPenyewaan:biayaPenyewaan,uangJaminan:uangJaminan,ongkir:ongkir,totalTagihan:totalTagihan,noRek:noRek,namaRek:namaRek,listkeranjang_id:listkeranjang_id,customer_email:customer_email}, function (data) {
@@ -112,12 +113,11 @@
     }
 
 
-// edit keranjang
+// lihat keranjang
     function openDetailKeranjang(keranjang_id) {
-        $.get("/keranjang/edit", {keranjang_id:keranjang_id}, function(data) {
-            $('.modal-content').find("#modalEditKeranjang").html(data);
+        $.get("/keranjang/detail", {keranjang_id:keranjang_id}, function(data) {
+            $("#modalLihatKeranjang").html(data);
         });
-        // $('.modal-content').find("#modalEditKeranjang").html('<h1>BISAAAA</h1>');
     }
 
 
@@ -154,7 +154,7 @@
                     values.push(el.value);
                 });
 
-                console.log(values); //INI MASIH MENGAMBIL ID SAJA BELUM DI FIX
+                // console.log(values); //INI MASIH MENGAMBIL ID SAJA BELUM DI FIX
 
 
                 // if(($('#cekboxsatu').prop("checked"))){
@@ -185,22 +185,24 @@
     
 
 // Buka Menu slide ===
-    function openMenu() {
-        document.getElementById("pilihan").style.transform = "translatex(0%)";
+    // function openMenu() {
+    //     document.getElementById("pilihan").style.transform = "translatex(100%)";
+    //     document.getElementById("pilihan").style.transform = "translatex(0%)";
+    // }
+
+    function closeSidebar() {
+        document.getElementById("sidebar").style.transform = "translatex(100%)";
+        $("#content").html('');
     }
 
-    function closeMenu() {
-        document.getElementById("pilihan").style.transform = "translatex(100%)";
-    }
+    // function openDetail() {
+    //     document.getElementById("pilihan").style.transform = "translatex(100%)";
+    //     document.getElementById("detail").style.transform = "translatex(0%)";
+    // }
 
-    function openDetail() {
-        document.getElementById("pilihan").style.transform = "translatex(100%)";
-        document.getElementById("detail").style.transform = "translatex(0%)";
-    }
-
-    function closeDetail() {
-        document.getElementById("pilihan").style.transform = "translatex(0%)";
-        document.getElementById("detail").style.transform = "translatex(100%)";
+    function backToMenu() {
+        document.getElementById("sidebar").style.transform = "translatex(100%)";
+        $("#content").html('');
     }
 
     

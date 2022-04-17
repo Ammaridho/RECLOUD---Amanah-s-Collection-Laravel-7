@@ -4,17 +4,17 @@
 
     <div class="row">
       <div class="col-sm-12 mt-2">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
         <h2>{{$provinsi->nama_provinsi}}</h2>
       </div>
     </div> 
 
     <div class="row">
       <div class="col-md-4">
-        <img src="img/provinsi/<?= $provinsi["gambar"]; ?>" class="rounded-circle text-center" width="150px">
+        <img src="img/provinsi/<?= $provinsi["gambar_provinsi"]; ?>" class="rounded-circle text-center" width="150px">
       </div>
       <div class="col-md-8 pt-2 pr-4">
-        <p class="text">{{$provinsi->deskripsi}}</p>
+        <p class="text">{{$provinsi->deskripsi_provinsi}}</p>
       </div>
     </div>
     
@@ -132,10 +132,6 @@
     do {
       currentDate = Date.now();
     } while (currentDate - date < milliseconds);
-  }
-
-  function closeMenu() {
-    document.getElementById("sidebar").style.transform = "translatex(100%)";
   }
 
   function openDetail(id) {

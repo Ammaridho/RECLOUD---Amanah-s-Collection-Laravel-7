@@ -6,9 +6,9 @@
     <meta name="csrf-token" content="{{ Session::token() }}"> 
 
     <title>Amanah's Collection</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styleberanda.css">
-    <script src="js/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styleberanda.css">
+    <script src="/js/jquery-3.6.0.js"></script>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
@@ -167,7 +167,7 @@
                   Keranjang
                 </button>
               
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuLink">
                   <div class="listKeranjang" id="listKeranjang"></div>
                 </div>
               </div>
@@ -177,7 +177,7 @@
                   Transaksi
                 </button>
               
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuLink">
                   <div class="listTransaksi" id="listTransaksi"></div>
                 </div>
               </div>
@@ -204,17 +204,17 @@
     </div>
   </nav>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl ">
-      <div class="modal-content bg-dark">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Keranjang</h5>
+  <!-- Modal lihat detail keranjang -->
+  <div class="modal fade" id="lihatDetailKeranjang" tabindex="-1" aria-labelledby="lihatDetailKeranjangLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title" id="lihatDetailKeranjangLabel">Keranjang</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="modalEditKeranjang"></div>
+        <div class="modal-body bg-dark" id="modalLihatKeranjang"></div>
       </div>
     </div>
   </div>
@@ -239,10 +239,10 @@
   <!-- akhir -->
 
 </body>
-    <script src="bst4/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="/bst4/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script> --}}
 
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
     
 </html>

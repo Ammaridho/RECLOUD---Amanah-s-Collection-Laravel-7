@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
 
-
   <!-- pulau -->
   <section class="utama" id="utama">
     <div class="container utama">
@@ -16,6 +15,7 @@
           <input class="form-control" type="search" placeholder="Tulis disini.." aria-label="Search">
           <button class="btn btn-outline-body bg-success" type="submit">Cari</button>
         </form>
+        <button onclick="openMenutest()" type="button">test side</button>
         {{-- <span style="font-size:2vw; cursor:pointer" onclick="openMenu()">&#9776; open</span> --}}
       </nav>
       
@@ -24,7 +24,7 @@
 
         <?php
         foreach($semuaprovinsi as $p):?>
-          <a href="javascript:void()" onclick="openMenuside('<?= $p['id_provinsi']; ?>')"><h6 class="tombolProvinsi" id=<?= $p['namaButton_provinsi'];?>><?= $p['nama_provinsi'];?></h6></a>
+          <a href="javascript:void()" onclick="openMenuside('<?= $p['id']; ?>')"><h6 class="tombolProvinsi" id=<?= $p['namaButton_provinsi'];?>><?= $p['nama_provinsi'];?></h6></a>
         <?php endforeach;?>
     
       </div>
@@ -45,17 +45,20 @@
 
 
     
-    <script src="js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="js/bootstrap.bundle.min.js"></script> --}}
 
     
     <script>
-      function openMenuside(id_provinsi) {
-        // alert('bisabisa');
+      function openMenutest() {
         document.getElementById("sidebar").style.transform = "translatex(0%)";
-        $.get("{{route('menu')}}", {id_provinsi:id_provinsi}, function(data) {
-            $("#content").html(data);
-            $("#tari0").trigger("click");
+    }
+
+      function openMenuside(provinsi_id) {
+        $.get("{{route('menu')}}", {provinsi_id:provinsi_id}, function(data) {
+          $("#content").html(data);
+          $("#tari0").trigger("click");
         });
+        document.getElementById("sidebar").style.transform = "translatex(0%)";
       }
 
       function inputProvinsi() {
@@ -65,9 +68,10 @@
         });
       }
 
-      function closeDetail() {
-        document.getElementById("sidebar").style.transform = "translatex(100%)";
-      }
+      // function closeDetail() {
+      //   document.getElementById("sidebar").style.transform = "translatex(100%)";
+      //   $("#content").html('');
+      // }
     </script>
 
 @endsection

@@ -15,6 +15,7 @@ class CreateKodeAksesorisTable extends Migration
     {
         Schema::create('kode_aksesoris', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('baju_id');
             $table->foreignId('aksesoris_id');
             $table->timestamps();
         });

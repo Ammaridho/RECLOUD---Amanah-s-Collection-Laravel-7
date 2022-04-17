@@ -10,12 +10,11 @@
           <div class="text-light" id="isikeranjang"></div>
           <?php //var_dump($id_keranjang);?>
       </div>
-    
     </div>
 
     <div class="row">
       <div class="namda col-sm-12 mt-3">
-        <a href="javascript:void(0)" class="closebtn" >&times;</a>
+        <a href="javascript:void(0)" class="closebtn" id="backToMenu">&times;</a>
         {{-- <h1>{{$detail->nama_tari}}</h1> --}}
         <?php
           // var_dump($detail['nama_tari']);
@@ -56,12 +55,7 @@
                 <div class="carousel-inner row w-100 mx-auto" role="listbox">
                 
 
-                  <?php 
-                  //gambar baju
-                  // $arrayGambar = query("SELECT gambar FROM gambar_baju WHERE id = $id");
-
-                  $arrayGambar = \App\Models\gambar_baju::select('gambar')->where('id', "$id")->get();
-
+                  <?php
                   foreach($arrayGambar as $d):?>
                   <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
                       <img src="img/gambarbaju/<?= $d['gambar'];?>" class="img-fluid mx-auto d-block" alt="img3">
@@ -85,7 +79,6 @@
             </div>
           </div>
         
-
           <table class="table table-dark w-1 mt-2" style="font-size: 12px; height:200px">
             <thead>
               <tr class="sticky-top bg-dark">
@@ -94,21 +87,6 @@
               </tr>
             </thead>
 
-            <?php
-              //keterangan lengkap
-              // $keterangan = tampil1("SELECT * FROM ((((baju INNER JOIN atasan_baju ON baju.id_atasan = atasan_baju.id_atasan) 
-              //                       INNER JOIN bawahan_baju ON baju.id_bawahan = bawahan_baju.id_bawahan) 
-              //                       INNER JOIN kode_aksesoris ON baju.kode_aksesoris = kode_aksesoris.kode_aksesoris)
-              //                       INNER jOIN aksesoris_baju ON kode_aksesoris.id_aksesoris = aksesoris_baju.id_aksesoris) 
-              //                       WHERE id = $id");
-
-              $keterangan = \App\Models\baju::join('atasan_baju','baju.id_atasan','=','atasan_baju.id_atasan')
-                                            ->join('bawahan_baju','baju.id_bawahan','=','bawahan_baju.id_bawahan')
-                                            ->join('kode_aksesoris','baju.kode_aksesoris','=','kode_aksesoris.kode_aksesoris')
-                                            ->join('aksesoris_baju','kode_aksesoris.id_aksesoris','=','aksesoris_baju.id_aksesoris')
-                                            ->where('baju.id',"$id")
-                                            ->first();
-            ?>
             <tbody>
 
               <tr>
@@ -122,14 +100,6 @@
               </tr>
 
               <?php 
-              // $daftarAksesoris = query("SELECT * FROM ((baju INNER JOIN kode_aksesoris ON baju.kode_aksesoris = kode_aksesoris.kode_aksesoris)
-              // INNER jOIN aksesoris_baju ON kode_aksesoris.id_aksesoris = aksesoris_baju.id_aksesoris) WHERE id = $id");
-              
-              $daftarAksesoris = \App\Models\baju::join('kode_aksesoris','baju.kode_aksesoris','=','kode_aksesoris.kode_aksesoris')
-                                                  ->join('aksesoris_baju','kode_aksesoris.id_aksesoris','=','aksesoris_baju.id_aksesoris')
-                                                  ->where('baju.id',"$id")
-                                                  ->get();
-
               $df=3;
               foreach($daftarAksesoris as $da):?>
               <tr>
@@ -140,7 +110,6 @@
 
             </tbody>
           </table>   
-        
         </div>
 
       </div>
@@ -157,26 +126,20 @@
                 <th scope="col" style="width: 20vw">Ukuran</th>
                 <th scope="col" style="width: 20vw">Lingkar</th>
                 <th scope="col" style="width: 20vw">Panjang</th>
+                <th scope="col" style="width: 20vw">Lebar</th>
                 <th scope="col" style="width: 20vw">Persediaan</th>
               </tr>
             </thead>
             <tbody>
-              <?php $iatas=1; ?>
-              <?php 
-              //chart atasan
-              // $arrayChartAtasan = query("SELECT * FROM baju INNER JOIN chart_atasan ON baju.id_atasan = chart_atasan.id_atasan WHERE id = $id");
-
-              $arrayChartAtasan = \App\Models\baju::join('chart_atasan','baju.id_atasan','=','chart_atasan.id_atasan')
-                                                  ->where('baju.id',"$id")
-                                                  ->get();
-              
+              <?php $iatas=1;              
               foreach($arrayChartAtasan as $d):?>
               <tr>
                 <td><?= $iatas;?></td>
                 <td><?= $d['ukuran_atasan'];?></td>
-                <td><?= $d['lingkaratasan'];?></td>
-                <td><?= $d['panjangatasan'];?></td>
-                <td><?= $d['persediaan'];?></td>
+                <td><?= $d['lingkar_badan'];?></td>
+                <td><?= $d['panjang_lengan'];?></td>
+                <td><?= $d['lebar_dada'];?></td>
+                <td><?= $d['persediaan_atasan'];?></td>
               </tr>
               <?php $iatas++;?>
               <?php endforeach; ?>
@@ -197,22 +160,14 @@
               </tr>
             </thead>
             <tbody>
-              <?php $ibawah=1; ?>
-              <?php 
-              //chart bawahan
-              // $arrayChartBawahan = query("SELECT * FROM baju INNER JOIN chart_bawahan ON baju.id_bawahan = chart_bawahan.id_bawahan WHERE id = $id");
-
-              $arrayChartBawahan = \App\Models\baju::join('chart_bawahan','baju.id_bawahan','=','chart_bawahan.id_bawahan')
-                                                  ->where('baju.id',"$id")
-                                                  ->get();
-
+              <?php $ibawah=1; 
               foreach($arrayChartBawahan as $d):?>
               <tr>
                 <td><?= $ibawah;?></td>
                 <td><?= $d['ukuran_bawahan'];?></td>
-                <td><?= $d['lingkarbawahan'];?></td>
-                <td><?= $d['panjangbawahan'];?></td>
-                <td><?= $d['persediaan'];?></td>
+                <td><?= $d['lingkar_pinggang'];?></td>
+                <td><?= $d['panjang_kaki'];?></td>
+                <td><?= $d['persediaan_bawahan'];?></td>
               </tr>
               <?php $ibawah++;?>
               <?php endforeach; ?>
@@ -222,7 +177,7 @@
       </div>
     </div>  
 
-    <form name="form-detail" onsubmit="masukkan_keranjang(); return false;" id="form" method="POST" action="{{route('storeInputDetail')}}">
+    <form name="form-detail" id="formDetailInput" method="POST" action="">
 
       @csrf
 
@@ -233,19 +188,16 @@
       <div class="row">
 
         <!-- form input ukuran -->
-        <div class="col-md-7">
-          
-          <div class="input-group mb-3" id="ukuran">
-               
-            <div class="formperhitungan" id="inputukuran"></div>
-
-            {{-- untuk mengambil array hasil dan dikirimkan ke constollernya --}}
-            <input type="hidden" name="ukuranBaju" id="ukuranBaju">
-
+        <div class="col-md-7">               
+          <div class="formperhitungan" id="forminputukuran">
+            <h5>Ukuran Masing Masing set Baju</h5>
           </div>
 
+          {{-- untuk mengambil array hasil dan dikirimkan ke contollernya --}}
+          <input type="hidden" name="ukuranBaju" id="ukuranBaju">
+
           <!-- form input ukuran lebih dari satu -->
-          <button type="button" class="btn btn-secondary" style="width: 10%" href="javascript:void()" onclick="formUkuran(1,'{{$id}}')">+</button>
+          <button type="button" class="btn btn-secondary bajutanggal" style="width: 10%" href="javascript:void()" onclick="formUkuran(1,'{{$id}}')">+</button>
           <!-- akhir form input ukuran lebih dari satu -->
 
         </div>
@@ -262,27 +214,27 @@
               <label for="example-date-input" class="col-2 col-form-label text-white">Mulai</label>
               <div class="col-10">
                 <?php date_default_timezone_set("Asia/Jakarta");?>
-                <input  id="tanggal_mulai" class="form-control" type="date" name="tanggal_mulai" min="<?= date("Y-m-d");?>" value="<?= date("Y-m-d");?>" id="datePicker">
+                <input  id="tanggal_mulai" class="form-control bajutanggal" type="date" name="tanggal_mulai" min="<?= date("Y-m-d");?>" value="<?= date("Y-m-d");?>" id="datePicker">
               </div>
             </div>
             <div class="form-group row">
               <label for="example-date-input" class="col-2 col-form-label text-white">Selesai</label>
               <div class="col-10">
-                <input id="tanggal_selesai" class="form-control" type="date" name="tanggal_selesai" min="<?= date("Y-m-d");?>" value="<?= date("Y-m-d");?>" id="datePicker">
+                <input id="tanggal_selesai" class="form-control bajutanggal" type="date" name="tanggal_selesai" min="<?= date("Y-m-d");?>" value="<?= date("Y-m-d");?>" id="datePicker">
               </div>
             </div>
           </div>
 
           <div class="form-group row">
             <label for="example-date-input" class="col-6 col-form-label text-white">Banyak Baju</label>
-            <div class="col-6 banyakBaju"><h5>Tambah Baju</h5></div>
+            <div class="col-6 banyakBaju"><h5>Silahkan Atur Baju</h5></div>
             {{-- mengambil dan mengirim banyakBaju ke controller --}}
             <input type="hidden" name="banyakBajuSaja" id="banyakBajuSaja">
           </div>
 
           <div class="form-group row">
             <label for="example-date-input" class="col-6 col-form-label text-white">Lama Penyewaan</label>
-            <div class="col-6 totalHari"><h5>Atur Tanggal</h5></div>
+            <div class="col-6 totalHari"><h5>Silahkan Atur Tanggal</h5></div>
             {{-- mengambil dan mengirim lama sewa ke controller --}}
             <input type="hidden" name="totalHariSaja" id="totalHariSaja">
           </div>
@@ -315,41 +267,56 @@
 
 <script>
 
-const hargaBaju = {{ $hargaBaju }};
+  // store data dengan ajax
+  $('#formDetailInput').on('submit',function(){
+    event.preventDefault();
+
+    const konfirm = confirm('yakin masukkan keranjang?');
+
+    if (konfirm) {
+
+      $.ajax({
+        type: 'POST',
+        url: "{{ route('storeInputDetail') }}",
+        data: $(this).serialize(),
+        success: function (data) {
+          alert('berhasil');
+          closeSidebar();
+          $('#formDetailInput').trigger("reset");
+          
+        },
+        error: function (data) {
+          console.log(data);
+          alert('Masukkan Data dengan Lengkap!');
+        }
+      })
+      
+    }
+
+  })
+
+  const hargaBaju = {{ $hargaBaju }};
   
   //menambah form ukuran
   var fu = 0 ;
   function formUkuran(tambah,id){
-      fu = fu + tambah;
+    fu = fu + tambah;
     $.get("{{route('inputdetailukuran')}}",{fu:fu,id:id}, function(data){
-      $("#ukuran #inputukuran").html(data);
-    });
-  }
-
-  //akumulasi
-  $('.formperhitungan').on('keyup change', 'input', function() {
-      totalBiaya(banyakBaju(), totalHari());
-  });
-    
-  //total baju 
-  function banyakBaju(){
-    var totalbaju = 0;
-
-    $('#inputukuran').find('input').each(function (){
-
-      var benar = (this.value == '') ? 0 : this.value;
-      var angka = parseInt(benar);
-      totalbaju = totalbaju + angka;
-
+      $("#forminputukuran").html(data);
     });
 
+    let totalbaju = fu;
     const kesimpulantotalbaju = `<h5>${((totalbaju == 0) ? 'Silahkan Atur Baju' : totalbaju+' Baju')}</h5>`;
-
+  
     document.querySelector('.banyakBaju').innerHTML = kesimpulantotalbaju;
-
+  
     document.getElementById('banyakBajuSaja').value = totalbaju;
+    
+    $('.bajutanggal').on("click change",function () {
+      //akumulasi
+        totalBiaya(totalbaju, totalHari());
+    })
 
-    return totalbaju;
   }
 
   //total hari
@@ -368,7 +335,7 @@ const hargaBaju = {{ $hargaBaju }};
       document.querySelector('.totalHari').innerHTML = kesimpulanLama;
 
       document.getElementById('totalHariSaja').value = diffTanggal;
-
+      
       return diffTanggal;
 
     }
@@ -386,13 +353,20 @@ const hargaBaju = {{ $hargaBaju }};
   }
   
 
-  $('.closebtn').on('click', function(){
-    
-    var konfirmasi = confirm("Yakin Keluar?");
+  $('#backToMenu').on('click', function(){
 
-    if(konfirmasi == true){
-      window.location.reload();
-      closeMenu()
+    let baju = $('#banyakBajuSaja').val();
+    let lama = $('#totalHariSaja').val();
+    
+    if( baju > 0 || lama > 0 ){
+      const konfirmasi = confirm("Yakin Keluar?");
+  
+      if(konfirmasi == true){
+        backToMenu();
+      }
+
+    }else{
+      backToMenu();
     }
     
   });

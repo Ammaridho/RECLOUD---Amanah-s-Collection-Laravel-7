@@ -21,12 +21,12 @@ class transaksiController extends Controller
         $customer_id = customer::where('email',$customer_email)->first()->id;
 
         //ambil data keranjang sesuai id
-        $transaksi = transaksi::where('customer_id',$customer_id);
-        $transaksiData = $transaksi->get();
-        $transaksiId = $transaksi->first()->id;
+        $transaksi = transaksi::where('transaksi.customer_id',$customer_id);
+        $transaksiData = $transaksi->get(); //list transaksi;
+        
+        $transaksiDetail = $transaksi->join('transaksi_barang','transaksi.id','=','transaksi_barang.transaksi_id')->join('baju','transaksi_barang.baju_id','=','baju.id')->get(); //melihat isi transaksi
+        
 
-        dd($transaksiId);  //Sampai DIsini Untuk Transaksi Id ambil barang belumm (untuk ambil nama barang)
-
-        return view('frontend.listTransaksi', compact('transaksiData'));
+        return view('frontend.listTransaksi', compact('transaksiData','transaksiDetail'));
     }
 }

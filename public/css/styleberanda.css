@@ -5,9 +5,20 @@ body{
 
 /* list transaksi */
 .container #listTransaksi{
-  width: 700px;
+  width: 300px;
+  background-color: #BBDFC8;
+}
+.container #listKeranjang{
+  background-color: #BBDFC8;
 }
 
+/* section.transaksi{
+  background-color: #FF7A00;
+} */
+
+element::-webkit-scrollbar {
+  display: none;
+}
 
 /* navbar */
 .navbar-brand{

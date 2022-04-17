@@ -1,45 +1,43 @@
+<div class="row">
+    <div class="col">
+        <h5>Ukuran Masing Masing set Baju</h5>
+    </div>
+</div>
 <?php 
-$batasan = $_GET['fu'];
-$id = $_GET['id'];
-
+$batasan = $fu;
+$id = $id;
 
 for($fiu = 0; $fiu < $batasan; $fiu++){?>
+    
+    <div class="row">
+        <div class="col">
+            <div class="input-group inputukuran" id="ukuran">
 
-    <div class="input-group" id="ukuran">
-
-        <?php
-
-        // $arrayChartAtasan = query("SELECT * FROM baju INNER JOIN chart_atasan ON baju.id_atasan = chart_atasan.id_atasan WHERE id = $id");
-
-        $arrayChartAtasan = \App\Models\baju::join('chart_atasan','baju.id_atasan','=','chart_atasan.id_atasan')
-                                                  ->where('baju.id',"$id")
-                                                  ->get();
-        // $arrayChartBawahan = query("SELECT * FROM baju INNER JOIN chart_bawahan ON baju.id_bawahan = chart_bawahan.id_bawahan WHERE id = $id");
-
-        $arrayChartBawahan = \App\Models\baju::join('chart_bawahan','baju.id_bawahan','=','chart_bawahan.id_bawahan')
-                                                  ->where('baju.id',"$id")
-                                                  ->get();
-        ?>
-
-        <button type="button" class="btn btn-secondary" style="width: 10%; height:40px;" href="javascript:void()" onclick="formUkuran(-1,'<?= $id; ?>')">x</button>
-
-        <select class="form-ukuran custom-select" name="ukuran_atasan{{$fiu}}" id="ukuran_atasan{{$fiu}}" style="width: 30%; bottom: 5px;">
-            <option selected>Ukuran Baju..</option>
-            <?php foreach($arrayChartAtasan as $a): ?>
-            <option value="<?= $a['ukuran_atasan'];?>"><?= $a['ukuran_atasan'];?></option>
-            <?php endforeach;?>
-        </select>
-
-        <select class="form-ukuran custom-select" name="ukuran_bawahan{{$fiu}}" id="ukuran_bawahan{{$fiu}}" style="width: 30%; bottom: 5px;">
-            <option selected>Ukuran Celana/Rok..</option>
-            <?php foreach($arrayChartBawahan as $b):?>
-            <option  value="<?= $b['ukuran_bawahan'];?>"><?= $b['ukuran_bawahan'];?></option>
-            <?php endforeach;?>
-        </select>
-
-        <input type="number" id="banyak{{$fiu}}" name="banyak{{$fiu}}" value="0" min="0" class="form-ukuran form-control" style="width: 15%; top: 1px;">
-
+                <span class="input-group-text text-secondary" style="width: 10%; height:40px;">{{$fiu+1}}.</span>
+                
+                <select class="form-ukuran custom-select" name="id_ukuran_atasan[]" id="ukuran_atasan{{$fiu}}" style="width: 30%; bottom: 5px;">
+                    <option selected>Ukuran Baju..</option>
+                    <?php foreach($arrayChartAtasan as $a): ?>
+                    <option value="<?= $a['id'];?>">{{$a['ukuran_atasan']}}</option>
+                    <?php endforeach;?>
+                </select>
+                
+                <select class="form-ukuran custom-select" name="id_ukuran_bawahan[]" id="ukuran_bawahan{{$fiu}}" style="width: 30%; bottom: 5px;">
+                    <option selected>Ukuran Celana/Rok..</option>
+                    <?php foreach($arrayChartBawahan as $b):?>
+                    <option  value="<?= $b['id'];?>"><?= $b['ukuran_bawahan'];?></option>
+                    <?php endforeach;?>
+                </select>
+                
+                <button type="button" class="btn btn-secondary bajutanggal" style="width: 10%; height:40px;" href="javascript:void()" onclick="formUkuran(-1,'<?= $id; ?>')">x</button>
+                {{-- <input type="number" id="banyak{{$fiu}}" name="banyak{{$fiu}}" value="0" min="0" class="form-ukuran form-control" style="width: 15%; top: 1px;"> --}}
+        
+                {{-- MASALAHNYA DISINI UNTUK JUMLAH BAJU DIHITUNG BERDASARKAN BANYAK SET BAJU YANG DI TAMBAH TAMBAH BERDASAR CHARTNYA --}}
+            </div>
+        </div>
     </div>
+
+    
             
 <?php }?>
 
@@ -68,7 +66,7 @@ for($fiu = 0; $fiu < $batasan; $fiu++){?>
             for (let i = 0; i < batasan; i++) {
                 arr[i][0] = $(`#ukuran_atasan${i}`).val();
                 arr[i][1] = $(`#ukuran_bawahan${i}`).val();
-                arr[i][2] = $(`#banyak${i}`).val();
+                // arr[i][2] = $(`#banyak${i}`).val();
             }
             
             return arr;

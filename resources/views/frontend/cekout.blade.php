@@ -144,10 +144,16 @@
                                             $ukur = count($arrayNamaBaju); 
                                             $total = 0;
                                         ?>
-                                        <input type="hidden" name="listkeranjang_id[]" id="listkeranjang_id" value="{{serialize($keranjang_id)}}">
 
+
+                                        {{-- @for ($i = 0; $i < count($keranjang_id); $i++)
+                                            <input type="text" class="keranjang_id" name="listkeranjang_id[]" value="{{$keranjang_id[$i]}}">
+                                        @endfor --}}
+                                        
                                         @for ($i = $ukur-1; $i >= 0; $i--)
 
+
+                                            {{-- DISINI MASIH BERMASALAHHH ID KERANJANG YANG DI AMBIL SAAT CEK OUT DETAIL BELUM BENAR --}}
                                             
                                             <!-- Card -->
                                             <div class="card mb-3 checkboxsatusatu">

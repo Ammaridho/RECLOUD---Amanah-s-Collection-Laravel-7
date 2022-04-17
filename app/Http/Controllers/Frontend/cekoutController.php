@@ -68,19 +68,9 @@ class cekoutController extends Controller
         $totalTagihan     = $request->totalTagihan;
         $noRek            = $request->noRek;
         $namaRek          = $request->namaRek;
-        $listkeranjang_id = unserialize($request->listkeranjang_id);
 
-        // $transaksi_barang = new transaksi_barang;
-        // dd($transaksi_barang);
-
-        // $transaksi_ukuranbarang = new transaksi_ukuranbarang; //INPUT TRANSAKSI_UKURANBARANG MASIH TIDAK MAU MASUKK
-
-        // $transaksi_ukuranbarang->ukuran_atasan = 'xl';
-        // $transaksi_ukuranbarang->ukuran_bawahan = 's';
-        // $transaksi_ukuranbarang->jumlah_baju_perukuran = 2;
-        // $transaksi_ukuranbarang->transaksi_barang_id = 1;
-        // $transaksi_ukuranbarang->save();
-
+        // Data ini berbentuk array berdasarkan banyak barang yang di cekout
+        $listkeranjang_id = $request->listkeranjang_id;
 
         //ambil id customer
         $customer_id = customer::where('email',$customer_email)->first();
@@ -89,9 +79,17 @@ class cekoutController extends Controller
         $transaksi = new transaksi;
         $transaksi->customer_id = $customer_id->id;
         $transaksi->status = 'Menunggu Pembayaran';
+        $transaksi->biaya_penyewaan = $biayaPenyewaan;
+        $transaksi->uang_jaminan = $uangJaminan;
+        $transaksi->kurir = $pilihkurir;
+        $transaksi->ongkir = $ongkir;
+        $transaksi->total_tagihan = $totalTagihan;
+        $transaksi->bank_tujuan = $bankTujuan;
+        $transaksi->nomor_rekening = $noRek;
+        $transaksi->nama_rekening = $namaRek;
         $transaksi->save();
 
-        //store tabel transaksi_barang
+        // store tabel transaksi_barang STORE BARANG CEKOUT BELUM BENARR
         for ($i=0; $i < count($listkeranjang_id); $i++) { 
 
             $datakeranjang = keranjang::find($listkeranjang_id[$i])->first();
@@ -110,15 +108,17 @@ class cekoutController extends Controller
 
             $keranjangukuran = keranjang_ukuran::where('keranjang_id',$listkeranjang_id[$i])->get();
 
-            for ($i=0; $i < count($keranjangukuran); $i++) { 
+            // PROSES TRANSAKSI HANYA MENGINPUT DATA PERTAMA LALU DI INPUT SEBANYAK DATA, BELUM BENAR
+            
+            for ($j=0; $j < count($keranjangukuran); $j++) { 
                 $transaksi_ukuranbarang = new transaksi_ukuranbarang;
-                $transaksi_ukuranbarang->ukuran_atasan = $keranjangukuran[$i]->ukuran_atasan;
-                $transaksi_ukuranbarang->ukuran_bawahan = $keranjangukuran[$i]->ukuran_bawahan;
-                $transaksi_ukuranbarang->jumlah_baju_perukuran = $keranjangukuran[$i]->jumlah_baju_perukuran;
+                $transaksi_ukuranbarang->chart_atasan_id = $keranjangukuran[$j]->chart_atasan_id;
+                $transaksi_ukuranbarang->chart_bawahan_id = $keranjangukuran[$j]->chart_bawahan_id;
                 $transaksi_ukuranbarang->transaksi_barang()->associate($transaksi_barang);
                 $transaksi_ukuranbarang->save();
             }
 
+            keranjang::find($listkeranjang_id[$i])->delete();
         }
 
         
