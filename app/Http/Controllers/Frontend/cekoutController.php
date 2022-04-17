@@ -92,7 +92,7 @@ class cekoutController extends Controller
         // store tabel transaksi_barang STORE BARANG CEKOUT BELUM BENARR
         for ($i=0; $i < count($listkeranjang_id); $i++) { 
 
-            $datakeranjang = keranjang::find($listkeranjang_id[$i])->first();
+            $datakeranjang = keranjang::find($listkeranjang_id[$i]);
 
             $transaksi_barang = new transaksi_barang;
             $transaksi_barang->baju_id = $datakeranjang->baju_id;

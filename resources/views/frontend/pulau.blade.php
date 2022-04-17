@@ -15,7 +15,7 @@
           <input class="form-control" type="search" placeholder="Tulis disini.." aria-label="Search">
           <button class="btn btn-outline-body bg-success" type="submit">Cari</button>
         </form>
-        <button onclick="openMenutest()" type="button">test side</button>
+        {{-- <button onclick="openMenutest()" type="button">test side</button> --}}
         {{-- <span style="font-size:2vw; cursor:pointer" onclick="openMenu()">&#9776; open</span> --}}
       </nav>
       

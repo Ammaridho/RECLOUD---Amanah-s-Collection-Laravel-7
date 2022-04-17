@@ -100,6 +100,7 @@
 
                     var listkeranjang_id = $("input[name='listkeranjang_id[]']").map(function(){return $(this).val();}).get();
                     
+                    // console.log(listkeranjang_id);
 
                     $.get("/rincianCekout", {nama:nama,alamat:alamat,kodePos:kodePos,noTelp:noTelp,emaill:emaill,pilihkurir:pilihkurir,bankTujuan:bankTujuan,biayaPenyewaan:biayaPenyewaan,uangJaminan:uangJaminan,ongkir:ongkir,totalTagihan:totalTagihan,noRek:noRek,namaRek:namaRek,listkeranjang_id:listkeranjang_id,customer_email:customer_email}, function (data) {
                         $('body > .contentUtama').html(data);       //masuk ke routes
