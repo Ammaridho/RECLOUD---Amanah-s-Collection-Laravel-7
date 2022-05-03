@@ -151,7 +151,7 @@
               <a class="nav-item nav-link" href="/pulau">For-rent</a>
             @endif
 
-            <a class="nav-item nav-link" href="/#contact">Contact</a>
+            
             
             <?php 
 
@@ -183,6 +183,7 @@
               </div>
             @endif
             
+            <a class="nav-item nav-link" href="/#contact">Contact</a>
 
             @if (!session('success_login'))
               <a class="nav-item  btn btn-primary nav-link" onclick="Tombollogin()">Login</a>

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\provinsi;
 
 use App\Models\baju;
+use App\Models\gambar_baju;
 
 class MenusideController extends Controller
 {
@@ -18,7 +19,7 @@ class MenusideController extends Controller
 
         $tariSatu = baju::join('tari','baju.id','=','tari.id')->where('provinsi_id',"$provinsi_id")->where('jenis_baju','Baju Tari')->orderBy('nama_tari', 'asc')->first();
 
-        $baju = baju::where('provinsi_id',"$provinsi_id")->where('jenis_baju','Baju Adat')->get();
+        $baju = baju::join('gambar_baju','baju.id','=','gambar_baju.id')->where('provinsi_id',"$provinsi_id")->where('jenis_baju','Baju Adat')->get();
 
         $semuaTari = baju::join('gambar_baju','baju.id','=','gambar_baju.id')->join('tari','baju.id','=','tari.id')->where('provinsi_id',"$provinsi_id")->where('jenis_baju',"Baju Tari")->orderBy('nama_baju','asc')->get();
 

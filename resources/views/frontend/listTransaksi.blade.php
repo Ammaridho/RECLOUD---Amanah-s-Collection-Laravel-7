@@ -35,7 +35,7 @@
                                       <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
                                         <div class="mask waves-effect waves-light text-center">
                                           <img class="img-fluid"
-                                          src="img/gambarbaju/1.png">
+                                          src="img/gambarbaju/{{$second->gambar}}">
                                         </div>
                                       </div>
                                     </div>

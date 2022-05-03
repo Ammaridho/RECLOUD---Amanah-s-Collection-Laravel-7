@@ -295,7 +295,7 @@
 
   })
 
-  const hargaBaju = {{ $hargaBaju }};
+  var hargaBaju = {{ $hargaBaju }};
   
   //menambah form ukuran
   var fu = 0 ;

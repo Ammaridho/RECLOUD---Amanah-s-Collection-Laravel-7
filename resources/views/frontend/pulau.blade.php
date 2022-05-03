@@ -50,6 +50,7 @@
     
     <script>
       function openMenutest() {
+        alert('1');
         document.getElementById("sidebar").style.transform = "translatex(0%)";
     }
 

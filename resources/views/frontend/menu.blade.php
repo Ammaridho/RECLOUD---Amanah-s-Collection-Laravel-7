@@ -44,10 +44,10 @@
               <?php foreach($baju as $b):?>
               <div class="col-sm p-1">
                 <div class="card">
-                  <img class="card-img-top" src="img/gambarbaju/<?= $b['gambar'];?>" alt="Card image cap">
+                  <img class="card-img-top" src="/img/gambarbaju/<?= $b['gambar'];?>" alt="Card image cap" height="100px" style="width: 100px; margin: auto;">
                   <div class="card-body">
                     <h5 class="card-title text-body"><?= $b["nama_baju"];?></h5>
-                    <h5 class="card-title text-body"><?= $b['id'];?></h5>
+                    <h5 class="card-title text-body">id : <?= $b['id'];?></h5>
                     <p class="card-text text-body"><?= $b["harga_baju"];?></p>
                     <a href="javascript:void()" onclick="openDetail('<?= $b['id']; ?>')" class="btn btn-primary">Go somewhere</a>
                   </div>

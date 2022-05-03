@@ -22,9 +22,9 @@ class transaksiController extends Controller
 
         //ambil data keranjang sesuai id
         $transaksi = transaksi::where('transaksi.customer_id',$customer_id);
-        $transaksiData = $transaksi->get(); //list transaksi;
+        $transaksiData = $transaksi->orderBy('transaksi.updated_at', 'desc')->get(); //list transaksi;
         
-        $transaksiDetail = $transaksi->join('transaksi_barang','transaksi.id','=','transaksi_barang.transaksi_id')->join('baju','transaksi_barang.baju_id','=','baju.id')->get(); //melihat isi transaksi
+        $transaksiDetail = $transaksi->join('transaksi_barang','transaksi.id','=','transaksi_barang.transaksi_id')->join('baju','transaksi_barang.baju_id','=','baju.id')->join('gambar_baju','baju.id','=','gambar_baju.id')->get(); //melihat isi transaksi
         
 
         return view('frontend.listTransaksi', compact('transaksiData','transaksiDetail'));
